@@ -19,6 +19,7 @@ class PruebasGrafica
     {
         $miVariable = 22;
         echo "aqui va la variable";
+        echo "aqui va la variable xxx";
        
     }
 }
