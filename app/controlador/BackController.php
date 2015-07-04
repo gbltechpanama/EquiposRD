@@ -30,69 +30,63 @@ class BackController
     }
         
         
-    public function C_PaginaPrincipal()
-	{
-                $model = new modelo(); 
-                
-                $this->rutaBanners = $model->M_obtenerRutaBanners();
-                
-                $this->descripcionBanners = $model->modelObtenerDescripcionBanners();
-                
-                /*
-                 * ASIGNO EL ARRAY A LAS VARIABLES DE SESION PARA PODERLAS USAR EN LA VISTA
-                 */
-                session_start();
-                
-                $_SESSION['rutaBanners'] = $this->rutaBanners;
-                $_SESSION['descripcionBanners'] = $this->descripcionBanners;
-                
-		header("Location: ".$this::$rutaAplicacion."app/vista/templates/home.php");
-	}
-	
-	
-	function C_obtenerInformacionGeneral($lineaNegocio)
-	{
+    public function controlPaginaPrincipal()
+    {
+        $model = new modelo();
 
-		
-		/*
-		 * LLAMAR LAS FUNCIONES NECESARIAS DEL OBJETO MODELO
-		 */
-		$model = new modelo(); 
-                
-                $this->descripcionGeneralNegocio = $model->modelObtenerDescripcionGeneralNegocio($lineaNegocio);
-		
-                $this->rutaIntegradores = $model->modelObtenerIntegradores($lineaNegocio);
-                
-                
-		/*
-		 * ASIGNACION VARIABLE SESION
-		 */
-                session_start();
-                
-                $_SESSION['descripcionGeneralNegocio'] = $this->descripcionGeneralNegocio;
-                
-                $_SESSION['rutaIntegradores'] = $this->rutaIntegradores;
-                
-                
-                if($lineaNegocio=="hubbell")
-                {
-                    $_SESSION['rutaImagen1'] = '../img/hubLevel1.jpg';
-                    $_SESSION['rutaImagen2'] = '../img/hubLevel2.jpg';
-                }
-                
-                
-                else if($lineaNegocio=="eclipse")
-                {
-                    $_SESSION['rutaImagen1'] = '../img/eclipseLevel1.jpg';
-                    $_SESSION['rutaImagen2'] = '../img/eclipseLevel2.jpg';
-                }
-                
-                
-                /*
-		 * LLAMAR A LA VISTA CORRESPONDIENTE
-		 */
-		header("Location: ".$this::$rutaAplicacion."app/vista/templates/level1neg.php");
-	}
+        $this->rutaBanners = $model->M_obtenerRutaBanners();
+
+        $this->descripcionBanners = $model->modelObtenerDescripcionBanners();
+
+        /*
+         * ASIGNO EL ARRAY A LAS VARIABLES DE SESION PARA PODERLAS USAR EN LA VISTA
+         */
+        session_start();
+
+        $_SESSION['rutaBanners'] = $this->rutaBanners;
+        $_SESSION['descripcionBanners'] = $this->descripcionBanners;
+
+        header("Location: ".$this::$rutaAplicacion."app/vista/templates/home.php");
+    }
+
+    public function controlObtenerInformacionGeneral($lineaNegocio)
+    {
+        
+        /*
+         * LLAMAR LAS FUNCIONES NECESARIAS DEL OBJETO MODELO
+         */
+        $model = new modelo();
+
+        $this->descripcionGeneralNegocio = $model->modelObtenerDescripcionGeneralNegocio($lineaNegocio);
+
+        $this->rutaIntegradores = $model->modelObtenerIntegradores($lineaNegocio);
+
+
+        /*
+         * ASIGNACION VARIABLE SESION
+         */
+        session_start();
+
+        $_SESSION['descripcionGeneralNegocio'] = $this->descripcionGeneralNegocio;
+
+        $_SESSION['rutaIntegradores'] = $this->rutaIntegradores;
+
+
+        if ($lineaNegocio=="hubbell") {
+            $_SESSION['rutaImagen1'] = '../img/hubLevel1.jpg';
+            $_SESSION['rutaImagen2'] = '../img/hubLevel2.jpg';
+        } else if ($lineaNegocio=="eclipse")
+        {
+            $_SESSION['rutaImagen1'] = '../img/eclipseLevel1.jpg';
+            $_SESSION['rutaImagen2'] = '../img/eclipseLevel2.jpg';
+        }
+
+
+        /*
+         * LLAMAR A LA VISTA CORRESPONDIENTE
+         */
+        header("Location: ".$this::$rutaAplicacion."app/vista/templates/level1neg.php");
+    }
 	
 	
 	function C_obtenerInformacionDetalleLinea($lineaNegocio)
