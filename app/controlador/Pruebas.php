@@ -17,6 +17,8 @@ class PruebasGrafica
     
     private function funcionPrivada()
     {
-       $miVariable; 
+        $miVariable = 22;
+        echo "aqui va la variable";
+       
     }
 }
