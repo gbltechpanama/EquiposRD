@@ -12,10 +12,10 @@ $action = isset($_GET['action']);
  * ROUTING FRONTCONTROLLER
  */
 if ($action=="principal") {
-    $bc->C_PaginaPrincipal();
+    $bc->controlPaginaPrincipal();
 } elseif ($action=="level1neg") {
     $linea = $_GET['linea'];
-    $bc->C_obtenerInformacionGeneral($linea);
+    $bc->controlObtenerInformacionGeneral($linea);
 } elseif ($action=="level2neg") {
     $linea = $_GET['linea'];
     //$bc->C_obtenerInformacionGeneral($linea);
