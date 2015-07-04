@@ -11,7 +11,8 @@
 
 function redireccion()
 {
-	document.location.href = "app/controlador/frontController.php?action=principal";	
+	document.location.href = "app/controlador/frontController.php?action=principal";
+        //algo aqui
 }
 
 </script>
