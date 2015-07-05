@@ -3,7 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ERD/app/controlador/Pruebas.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/app/controlador/FrontController.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/app/controlador/BackController.php</file>
         </group>
     </open-files>
 </project-private>

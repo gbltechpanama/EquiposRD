@@ -1,8 +1,6 @@
 <?php
 namespace erd;
 
-require "../../orm.php";
-
 class Modelo
 {
 
@@ -11,11 +9,11 @@ class Modelo
      */
     public function modelObtenerRutaBanners()
     {
-            $orm = new orm();
-            
+            $orm = new ORM();
+
             $sql = "Select \"rutaBanner\" from \"banners\"";
             
-            $resultado = $orm->M_queryDB($sql);
+            $resultado = $orm->modelQueryDB($sql);
             
             $data_array = $this->modelConvertirEnArray($resultado);
             
@@ -28,7 +26,7 @@ class Modelo
 
         $sql = "Select \"descripcionBanner\" from \"banners\"";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $data_array = $this->modelConvertirEnArray($resultado);
 
@@ -46,7 +44,7 @@ class Modelo
         $sql = "Select \"descripcionSubLinea\" from \"lineasNegocios\" where \"nombreLineaPadre\" "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $data_array = $this->modelConvertirEnArray($resultado);
 
@@ -61,7 +59,7 @@ class Modelo
         $sql = "Select \"rutaLogo\" from \"integradores\" where \"nombreLineaPadre\" "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $data_array = $this->modelConvertirEnArray($resultado);
 
@@ -80,7 +78,7 @@ class Modelo
         $sql = "Select \"descripcionSubLinea\" from \"lineasNegocios\" where \"nombreSubLineaNegocio\" "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $row = pg_fetch_array($resultado);
 
@@ -97,7 +95,7 @@ class Modelo
         $sql = "Select \"nombreProducto\" from \"productos\" where \"nombreSubLineaNegocio\" "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $data_array = $this->modelConvertirEnArray($resultado);
 
@@ -112,7 +110,7 @@ class Modelo
         $sql = "Select \"enlaceCatalogo\" from \"lineasNegocios\" where \"nombreSubLineaNegocio\" "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $row = pg_fetch_array($resultado);
 
@@ -146,7 +144,7 @@ class Modelo
 
         $sql = "Select \"idArticulo\" from \"academia\"";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $data_array = $this->modelConvertirEnArray($resultado);
 
@@ -159,7 +157,7 @@ class Modelo
 
         $sql = "Select \"tituloArticulo\" from \"academia\"";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $data_array = $this->modelConvertirEnArray($resultado);
 
@@ -172,7 +170,7 @@ class Modelo
 
         $sql = "Select \"rutaFotoArticulo\" from \"academia\"";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $data_array = $this->modelConvertirEnArray($resultado);
 
@@ -185,7 +183,7 @@ class Modelo
 
         $sql = "Select \"contenidoArticulo\" from \"academia\"";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $data_array = $this->modelConvertirEnArray($resultado);
 
@@ -199,7 +197,7 @@ class Modelo
 
         $sql = "Select \"fechaPublicacion\" from \"academia\"";
 
-        $resultado = $orm->M_queryDB($sql);
+        $resultado = $orm->modelQueryDB($sql);
 
         $data_array = $this->modelConvertirEnArray($resultado);
 
