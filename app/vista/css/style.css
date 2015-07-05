@@ -360,7 +360,8 @@ ul.social_left li.fb_text h4 a {
 	font-weight: 600;
 }
 ul.social_left li.fb_text h4 a:hover {
-	color: #e4551d;
+	/*color: #e4551d;*/
+        color: #009900;
 	text-decoration: none;
 }
 ul.social_left li.fb_text p {
@@ -374,7 +375,7 @@ ul.social_left li.fb_text {
 }
 .footer_bottom {
 	padding: 2em 0;
-	background: #7cc4cc;
+	background: #009900;
 }
 .copy {
 	text-align: center;

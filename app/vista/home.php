@@ -60,6 +60,7 @@
   <p>Hubbell / Eclipse</p>
 </div>
     
+<!-- LINEAS NEGOCIO -->
 <div class="featured_content" id="feature">
     
   <div class="container">
@@ -82,107 +83,85 @@
   </div>
 </div>
     
-    
-<div class="container">
-  <div class="content_white">
-    <h2>Vel ad aliquid copiosae</h2>
-    <p>No cum agam appareat vituperata ateum iusto paulo dignissim</p>
-  </div>
-  <div class="testimonial">
-    <div class="row testimonial_top">
-      <div class="col-md-6">
-        <ul class="test_box">
-          <li class="test_img"><img src="../img/pic1.jpg" class="img-responsive" alt=""/> </li>
-          <li class="test_desc">
-            <h4><a href="#">Impetus tincidunt</a></h4>
-            <p>Vel ad aliquid copiosae, cum id impetus tincidunt, solum option laoreet ei quo. No cum agam appareat vituperata ateum iusto paulo dignissim.</p>
-          </li>
-          <div class="clearfix"> </div>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <ul class="test_box">
-          <li class="test_img"><img src="../img/pic2.jpg" class="img-responsive" alt=""/> </li>
-          <li class="test_desc">
-            <h4><a href="#">Paulo dignissim</a></h4>
-            <p>Vel ad aliquid copiosae, cum id impetus tincidunt, solum option laoreet ei quo. No cum agam appareat vituperata ateum iusto paulo dignissim.</p>
-          </li>
-          <div class="clearfix"> </div>
-        </ul>
-      </div>
-    </div>
-    <div class="row testimonial_bottom">
-      <div class="col-md-6">
-        <ul class="test_box">
-          <li class="test_img"><img src="../img/pic3.jpg" class="img-responsive" alt=""/> </li>
-          <li class="test_desc">
-            <h4><a href="#">Vituperata ateum</a></h4>
-            <p>Vel ad aliquid copiosae, cum id impetus tincidunt, solum option laoreet ei quo. No cum agam appareat vituperata ateum iusto paulo dignissim.</p>
-          </li>
-          <div class="clearfix"> </div>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <ul class="test_box">
-          <li class="test_img"><img src="../img/pic4.jpg" class="img-responsive" alt=""/> </li>
-          <li class="test_desc">
-            <h4><a href="#">Appareat vituperat</a></h4>
-            <p>Vel ad aliquid copiosae, cum id impetus tincidunt, solum option laoreet ei quo. No cum agam appareat vituperata ateum iusto paulo dignissim.</p>
-          </li>
-          <div class="clearfix"> </div>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- SECCION REDES SOCIALES -->
+
 <div class="footer">
   <div class="footer_midle">
     <div class='container'>
       <div class="row">
+          
         <div class="col-md-3">
           <ul class="social_left">
-            <li class="facebook"><a href="#"><i class="fa fa-facebook-square fa-3x"></i></a></li>
+            <li class="facebook">
+                <a href="#">
+                    <i class="fa fa-facebook-square fa-3x" style="color: #3b5998"></i>
+                </a>
+            </li>
             <li class="fb_text">
               <h4><a href="#">Follow us on Facebook</a></h4>
             </li>
             <div class="clearfix"> </div>
           </ul>
         </div>
+          
         <div class="col-md-3">
           <ul class="social_left">
-            <li class="facebook"><a href="#"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+            <li class="facebook">
+                <a href="#">
+                    <i class="fa fa-twitter-square fa-3x" style="color: #00aced"></i>
+                </a>
+            </li>
             <li class="fb_text">
               <h4><a href="#">Follow us on Twitter</a></h4>
             </li>
             <div class="clearfix"> </div>
           </ul>
         </div>
+          
+          
         <div class="col-md-3">
           <ul class="social_left">
-            <li class="facebook"><a href="#"><i class="fa fa-google-plus-square fa-3x"></i></a></li>
+            <li class="facebook">
+                <a href="#">
+                    <i class="fa fa-google-plus-square fa-3x" style="color: #dd4b39"></i>
+                </a>
+            </li>
             <li class="fb_text">
               <h4><a href="#">Follow us on Google +</a></h4>
             </li>
             <div class="clearfix"> </div>
           </ul>
         </div>
+          
+          
         <div class="col-md-3">
           <ul class="social_left">
-            <li class="facebook"><a href="#"><i class="fa fa-linkedin-square fa-3x"></i></a></li>
+            <li class="facebook">
+                <a href="#">
+                    <i class="fa fa-linkedin-square fa-3x" style="color: #007bb6"></i>
+                </a>
+            </li>
             <li class="fb_text">
               <h4><a href="#">Follow us on LinkedIn</a></h4>
             </li>
+            
             <div class="clearfix"> </div>
+            
           </ul>
         </div>
       </div>
     </div>
   </div>
+    
+    
+  <!-- PIE DE PAGINA -->
   <div class="footer_bottom">
     <div class="copy">
-      <p>Copyright &copy; 2014 Nova. Design by <a href="http://www.templategarden.com" rel="nofollow">TemplateGarden</a></p>
+      <p>&copy; 2015 Equipos y Controles R&D, C.A. RIF: J-31371156-1 TODOS LOS DERECHOS RESERVADOS.</p>
     </div>
   </div>
+  
+  
 </div>
 </body>
 </html>
