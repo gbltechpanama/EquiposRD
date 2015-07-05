@@ -1,6 +1,8 @@
 <?php
 namespace erd;
 
+require '../../ORM.php';
+
 class Modelo
 {
 
@@ -9,20 +11,20 @@ class Modelo
      */
     public function modelObtenerRutaBanners()
     {
-            $orm = new ORM();
+        $orm = new ORM();
 
-            $sql = "Select \"rutaBanner\" from \"banners\"";
-            
-            $resultado = $orm->modelQueryDB($sql);
-            
-            $data_array = $this->modelConvertirEnArray($resultado);
-            
-            return $data_array;
+        $sql = "Select \"rutaBanner\" from \"banners\"";
+
+        $resultado = $orm->modelQueryDB($sql);
+
+        $data_array = $this->modelConvertirEnArray($resultado);
+
+        return $data_array;
     }
 
     public function modelObtenerDescripcionBanners()
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"descripcionBanner\" from \"banners\"";
 
@@ -39,7 +41,7 @@ class Modelo
 
     public function modelObtenerDescripcionGeneralNegocio($lineaNegocio)
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"descripcionSubLinea\" from \"lineasNegocios\" where \"nombreLineaPadre\" "
                 . "= '".$lineaNegocio."'";
@@ -54,7 +56,7 @@ class Modelo
     
     public function modelObtenerIntegradores($lineaNegocio) //LEVEL 1 Y LEVEL 2
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"rutaLogo\" from \"integradores\" where \"nombreLineaPadre\" "
                 . "= '".$lineaNegocio."'";
@@ -73,7 +75,7 @@ class Modelo
 
     public function modelObtenerDescripcionLineaNegocio($lineaNegocio)
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"descripcionSubLinea\" from \"lineasNegocios\" where \"nombreSubLineaNegocio\" "
                 . "= '".$lineaNegocio."'";
@@ -90,7 +92,7 @@ class Modelo
 
     public function modelObtenerProductos($lineaNegocio)
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"nombreProducto\" from \"productos\" where \"nombreSubLineaNegocio\" "
                 . "= '".$lineaNegocio."'";
@@ -105,7 +107,7 @@ class Modelo
 
     public function modelObtenerRutaCatalogo($lineaNegocio)
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"enlaceCatalogo\" from \"lineasNegocios\" where \"nombreSubLineaNegocio\" "
                 . "= '".$lineaNegocio."'";
@@ -140,7 +142,7 @@ class Modelo
      */
     public function modelObtenerIDArticulosAcademia()
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"idArticulo\" from \"academia\"";
 
@@ -153,7 +155,7 @@ class Modelo
 
     public function modelObtenerTituloArticulosAcademia()
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"tituloArticulo\" from \"academia\"";
 
@@ -166,7 +168,7 @@ class Modelo
 
     public function modelObtenerRutaImagenArticulosAcademia()
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"rutaFotoArticulo\" from \"academia\"";
 
@@ -179,7 +181,7 @@ class Modelo
 
     public function modelObtenerContenidoArticulosAcademia()
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"contenidoArticulo\" from \"academia\"";
 
@@ -193,7 +195,7 @@ class Modelo
 
     public function modelObtenerfechaArticulosAcademia()
     {
-        $orm = new orm();
+        $orm = new ORM();
 
         $sql = "Select \"fechaPublicacion\" from \"academia\"";
 

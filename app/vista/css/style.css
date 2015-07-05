@@ -39,7 +39,8 @@ body a {
 .menu li a {
 	display: block;
 	font-size: 1em;
-	color: #777;
+	/*color: #777;*/
+        color: #000000;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -48,14 +49,14 @@ body a {
 	font-weight: 600;
 }
 #nav .current a {
-	color: #6fb0b7;
+        color: #009900;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
 .menu li a:hover, .menu li.active a {
-	color: #6fb0b7;
+	color: #009900;
 	background: #fff !important;
 }
 .toggleMenu {
@@ -135,8 +136,8 @@ body a {
 }
 }
 .banner {
-	background: url(../images/banner.jpg) #96b9bd no-repeat center;
-	min-height: 500px;
+	/*background: url(../images/banner.jpg) #96b9bd no-repeat center;*/
+	min-height: 50px;
 }
 .banner-info {
 	margin-top: 8em;
@@ -754,10 +755,11 @@ ul.sidebar li a {
 	width: 23%;
 }
 .banner {
-	min-height: 450px;
+	height: 450px;
+        
 }
 .banner-info {
-	margin-top: 4em;
+	/*margin-top: 4em;*/
 }
 .nbs-flexisel-nav-right {
 	right: 30em;

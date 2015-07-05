@@ -1,6 +1,8 @@
 <?php
 namespace erd;
 
+require '../modelo/Modelo.php';
+
 class BackController
 {
 
@@ -21,9 +23,9 @@ class BackController
         
     public function controlPaginaPrincipal()
     {
-        $model = new modelo();
-
-        $this->rutaBanners = $model->M_obtenerRutaBanners();
+        $model = new Modelo();
+        
+        $this->rutaBanners = $model->modelObtenerRutaBanners();
 
         $this->descripcionBanners = $model->modelObtenerDescripcionBanners();
 
@@ -44,7 +46,7 @@ class BackController
         /*
          * LLAMAR LAS FUNCIONES NECESARIAS DEL OBJETO MODELO
          */
-        $model = new modelo();
+        $model = new Modelo();
 
         $this->descripcionGeneralNegocio = $model->modelObtenerDescripcionGeneralNegocio($lineaNegocio);
 
@@ -81,7 +83,7 @@ class BackController
         /*
          * LLAMAR LAS FUNCIONES NECESARIAS DEL OBJETO MODELO
          */
-        $model = new modelo();
+        $model = new Modelo();
 
         $this->descripcionLineaNegocio = $model->modelObtenerDescripcionLineaNegocio($lineaNegocio);
 
@@ -117,7 +119,7 @@ class BackController
         /*
          * LLAMAR LAS FUNCIONES NECESARIAS DEL OBJETO MODELO
          */
-        $model = new modelo();
+        $model = new Modelo();
 
         $this->idAcademia=$model->modelObtenerIDArticulosAcademia();
 
