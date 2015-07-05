@@ -20,8 +20,10 @@ body a {
 	-ms-transition: 0.5s all;
 }
 .header {
-	background: #fff;
-	padding: 2em 0;
+	background: #f6f6f6;
+        padding-top: 0px; 
+        padding-bottom: 0px;
+        height: 105px;
 }
 .logo {
 	float: left;
@@ -189,7 +191,9 @@ a.banner-btn span:hover {
 	line-height: 0.6em;
 }
 .featured_content {
-	background: #f6f6f6;
+/*	background: #f6f6f6;*/
+        background-color: #e8e8e8; 
+        height: 365px
 }
 .feature_grid1 {
 	width: 23.5%;
@@ -375,7 +379,7 @@ ul.social_left li.fb_text {
 }
 .footer_bottom {
 	padding: 2em 0;
-	background: #009900;
+	background: #489a29;
 }
 .copy {
 	text-align: center;
@@ -785,7 +789,9 @@ div.list.custom-list ul li h5 a {
 
 @media (max-width:800px) {
 .header {
-	padding: 1em 0;
+        background: #f6f6f6;
+        padding-top: 0px; 
+        padding-bottom: 0px;
 }
 .logo {
 	margin-top: 15px;
@@ -883,7 +889,10 @@ a.banner-btn span {
 	margin-top: 12px;
 }
 .header {
-	padding: 0.5em 0;
+        background: #f6f6f6;
+        padding-top: 0px; 
+        padding-bottom: 0px;
+	
 }
 .content_white h2 {
 	font-size: 1.5em;
@@ -966,4 +975,22 @@ ul.links li {
 input.text {
 	margin-left: 0 !important;
 }
+}
+
+
+#descripcion
+{
+    width: 100%;
+    height: 79px;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    background-image:url(../img/backDescripcion.jpg); 
+    background-repeat: repeat
+}
+
+#barraSuperior
+{
+    width: 100%; 
+    height: 10px; 
+    background-color: #489a29
 }

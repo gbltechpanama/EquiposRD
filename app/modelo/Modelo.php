@@ -13,7 +13,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"rutaBanner\" from \"banners\"";
+        $sql = "Select \"rutaBanner\" from \"banners\" order by \"idBanner\"";
 
         $resultado = $orm->modelQueryDB($sql);
 
@@ -26,7 +26,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"descripcionBanner\" from \"banners\"";
+        $sql = "Select \"descripcionBanner\" from \"banners\" order by \"idBanner\"";
 
         $resultado = $orm->modelQueryDB($sql);
 

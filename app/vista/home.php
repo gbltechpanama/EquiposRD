@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Equipos R&D</title>
+<title>Equipos y Controles R&D</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
@@ -15,18 +15,27 @@
 </script>
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> 
+    addEventListener("load", function() { 
+        setTimeout(hideURLbar, 0); }, false); 
+    function hideURLbar(){ window.scrollTo(0,1); } 
+</script>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' 
+      rel='stylesheet' type='text/css'>
+
 </script>
 </head>
 <body>
     
+
+    
 <!-- ENCABEZADO -->
 <div class="header">
   <div class="container">
-    <div class="logo"> <a href="home.php"><img src="img/logo.png" alt="Nova"></a> </div>
-    <div class="menu"> <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
-      <ul class="nav" id="nav">
+      <div class="logo"> <a href="home.php"><img src="img/logo.png"></a> </div>
+      <div class="menu" style="padding-top: 25px"> 
+          <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
+        <ul class="nav" id="nav">
         <li class="current"><a href="home.php">INICIO</a></li>
         <li><a href="about.html">ACERCA DE</a></li>
         <li><a href="services.html">ACADEMIA</a></li>
@@ -40,22 +49,37 @@
   </div>
 </div>
     
+
+<!-- BARRA SUPERIOR VERDE -->
+<div id="barraSuperior"></div>
+
+
 <!-- BANNER -->
 <div class="text-center banner">
-    <div class="container" style="background-color: #0033ff">
-        <div id="barraSuperior" style="width: 100%; height: 10px; background-color: #009900"></div>
-        
-        <div id="imagen" style="text-align: center">
-            <img src="img/b2.jpg">
-            <p>AQUI VA LA DESCRIPCION DEL BANNER...</p>
-            
-        </div>
+    <div class="container" style="background-color: #0033ff; padding-left: 0px; 
+         padding-right: 0px; padding-bottom: 0px; padding-top: 0px">
+
+        <div id="imagen" style="width: 100%;background-color: #ff0000">
+            <?php
+                session_start();
+                echo '<img src="'.trim($_SESSION["rutaBanners"][0]).'" class="img-responsive">';
+            ?>
+        </div>  
     </div>
+</div>
+
+<!-- DESCRIPCION -->
+<div id="descripcion">
+    <p style="padding-top: 25px; text-align: center">
+        <?php
+            echo $_SESSION['descripcionBanners'][0];
+        ?>
+    </p>
 </div>
 
 <!-- COMENTARIO -->    
 <div class="main">
-<div class="content_white">
+    <div class="content_white" style="background-color: #f6f6f6">
   <h2>Equipos y Controles R&D</h2>
   <p>Hubbell / Eclipse</p>
 </div>
@@ -67,16 +91,25 @@
       
     <div class="row text-center">
         
-      <div class="col-md-6"> <i class="fa fa-cloud-download fa-3x"></i>
-        <h3 class="m_1"><a href="#">Legimus graecis</a></h3>
-        <p class="m_2">Lorem ipsum dolor sit amet, facilisis egestas sodales non luctus, sem quas potenti malesuada vel phasellus.</p>
-        <a href="#" class="feature_btn">More</a> 
+      <div class="col-md-6"> 
+
+        <p class="m_2" style="margin-top: 45px">
+            <img src="img/hubbell.jpg">
+        </p>
+
+        <a href="#" class="feature_btn">Mas</a> 
+        
       </div>
         
-      <div class="col-md-6"> <i class="fa fa-shield fa-3x"></i>
-        <h3 class="m_1"><a href="#">Mazim minimum</a></h3>
-        <p class="m_2">Lorem ipsum dolor sit amet, facilisis egestas sodales non luctus, sem quas potenti malesuada vel phasellus.</p>
-        <a href="#" class="feature_btn">More</a> 
+        
+      <div class="col-md-6"> 
+          
+        <p class="m_2" style="margin-top: 45px">
+            <img src="img/ecplise.jpg">
+        </p>
+
+        <a href="#" class="feature_btn">Mas</a> 
+        
       </div>
         
     </div>

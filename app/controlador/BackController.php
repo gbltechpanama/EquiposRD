@@ -37,7 +37,8 @@ class BackController
         $_SESSION['rutaBanners'] = $this->rutaBanners;
         $_SESSION['descripcionBanners'] = $this->descripcionBanners;
 
-        header("Location: ".$this::$rutaAplicacion."app/vista/templates/home.php");
+       
+        header("Location: ".$this::$rutaAplicacion."app/vista/home.php");
     }
 
     public function controlObtenerInformacionGeneral($lineaNegocio)
@@ -75,7 +76,7 @@ class BackController
         /*
          * LLAMAR A LA VISTA CORRESPONDIENTE
          */
-        header("Location: ".$this::$rutaAplicacion."app/vista/templates/level1neg.php");
+        header("Location: ".$this::$rutaAplicacion."app/vista/level1neg.php");
     }
 
     public function controlObtenerInformacionDetalleLinea($lineaNegocio)
