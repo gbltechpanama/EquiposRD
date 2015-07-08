@@ -13,7 +13,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"rutaBanner\" from \"banners\" order by \"idBanner\"";
+        $sql = "Select rutaBanner from banners order by idBanner";
 
         $resultado = $orm->modelQueryDB($sql);
 
@@ -26,7 +26,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"descripcionBanner\" from \"banners\" order by \"idBanner\"";
+        $sql = "Select descripcionBanner from banners order by idBanner";
 
         $resultado = $orm->modelQueryDB($sql);
 
@@ -43,8 +43,8 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"descripcionSubLinea\" from \"lineasNegocios\" where \"nombreLineaPadre\" "
-                . "= '".$lineaNegocio."'";
+        $sql = "Select descripcionSubLinea from lineasNegocios where "
+                . "nombreLineaPadre = '".$lineaNegocio."'";
 
         $resultado = $orm->modelQueryDB($sql);
 
@@ -58,7 +58,21 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"rutaLogo\" from \"integradores\" where \"nombreLineaPadre\" "
+        $sql = "Select rutaLogo from integradores where "
+                . "nombreLineaPadre = '".$lineaNegocio."'";
+
+        $resultado = $orm->modelQueryDB($sql);
+
+        $data_array = $this->modelConvertirEnArray($resultado);
+
+        return $data_array;
+    }
+    
+    public function modelObtenerRutaImagenSubLinea($lineaNegocio)
+    {
+        $orm = new ORM();
+
+        $sql = "Select rutaImagenSubLinea from lineasNegocios where nombreLineaPadre "
                 . "= '".$lineaNegocio."'";
 
         $resultado = $orm->modelQueryDB($sql);
@@ -66,6 +80,7 @@ class Modelo
         $data_array = $this->modelConvertirEnArray($resultado);
 
         return $data_array;
+
     }
 
 
@@ -77,7 +92,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"descripcionSubLinea\" from \"lineasNegocios\" where \"nombreSubLineaNegocio\" "
+        $sql = "Select descripcionSubLinea from lineasNegocios where nombreSubLineaNegocio "
                 . "= '".$lineaNegocio."'";
 
         $resultado = $orm->modelQueryDB($sql);
@@ -94,7 +109,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"nombreProducto\" from \"productos\" where \"nombreSubLineaNegocio\" "
+        $sql = "Select nombreProducto from productos where nombreSubLineaNegocio "
                 . "= '".$lineaNegocio."'";
 
         $resultado = $orm->modelQueryDB($sql);
@@ -109,12 +124,12 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"enlaceCatalogo\" from \"lineasNegocios\" where \"nombreSubLineaNegocio\" "
+        $sql = "Select enlaceCatalogo from lineasNegocios where nombreSubLineaNegocio "
                 . "= '".$lineaNegocio."'";
 
         $resultado = $orm->modelQueryDB($sql);
 
-        $row = pg_fetch_array($resultado);
+        $row = mysql_fetch_row($resultado);
 
         $data = $row[0];
 
@@ -127,7 +142,7 @@ class Modelo
     {
         $i = 0;
 
-        while ($row = pg_fetch_array($resultado)) {
+        while ($row = mysql_fetch_row($resultado)) {
                 $data_array[$i] = $row[0];
                 $i++;
         }
@@ -144,7 +159,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"idArticulo\" from \"academia\"";
+        $sql = "Select idArticulo from academia";
 
         $resultado = $orm->modelQueryDB($sql);
 
@@ -157,7 +172,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"tituloArticulo\" from \"academia\"";
+        $sql = "Select tituloArticulo from academia";
 
         $resultado = $orm->modelQueryDB($sql);
 
@@ -170,7 +185,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"rutaFotoArticulo\" from \"academia\"";
+        $sql = "Select rutaFotoArticulo from academia";
 
         $resultado = $orm->modelQueryDB($sql);
 
@@ -183,7 +198,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"contenidoArticulo\" from \"academia\"";
+        $sql = "Select contenidoArticulo from academia";
 
         $resultado = $orm->modelQueryDB($sql);
 
@@ -197,7 +212,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select \"fechaPublicacion\" from \"academia\"";
+        $sql = "Select fechaPublicacion from academia";
 
         $resultado = $orm->modelQueryDB($sql);
 

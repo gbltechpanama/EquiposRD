@@ -6,7 +6,8 @@ require("BackController.php");
 
 $bc = new BackController();
 
-$action = isset($_GET['action']);
+$action = $_GET['action'];
+
 
 /*
  * ROUTING FRONTCONTROLLER

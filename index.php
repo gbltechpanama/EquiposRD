@@ -8,7 +8,7 @@
 
 function redireccion()
 {
-	document.location.href = "app/controlador/frontController.php?action=principal";
+	document.location.href = "app/controlador/FrontController.php?action=principal";
         //prueba
 }
 

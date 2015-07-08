@@ -8,28 +8,29 @@ class ORM
     /*
      *  MANEJO DE BASE DE DATOS
      */
-
-    private function leerArchivoConfig()
-    {
-
-
-    }
+    private static $servidor = "localhost";
+    private static $puerto = "3306";
+    private static $baseDatos = "erd";
+    private static $usuario = "root";
+    private static $password = "";
     
     private function modelAbrirConexionBD()
     {
-        $conn_string = "host=localhost port=5432 dbname=erd user=postgres password=123456";
 
-        $conexion = pg_connect($conn_string);
-
+        $conexion = mysql_connect($this::$servidor, $this::$usuario, $this::$password);
+        
+        mysql_select_db($this::$baseDatos, $conexion);
+                
         return $conexion;
+        
     }
 
     public function modelQueryDB($query)
     {
         $conexion = $this->modelAbrirConexionBD();
-
-        $resultado=pg_query($conexion, $query);
-
+        
+        $resultado = mysql_query($query, $conexion);
+        
         $this->modelCerrarConexionBD();
 
         return $resultado;
@@ -37,8 +38,6 @@ class ORM
     
     private function modelCerrarConexionBD()
     {
-
-        pg_close();
-
+        mysql_close();
     }
 }

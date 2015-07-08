@@ -10,6 +10,7 @@ class BackController
     private $descripcionGeneralNegocio;
     private $descipcionLineaNegocio;
     private $rutaCatalogo;
+    private $rutaImagenSubLinea;
 
     private $rutaIntegradores;
     private $productos;
@@ -28,7 +29,7 @@ class BackController
         $this->rutaBanners = $model->modelObtenerRutaBanners();
 
         $this->descripcionBanners = $model->modelObtenerDescripcionBanners();
-
+        
         /*
          * ASIGNO EL ARRAY A LAS VARIABLES DE SESION PARA PODERLAS USAR EN LA VISTA
          */
@@ -53,6 +54,8 @@ class BackController
 
         $this->rutaIntegradores = $model->modelObtenerIntegradores($lineaNegocio);
 
+        $this->rutaImagenSubLinea = $model->modelObtenerRutaImagenSubLinea($lineaNegocio);
+
 
         /*
          * ASIGNACION VARIABLE SESION
@@ -60,19 +63,13 @@ class BackController
         session_start();
 
         $_SESSION['descripcionGeneralNegocio'] = $this->descripcionGeneralNegocio;
-
+        
         $_SESSION['rutaIntegradores'] = $this->rutaIntegradores;
 
+        $_SESSION['rutaImagenSubLineas'] = $this->rutaImagenSubLinea;
 
-        if ($lineaNegocio=="hubbell") {
-            $_SESSION['rutaImagen1'] = '../img/hubLevel1.jpg';
-            $_SESSION['rutaImagen2'] = '../img/hubLevel2.jpg';
-        } elseif ($lineaNegocio=="eclipse") {
-            $_SESSION['rutaImagen1'] = '../img/eclipseLevel1.jpg';
-            $_SESSION['rutaImagen2'] = '../img/eclipseLevel2.jpg';
-        }
-
-
+        $_SESSION['lineaNegocio'] = $lineaNegocio;
+        
         /*
          * LLAMAR A LA VISTA CORRESPONDIENTE
          */

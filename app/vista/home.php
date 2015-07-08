@@ -37,10 +37,10 @@
           <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
         <li class="current"><a href="home.php">INICIO</a></li>
-        <li><a href="about.html">ACERCA DE</a></li>
-        <li><a href="services.html">ACADEMIA</a></li>
-        <li><a href="blog.html">MARCAS</a></li>
-        <li><a href="contact.html">CONTACTO</a></li>
+        <li><a href="#">ACERCA DE</a></li>
+        <li><a href="#">ACADEMIA</a></li>
+        <li><a href="#">MARCAS</a></li>
+        <li><a href="#">CONTACTO</a></li>
         <div class="clear"></div>
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 
@@ -97,7 +97,7 @@
             <img src="img/hubbell.jpg">
         </p>
 
-        <a href="#" class="feature_btn">Mas</a> 
+        <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" class="feature_btn">Mas</a> 
         
       </div>
         
@@ -108,7 +108,7 @@
             <img src="img/ecplise.jpg">
         </p>
 
-        <a href="#" class="feature_btn">Mas</a> 
+        <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" class="feature_btn">Mas</a> 
         
       </div>
         
