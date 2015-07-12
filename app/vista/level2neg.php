@@ -63,7 +63,7 @@
         
             <div id="palabraLinea">
                 <?php
-                    echo strtoupper($_SESSION['lineaNegocio']);
+                    echo strtoupper($_SESSION['lineaNegocio'])." ".strtoupper($_SESSION['subLineaNegocios']);
                 ?>
             </div>
             <div style="height: 26px; background-color: green; width: 90%; float: left; margin-top: 48px"></div>
@@ -83,7 +83,7 @@
                     <td>
                     <?php
                         
-                        echo '<img src='.$_SESSION['rutaImagenSubLineas'][0].' width=441px; height=195px>';
+                        echo '<img src='.$_SESSION['rutaImagenSubLineaEspecifico'].' width=441px; height=195px>';
                     ?>
                     </td>
                 <tr>
@@ -92,63 +92,19 @@
                     <p style="text-align: justify">
                         <br>
                         <?php
-                            echo $_SESSION['descripcionGeneralNegocio'][0];
+                            echo $_SESSION['descripcionLineaNegocio'];
                         ?>
                     </p>
 
                     </td>
                 </tr>
-                <tr>
-                    <td style="text-align: center;">
-                        <br>
-                        <br>
-                        <?php
-                            echo "<a href='../controlador/FrontController.php?action=level2neg&linea=".$_SESSION['nombreSubLineaNegocio'][0]."' class='feature_btn'>Ver Productos</a>";
-                        ?>
-                        
-                        <br>
-                        <br>
-                        <br>
-                    </td>
-                </tr>
+                
             </table>
         </div>
         
         
         <div class="col-md-6">
             
-            <table style="width: 440px; margin-left: auto; margin-right: auto; margin-top: 45px">
-                <tr>
-                    <td>
-                    <?php
-                        echo '<img src='.$_SESSION['rutaImagenSubLineas'][1].' width=441px; height=195px>';
-                    ?>
-                    </td>
-                <tr>
-                <tr valign = top>
-                    <td>
-                    <p style="text-align: justify">
-                        <br>
-                        <?php
-                            echo $_SESSION['descripcionGeneralNegocio'][1];
-                        ?>                       
-                    </p>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;">
-                        <br>
-                        <br>
-                        <?php
-                            echo "<a href='../controlador/FrontController.php?action=level2neg&linea=".$_SESSION['nombreSubLineaNegocio'][1]."' class='feature_btn'>Ver Productos</a>";
-                        ?>
-                        <br>
-                        <br>
-                        <br>
-                    </td>
-                </tr>
-            </table>
         </div>
     </div>
     

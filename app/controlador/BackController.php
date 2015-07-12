@@ -8,9 +8,11 @@ class BackController
 
     public static $rutaAplicacion = "http://localhost/erd/";
     private $descripcionGeneralNegocio;
+    private $nombreSubLineaNegocio;
     private $descipcionLineaNegocio;
     private $rutaCatalogo;
     private $rutaImagenSubLinea;
+    private $rutaImagenSubLineaEspecifico;
 
     private $rutaIntegradores;
     private $productos;
@@ -52,11 +54,14 @@ class BackController
 
         $this->descripcionGeneralNegocio = $model->modelObtenerDescripcionGeneralNegocio($lineaNegocio);
 
+        $this->nombreSubLineasNegocio = $model->modelObtenerNombreSubLineaNegocios($lineaNegocio);
+        
         $this->rutaIntegradores = $model->modelObtenerIntegradores($lineaNegocio);
+  
+        $this->rutaImagenSubLinea = $model->modelObtenerRutaImagenesSubLinea($lineaNegocio);
 
-        $this->rutaImagenSubLinea = $model->modelObtenerRutaImagenSubLinea($lineaNegocio);
 
-
+        
         /*
          * ASIGNACION VARIABLE SESION
          */
@@ -64,11 +69,14 @@ class BackController
 
         $_SESSION['descripcionGeneralNegocio'] = $this->descripcionGeneralNegocio;
         
+        $_SESSION['nombreSubLineaNegocio'] = $this->nombreSubLineasNegocio;
+                
         $_SESSION['rutaIntegradores'] = $this->rutaIntegradores;
-
+ 
         $_SESSION['rutaImagenSubLineas'] = $this->rutaImagenSubLinea;
 
         $_SESSION['lineaNegocio'] = $lineaNegocio;
+        
         
         /*
          * LLAMAR A LA VISTA CORRESPONDIENTE
@@ -86,16 +94,21 @@ class BackController
         $this->descripcionLineaNegocio = $model->modelObtenerDescripcionLineaNegocio($lineaNegocio);
 
         $this->productos = $model->modelObtenerProductos($lineaNegocio);
-
-        $this->rutaIntegradores = $model->modelObtenerIntegradores($lineaNegocio);
-
+        
         $this->rutaCatalogo = $model->modelObtenerRutaCatalogo($lineaNegocio);
+
+        $this->rutaImagenSubLineaEspecifico = $model->modelObtenerRutaImagenSubLineaEspecifico($lineaNegocio);
+                
 
         /*
          * ASIGNO A LA VARIABLE GLOBAL
          */
-         session_start();
+        session_start();
+ 
+        //AQUI UTILIZO LA LINEA DE NEGOCIO PADRE
+         $this->rutaIntegradores = $model->modelObtenerIntegradores($_SESSION['lineaNegocio']);
 
+        
          $_SESSION['descripcionLineaNegocio'] = $this->descripcionLineaNegocio;
 
          $_SESSION['productos'] = $this->productos;
@@ -104,12 +117,15 @@ class BackController
 
          $_SESSION['rutaCatalogo'] = $this->rutaCatalogo;
 
-
+         $_SESSION['subLineaNegocios'] = $lineaNegocio;
+         
+         $_SESSION['rutaImagenSubLineaEspecifico'] = $this->rutaImagenSubLineaEspecifico;
+         
         /*
          * LLAMAR A LA VISTA CORRESPONDIENTE
          */
 
-        //header("Location: ".$this::$rutaAplicacion."app/vista/templates/level2neg.php");
+        header("Location: ".$this::$rutaAplicacion."app/vista/level2neg.php");
     }
     
     public function controlObtenerInformacionAcademia()

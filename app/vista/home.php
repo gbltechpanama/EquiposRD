@@ -1,7 +1,10 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Equipos y Controles R&D</title>
+<title>VERSION PRUEBAS</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
@@ -61,7 +64,6 @@
 
         <div id="imagen" style="width: 100%;background-color: #ff0000">
             <?php
-                session_start();
                 echo '<img src="'.trim($_SESSION["rutaBanners"][0]).'" class="img-responsive">';
             ?>
         </div>  

@@ -43,7 +43,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select descripcionSubLinea from lineasNegocios where "
+        $sql = "Select descripcionSubLinea from lineasnegocios where "
                 . "nombreLineaPadre = '".$lineaNegocio."'";
 
         $resultado = $orm->modelQueryDB($sql);
@@ -59,7 +59,7 @@ class Modelo
         $orm = new ORM();
 
         $sql = "Select rutaLogo from integradores where "
-                . "nombreLineaPadre = '".$lineaNegocio."'";
+                . "nombreLineaPadre = '".$lineaNegocio."' order by idIntegradores";
 
         $resultado = $orm->modelQueryDB($sql);
 
@@ -68,11 +68,11 @@ class Modelo
         return $data_array;
     }
     
-    public function modelObtenerRutaImagenSubLinea($lineaNegocio)
+    public function modelObtenerRutaImagenesSubLinea($lineaNegocio)
     {
         $orm = new ORM();
 
-        $sql = "Select rutaImagenSubLinea from lineasNegocios where nombreLineaPadre "
+        $sql = "Select rutaImagenSubLinea from lineasnegocios where nombreLineaPadre "
                 . "= '".$lineaNegocio."'";
 
         $resultado = $orm->modelQueryDB($sql);
@@ -83,6 +83,20 @@ class Modelo
 
     }
 
+    public function modelObtenerNombreSubLineaNegocios($lineaNegocio)
+    {
+        $orm = new ORM();
+
+        $sql = "Select nombreSubLineaNegocio from lineasnegocios where nombreLineaPadre "
+                . "= '".$lineaNegocio."'";
+
+        $resultado = $orm->modelQueryDB($sql);
+
+        $data_array = $this->modelConvertirEnArray($resultado);
+                
+        return $data_array;
+
+    }
 
     /*
      * LINEAS DE NEGOCIOS LEVEL 2
@@ -92,19 +106,35 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select descripcionSubLinea from lineasNegocios where nombreSubLineaNegocio "
+        $sql = "Select descripcionSubLinea from lineasnegocios where nombreSubLineaNegocio "
                 . "= '".$lineaNegocio."'";
 
         $resultado = $orm->modelQueryDB($sql);
 
-        $row = pg_fetch_array($resultado);
+        $row = mysql_fetch_array($resultado);
 
         $data = $row[0];
 
         return $data;
     }
 
+    public function modelObtenerRutaImagenSubLineaEspecifico($lineaNegocio)
+    {
+        $orm = new ORM();
 
+        $sql = "Select rutaImagenSubLinea from lineasnegocios where nombreSubLineaNegocio "
+                . "= '".$lineaNegocio."'";
+
+        $resultado = $orm->modelQueryDB($sql);
+
+        $row = mysql_fetch_array($resultado);
+
+        $data = $row[0];
+
+        
+        return $data;
+    }
+    
     public function modelObtenerProductos($lineaNegocio)
     {
         $orm = new ORM();
@@ -124,7 +154,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select enlaceCatalogo from lineasNegocios where nombreSubLineaNegocio "
+        $sql = "Select enlaceCatalogo from lineasnegocios where nombreSubLineaNegocio "
                 . "= '".$lineaNegocio."'";
 
         $resultado = $orm->modelQueryDB($sql);

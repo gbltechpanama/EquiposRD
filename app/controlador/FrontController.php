@@ -19,5 +19,5 @@ if ($action=="principal") {
     $bc->controlObtenerInformacionGeneral($linea);
 } elseif ($action=="level2neg") {
     $linea = $_GET['linea'];
-    //$bc->C_obtenerInformacionGeneral($linea);
+    $bc->controlObtenerInformacionDetalleLinea($linea);
 }
