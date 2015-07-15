@@ -8,14 +8,7 @@
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-		});
-	});
-</script>
+
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
@@ -38,7 +31,7 @@
           <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
         <li class="current"><a href="home.php">INICIO</a></li>
-        <li><a href="#">ACERCA DE</a></li>
+        <li><a href="about.html">ACERCA DE</a></li>
         <li><a href="#">ACADEMIA</a></li>
         <li><a href="#">MARCAS</a></li>
         <li><a href="#">CONTACTO</a></li>
@@ -154,7 +147,7 @@
     
 <!--SECCION INTEGRADORES-->
 <div id="integradoresContenedor" style="background-color: #eeeeee; width: 100%; height: 155px">
-    <span style="font-family: arial; font-size: 18px; font-weight: bold">INTEGRADORES</span> 
+    <span style="font-family: arial; font-size: 18px; font-weight: bold; margin-left: 40px">INTEGRADORES</span> 
   
   <div class="itemIntegrador">
     <?php

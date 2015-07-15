@@ -8,14 +8,7 @@
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-		});
-	});
-</script>
+
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
@@ -38,7 +31,7 @@
           <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
         <li class="current"><a href="home.php">INICIO</a></li>
-        <li><a href="#">ACERCA DE</a></li>
+        <li><a href="about.html">ACERCA DE</a></li>
         <li><a href="#">ACADEMIA</a></li>
         <li><a href="#">MARCAS</a></li>
         <li><a href="#">CONTACTO</a></li>
@@ -63,7 +56,7 @@
         
             <div id="palabraLinea">
                 <?php
-                    echo strtoupper($_SESSION['lineaNegocio'])." ".strtoupper($_SESSION['subLineaNegocios']);
+                    echo strtoupper($_SESSION['lineaNegocio']);//." ".strtoupper($_SESSION['subLineaNegocios']);
                 ?>
             </div>
             <div style="height: 26px; background-color: green; width: 90%; float: left; margin-top: 48px"></div>
@@ -73,20 +66,23 @@
 </div>
     
 <!-- LINEAS NEGOCIO -->
+<div class="clearfix"></div>
+
 <div style="background-color: #e8e8e8">
-    <div class="container">
+
+    <div class="row">
         
-        <div class="col-md-6" style=" border-right-color: #bcbcbc; border-right-style: solid; border-right-width: 1px">
+        <div class="col-md-6 col-lg-6">
             
-            <table style="width: 440px; margin-left: auto; margin-right: auto; margin-top: 45px">
+            <table style="margin-left: auto; margin-right: auto; margin-top: 30px; width: 400px">
                 <tr>
                     <td>
                     <?php
-                        
                         echo '<img src='.$_SESSION['rutaImagenSubLineaEspecifico'].' width=441px; height=195px>';
                     ?>
                     </td>
                 <tr>
+                    
                 <tr valign = top>
                     <td>
                     <p style="text-align: justify">
@@ -103,14 +99,34 @@
         </div>
         
         
-        <div class="col-md-6">
-            
+        <div class="col-md-6 col-lg-6" style="height: 300px;">
+            <div class="col-md-6" style="margin-top: 30px">
+                <span style="font-weight: bold"> PRODUCTOS</span>
+            <br><br>
+                <?php
+
+                $n = count($_SESSION['productos']);
+
+                for ($i=0; $i<$n; $i++) {
+                        echo "<img src='img/vineta.jpg' style='margin-left: 25px;'><span style='margin-left: 10px; font-weight: bold'>".$_SESSION['productos'][$i]."</span><br>";
+                }
+
+                ?>
+            </div>
+            <div class="col-md-6" style="height: 300px; font-weight: bold">
+                <br><br><br><br>
+                <?php
+                echo "<a href='".$_SESSION['rutaCatalogo']."' target=blank><img src=img/btnCatalogo.jpg></a><br><br>";
+                echo "<a href='#'><img src=img/btnSolicitud.jpg></a>";
+                ?>
+                
+            </div>
         </div>
     </div>
     
 <!--SECCION INTEGRADORES-->
-<div id="integradoresContenedor" style="background-color: #eeeeee; width: 100%; height: 155px">
-    <span style="font-family: arial; font-size: 18px; font-weight: bold">INTEGRADORES</span> 
+<div id="integradoresContenedor" style="background-color: #eeeeee; width: 100%; height: 155px; margin-top: 100px">
+    <span style="font-family: arial; font-size: 18px; font-weight: bold; margin-left: 40px">INTEGRADORES</span> 
   
   <div class="itemIntegrador">
     <?php

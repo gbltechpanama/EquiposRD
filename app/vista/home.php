@@ -7,16 +7,14 @@
 <title>VERSION PRUEBAS</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/font-awesome.min.css">
+
 <script src="js/jquery.min.js"></script>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-		});
-	});
-</script>
+
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+
+<link href="js/flexslider.css" rel="stylesheet" />
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
     addEventListener("load", function() { 
@@ -40,7 +38,7 @@
           <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
         <li class="current"><a href="home.php">INICIO</a></li>
-        <li><a href="#">ACERCA DE</a></li>
+        <li><a href="about.html">ACERCA DE</a></li>
         <li><a href="#">ACADEMIA</a></li>
         <li><a href="#">MARCAS</a></li>
         <li><a href="#">CONTACTO</a></li>
@@ -58,15 +56,35 @@
 
 
 <!-- BANNER -->
+
 <div class="text-center banner">
+    
     <div class="container" style="background-color: #0033ff; padding-left: 0px; 
          padding-right: 0px; padding-bottom: 0px; padding-top: 0px">
 
-        <div id="imagen" style="width: 100%;background-color: #ff0000">
+    <!-- Slider -->
+        <div id="main-slider" class="flexslider">
+            <ul class="slides">
             <?php
-                echo '<img src="'.trim($_SESSION["rutaBanners"][0]).'" class="img-responsive">';
+            
+            $n = count($_SESSION["rutaBanners"]);
+            
+            for ($i=0; $i<$n; $i++) {
+                echo "<li>";
+                echo '<img src="'.trim($_SESSION["rutaBanners"][$i]).'" class="img-responsive">';
+                echo "</li>";
+            }
+            
+            ?>  
+            </ul>
+        </div>
+    <!-- end slider -->
+
+<!--        <div id="imagen" style="width: 100%;background-color: #ff0000">
+            <?php
+                //echo '<img src="'.trim($_SESSION["rutaBanners"][0]).'" class="img-responsive">';
             ?>
-        </div>  
+        </div>  -->
     </div>
 </div>
 
@@ -198,5 +216,19 @@
   
   
 </div>
+
+<script src="js/jquery.flexslider.js"></script>
+
+<script type="text/javascript">
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+</script>
+  
 </body>
 </html>
