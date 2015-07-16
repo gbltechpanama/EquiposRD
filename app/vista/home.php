@@ -24,7 +24,7 @@
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' 
       rel='stylesheet' type='text/css'>
 
-</script>
+
 </head>
 <body>
     
@@ -41,8 +41,7 @@
         <li><a href="about.html">ACERCA DE</a></li>
         <li><a href="#">ACADEMIA</a></li>
         <li><a href="#">MARCAS</a></li>
-        <li><a href="#">CONTACTO</a></li>
-        <div class="clear"></div>
+        <li><a href="contact.html">CONTACTO</a></li>
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 
     </div>
@@ -59,7 +58,7 @@
 
 <div class="text-center banner">
     
-    <div class="container" style="background-color: #0033ff; padding-left: 0px; 
+    <div class="container" style="background-color: #ffffff; padding-left: 0px; 
          padding-right: 0px; padding-bottom: 0px; padding-top: 0px">
 
     <!-- Slider -->
@@ -79,12 +78,6 @@
             </ul>
         </div>
     <!-- end slider -->
-
-<!--        <div id="imagen" style="width: 100%;background-color: #ff0000">
-            <?php
-                //echo '<img src="'.trim($_SESSION["rutaBanners"][0]).'" class="img-responsive">';
-            ?>
-        </div>  -->
     </div>
 </div>
 

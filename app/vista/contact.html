@@ -1,123 +1,232 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Contact | Nova</title>
+<title>VERSION PRUEBAS</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> 
+    addEventListener("load", function() { 
+        setTimeout(hideURLbar, 0); }, false); 
+    function hideURLbar(){ window.scrollTo(0,1); } 
 </script>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' 
+      rel='stylesheet' type='text/css'>
+
 </head>
 <body>
+    
+<!-- ENCABEZADO -->
 <div class="header">
   <div class="container">
-    <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="Nova"></a> </div>
-    <div class="menu"> <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
-      <ul class="nav" id="nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li class="current"><a href="contact.html">Contact</a></li>
-        <div class="clear"></div>
+      <div class="logo"> <a href="home.php"><img src="img/logo.png"></a> </div>
+      <div class="menu" style="padding-top: 25px"> 
+        <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
+        <ul class="nav" id="nav">
+        <li><a href="home.php">INICIO</a></li>
+        <li><a href="about.html">ACERCA DE</a></li>
+        <li><a href="#">ACADEMIA</a></li>
+        <li><a href="#">MARCAS</a></li>
+        <li class="current"><a href="#">CONTACTO</a></li>
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 
     </div>
     <div class="clearfix"> </div>
   </div>
 </div>
-<div class="about">
-  <div class="container">
-    <section class="title-section">
-      <h1 class="title-header">Contact Us</h1>
-    </section>
-  </div>
-</div>
-<div class="contact">
-  <div class="container">
-    <div class="row contact_top">
-      <div class="col-md-4 contact_details">
-        <h5>Mailing address:</h5>
-        <div class="contact_address"> 321 Laoreet quis risus nec, Donec eget</div>
-      </div>
-      <div class="col-md-4 contact_details">
-        <h5>Call us:</h5>
-        <div class="contact_address"> +1 800 123 1234<br>
+    
+
+<!-- BARRA SUPERIOR NEGRA -->
+<div id="barraSuperiorLevel1" style="background-color: #000000; height: 1px;"></div>
+
+
+<!-- NOMBRE LINEA -->    
+<div class="main">
+    <div style=" background-image: url('img/backHeaderLine.jpg'); text-align: left; height: 108px">
+
+        <div id="contenedorInterno" style="background-color: red;">
+        
+            <div id="palabraLinea">
+                CONTACTO
+            </div>
+            <div style="height: 26px; background-color: green; width: 90%; float: left; margin-top: 48px"></div>
         </div>
-      </div>
-      <div class="col-md-4 contact_details">
-        <h5>Email us:</h5>
-        <div class="contact_mail"> info@companyname.com</div>
-      </div>
     </div>
-    <div class="contact_bottom">
-      <h3>Contact Form</h3>
-      <p>Mauris a vulputate lectus at blandit nisi. Donec eleifend vel felis vitae auctor aenean rhoncus sapien sollicitudin leo interdum.</p>
-      <form method="post" action="contact-post.html">
-        <div class="contact-to">
-          <input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
-          <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left: 10px">
-          <input type="text" class="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" style="margin-left: 10px">
-        </div>
-        <div class="text2">
-          <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea>
-        </div>
-        <div> <a href="#" class="submit">Send Message</a> </div>
-      </form>
-    </div>
-  </div>
 </div>
+    
+<!-- LINEAS NEGOCIO -->
+<div class="clearfix"></div>
+
+<div>
+
+    <div class="row" style="margin-top: 30px">
+        
+        <div class="col-md-4 col-sm-12" style="padding-left: 30px;">
+            
+            <!-- REGIONES -->
+            <table border="1" class="tablaContactos">
+                <tr>
+                    <td class="celdaTablaContactos">
+                        <div style="font-size: 14px; color: #f9ca03; font-weight: bold;">ZONA CENTRAL</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.</div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="celdaTablaContactos">
+                        <div style="font-size: 14px; color: #888888; font-weight: bold">Telefono</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">+58 268.72.93</div>
+                    </td>
+                </tr>
+                
+                <tr class="celdaTablaContactos">
+                    <td style="padding-left: 20px; padding-right: 20px">
+                        <div style="font-size: 14px; color: #888888; font-weight: bold">Email</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">info@erd.com</div>
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- REGIONES -->
+            <table border="1" class="tablaContactos">
+                <tr>
+                    <td class="celdaTablaContactos">
+                        <div style="font-size: 14px; color: #489a29; font-weight: bold;">ZONA ORIENTE</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.</div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="celdaTablaContactos">
+                        <div style="font-size: 14px; color: #888888; font-weight: bold">Telefono</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">+58 268.72.93</div>
+                    </td>
+                </tr>
+                
+                <tr class="celdaTablaContactos">
+                    <td style="padding-left: 20px; padding-right: 20px">
+                        <div style="font-size: 14px; color: #888888; font-weight: bold">Email</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">info@erd.com</div>
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- REGIONES -->
+            <table border="1" class="tablaContactos">
+                <tr>
+                    <td class="celdaTablaContactos">
+                        <div style="font-size: 14px; color: #040062; font-weight: bold;">ZONA OCCIDENTE</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.</div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="celdaTablaContactos">
+                        <div style="font-size: 14px; color: #888888; font-weight: bold">Telefono</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">+58 268.72.93</div>
+                    </td>
+                </tr>
+                
+                <tr class="celdaTablaContactos">
+                    <td style="padding-left: 20px; padding-right: 20px">
+                        <div style="font-size: 14px; color: #888888; font-weight: bold">Email</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">info@erd.com</div>
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+        </div>
+        
+        <div class="col-md-8" style="height: 500px">
+            <img src="img/mapa.jpg" style="margin-top: 50px">
+        </div>
+        
+    </div>
+    
+<!-- SECCION REDES SOCIALES -->
+
 <div class="footer">
   <div class="footer_midle">
     <div class='container'>
       <div class="row">
+          
         <div class="col-md-3">
           <ul class="social_left">
-            <li class="facebook"><a href="#"><i class="fa fa-facebook-square fa-3x"></i></a></li>
+            <li class="facebook">
+                <a href="#">
+                    <i class="fa fa-facebook-square fa-3x" style="color: #3b5998"></i>
+                </a>
+            </li>
             <li class="fb_text">
               <h4><a href="#">Follow us on Facebook</a></h4>
             </li>
             <div class="clearfix"> </div>
           </ul>
         </div>
+          
         <div class="col-md-3">
           <ul class="social_left">
-            <li class="facebook"><a href="#"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+            <li class="facebook">
+                <a href="#">
+                    <i class="fa fa-twitter-square fa-3x" style="color: #00aced"></i>
+                </a>
+            </li>
             <li class="fb_text">
               <h4><a href="#">Follow us on Twitter</a></h4>
             </li>
             <div class="clearfix"> </div>
           </ul>
         </div>
+          
+          
         <div class="col-md-3">
           <ul class="social_left">
-            <li class="facebook"><a href="#"><i class="fa fa-google-plus-square fa-3x"></i></a></li>
+            <li class="facebook">
+                <a href="#">
+                    <i class="fa fa-google-plus-square fa-3x" style="color: #dd4b39"></i>
+                </a>
+            </li>
             <li class="fb_text">
               <h4><a href="#">Follow us on Google +</a></h4>
             </li>
             <div class="clearfix"> </div>
           </ul>
         </div>
+          
+          
         <div class="col-md-3">
           <ul class="social_left">
-            <li class="facebook"><a href="#"><i class="fa fa-linkedin-square fa-3x"></i></a></li>
+            <li class="facebook">
+                <a href="#">
+                    <i class="fa fa-linkedin-square fa-3x" style="color: #007bb6"></i>
+                </a>
+            </li>
             <li class="fb_text">
               <h4><a href="#">Follow us on LinkedIn</a></h4>
             </li>
+            
             <div class="clearfix"> </div>
+            
           </ul>
         </div>
       </div>
     </div>
   </div>
+    
+    
+  <!-- PIE DE PAGINA -->
   <div class="footer_bottom">
     <div class="copy">
-      <p>Copyright &copy; 2014 Nova. Design by <a href="http://www.templategarden.com" rel="nofollow">TemplateGarden</a></p>
+      <p>&copy; 2015 Equipos y Controles R&D, C.A. RIF: J-31371156-1 TODOS LOS DERECHOS RESERVADOS.</p>
     </div>
   </div>
+  
+  
 </div>
 </body>
 </html>

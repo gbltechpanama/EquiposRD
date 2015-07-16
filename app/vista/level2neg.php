@@ -34,8 +34,7 @@
         <li><a href="about.html">ACERCA DE</a></li>
         <li><a href="#">ACADEMIA</a></li>
         <li><a href="#">MARCAS</a></li>
-        <li><a href="#">CONTACTO</a></li>
-        <div class="clear"></div>
+        <li><a href="contact.html">CONTACTO</a></li>
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 
     </div>
