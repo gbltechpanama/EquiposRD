@@ -59,7 +59,8 @@ body a {
 }
 .menu li a:hover, .menu li.active a {
 	color: #009900;
-	background: #fff !important;
+	/*background: #fff !important;*/
+        
 }
 .toggleMenu {
 	display: none;
@@ -1007,14 +1008,12 @@ input.text {
 
 #palabraLinea
 {
-   padding-left: 10px; 
-   width: 10%; 
-   float: left; 
-   margin-top: 43px; 
-   color: green; 
-   font-family: arial; 
-   font-size: 24px; 
-   font-weight: bold
+    width: 180px; 
+    text-align: center; 
+    font-family: arial; 
+    font-size: 24px; 
+    font-weight: bold; 
+    color: green
 }
 
 
@@ -1024,8 +1023,8 @@ input.text {
   border-style: solid; 
   border-color: white; 
   border-width: 2px; 
-  width: 70%; 
-  margin-left: auto; 
+  width: 100%; 
+  margin-left: 0px; 
   margin-right: auto;  
 }
 

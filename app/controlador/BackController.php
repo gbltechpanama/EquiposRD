@@ -148,6 +148,7 @@ class BackController
         /*
          * ASIGNO LAS VARIABLES DE SESSION NECESARIAS
          */
+        session_start();
         $_SESSION['idAcademia'] =$this->idAcademia;
         $_SESSION['titulosAcademia']=$this->titulosAcademia;
         $_SESSION['contenidoAcademia']=$this->contenidoAcademia;
@@ -158,6 +159,6 @@ class BackController
         /*
          * LLAMADA A LA VISTA
          */
-        //header("Location: ".$this::$rutaAplicacion."app/vista/templates/academia.php");
+        header("Location: ".$this::$rutaAplicacion."app/vista/academy.php");
     }
 }

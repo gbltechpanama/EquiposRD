@@ -26,13 +26,13 @@
 <!-- ENCABEZADO -->
 <div class="header">
   <div class="container">
-      <div class="logo"> <a href="home.php"><img src="img/logo.png"></a> </div>
+      <div class="logo"> <a href="../../app/controlador/FrontController.php?action=principal"><img src="img/logo.png"></a> </div>
       <div class="menu" style="padding-top: 25px"> 
           <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
-        <li class="current"><a href="home.php">INICIO</a></li>
+        <li class="current"><a href="../../app/controlador/FrontController.php?action=principal">INICIO</a></li>
         <li><a href="about.html">ACERCA DE</a></li>
-        <li><a href="#">ACADEMIA</a></li>
+        <li><a href="../controlador/FrontController.php?action=academia">ACADEMIA</a></li>
         <li><a href="#">MARCAS</a></li>
         <li><a href="contact.html">CONTACTO</a></li>
       </ul>
@@ -46,23 +46,28 @@
 <!-- BARRA SUPERIOR NEGRA -->
 <div id="barraSuperiorLevel1" style="background-color: #000000; height: 1px;"></div>
 
-
 <!-- NOMBRE LINEA -->    
 <div class="main">
     <div style=" background-image: url('img/backHeaderLine.jpg'); text-align: left; height: 108px">
 
-        <div id="contenedorInterno" style="background-color: red;">
-        
-            <div id="palabraLinea">
-                <?php
-                    echo strtoupper($_SESSION['lineaNegocio']);
-                ?>
-            </div>
-            <div style="height: 26px; background-color: green; width: 90%; float: left; margin-top: 48px"></div>
-            
+       <div id="contenedorInterno">
+           <br>
+           <table style="width: 100%; ">
+               <tr>
+                   <td id="palabraLinea">
+                    <?php
+                        echo strtoupper($_SESSION['lineaNegocio']);
+                    ?>
+                   </td>
+                   <td style="background-color: green;">    
+                   </td>
+               </tr>
+           </table>
+           
         </div>
     </div>
 </div>
+
     
 <!-- LINEAS NEGOCIO -->
 <div style="background-color: #e8e8e8">

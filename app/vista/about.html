@@ -25,13 +25,13 @@
 <!-- ENCABEZADO -->
 <div class="header">
   <div class="container">
-      <div class="logo"> <a href="home.php"><img src="img/logo.png"></a> </div>
+      <div class="logo"> <a href="../../app/controlador/FrontController.php?action=principal"><img src="img/logo.png"></a> </div>
       <div class="menu" style="padding-top: 25px"> 
           <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
-        <li><a href="home.php">INICIO</a></li>
+        <li><a href="../../app/controlador/FrontController.php?action=principal">INICIO</a></li>
         <li class="current"><a href="#">ACERCA DE</a></li>
-        <li><a href="#">ACADEMIA</a></li>
+        <li><a href="../controlador/FrontController.php?action=academia">ACADEMIA</a></li>
         <li><a href="#">MARCAS</a></li>
         <li><a href="contact.html">CONTACTO</a></li>
       </ul>
@@ -50,13 +50,18 @@
 <div class="main">
     <div style=" background-image: url('img/backHeaderLine.jpg'); text-align: left; height: 108px">
 
-        <div id="contenedorInterno" style="background-color: red;">
-        
-            <div id="palabraLinea">
-                ACERCA DE
-            </div>
-            <div style="height: 26px; background-color: green; width: 90%; float: left; margin-top: 48px"></div>
-            
+       <div id="contenedorInterno">
+           <br>
+           <table style="width: 100%; ">
+               <tr>
+                   <td id="palabraLinea">
+                       ACERCA DE
+                   </td>
+                   <td style="background-color: green;">    
+                   </td>
+               </tr>
+           </table>
+           
         </div>
     </div>
 </div>
@@ -64,18 +69,19 @@
 <!-- LINEAS NEGOCIO -->
 <div class="clearfix"></div>
 
-<div>
-                
+<br><br>     
+
     <div class="col-md-3" style="font-size: 24px; font-weight: bold; text-align: center">
         EQUIPOS Y CONTROLES R&D
     </div>
 
     <div class="clearfix"></div>
+    <div class="container">
     <div class="row" style="margin-top: 30px">
-        
+       
         <div class="col-md-9">
 
-            <div style="width: 355px; float:left; margin-left: 50px">
+            <div style="width: 355px; float:left;">
                 <img src="img/acercaImagen.jpg">
             </div>
             
@@ -99,13 +105,14 @@
         </div>
         
         <div class="col-md-3" style="text-align: center;">
-            <img src="img/acercaLogos.jpg">
+           <img src="img/acercaLogos.jpg">
         </div>
         
     </div>
+  </div>
     
 <!-- SECCION REDES SOCIALES -->
-
+<div class="clearfix"></div>
 <div class="footer">
   <div class="footer_midle">
     <div class='container'>
@@ -121,7 +128,7 @@
             <li class="fb_text">
               <h4><a href="#">Follow us on Facebook</a></h4>
             </li>
-            <div class="clearfix"> </div>
+            
           </ul>
         </div>
           
@@ -135,7 +142,7 @@
             <li class="fb_text">
               <h4><a href="#">Follow us on Twitter</a></h4>
             </li>
-            <div class="clearfix"> </div>
+            
           </ul>
         </div>
           
@@ -150,7 +157,7 @@
             <li class="fb_text">
               <h4><a href="#">Follow us on Google +</a></h4>
             </li>
-            <div class="clearfix"> </div>
+            
           </ul>
         </div>
           
@@ -166,8 +173,6 @@
               <h4><a href="#">Follow us on LinkedIn</a></h4>
             </li>
             
-            <div class="clearfix"> </div>
-            
           </ul>
         </div>
       </div>
@@ -182,7 +187,6 @@
     </div>
   </div>
   
-  
-</div>
+
 </body>
 </html>

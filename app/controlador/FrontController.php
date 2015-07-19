@@ -20,4 +20,7 @@ if ($action=="principal") {
 } elseif ($action=="level2neg") {
     $linea = $_GET['linea'];
     $bc->controlObtenerInformacionDetalleLinea($linea);
+} elseif ($action=="academia") {
+    $linea = $_GET['linea'];
+    $bc->controlObtenerInformacionAcademia();
 }
