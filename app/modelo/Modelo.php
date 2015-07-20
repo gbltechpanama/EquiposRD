@@ -189,7 +189,7 @@ class Modelo
     {
         $orm = new ORM();
 
-        $sql = "Select idArticulo from academia";
+        $sql = "Select idAcademia from academia";
 
         $resultado = $orm->modelQueryDB($sql);
 
