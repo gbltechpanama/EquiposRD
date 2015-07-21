@@ -5,10 +5,20 @@
 <html>
 <head>
 <title>VERSION PRUEBAS</title>
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+
 <link rel="stylesheet" href="css/font-awesome.min.css">
 
-<script src="js/jquery.min.js"></script>
+
 
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 
@@ -20,6 +30,7 @@
     addEventListener("load", function() { 
         setTimeout(hideURLbar, 0); }, false); 
     function hideURLbar(){ window.scrollTo(0,1); } 
+    
 </script>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' 
       rel='stylesheet' type='text/css'>
@@ -28,6 +39,7 @@
 </head>
 <body>
     
+
 
     
 <!-- ENCABEZADO -->
@@ -38,10 +50,48 @@
           <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
         <li class="current"><a href="../../app/controlador/FrontController.php?action=principal">INICIO</a></li>
-        <li><a href="about.html">ACERCA DE</a></li>
+        <li><a href="about.php">ACERCA DE</a></li>
         <li><a href="../controlador/FrontController.php?action=academia">ACADEMIA</a></li>
-        <li><a href="#">MARCAS</a></li>
-        <li><a href="contact.html">CONTACTO</a></li>
+        
+        <!-- MENU MARCAS DESPLEGABLE -->
+        <script>
+            /*
+             * CODIGO PARA QUE EL MENU DESPLEGABLE ABRA CON MOUSEOVER
+             */
+            $(document).ready(function () {
+               $('.dropdown-toggle').mouseover(function() {
+                   $('.dropdown-menu').show();
+               });
+
+               $('.dropdown-toggle').mouseout(function() {
+                   t = setTimeout(function() {
+                       $('.dropdown-menu').hide();
+                   }, 100);
+
+                   $('.dropdown-menu').on('mouseenter', function() {
+                       $('.dropdown-menu').show();
+                       clearTimeout(t);
+                   }).on('mouseleave', function() {
+                       $('.dropdown-menu').hide();
+                   });
+               });
+            });
+        </script>
+        <li class="dropdown"">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
+            <ul class="dropdown-menu" style="background-color: #ffffff;">
+                <li style="width: 100%">
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">Hubbell</a>
+                </li>
+                
+                <li style="width: 100%">
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">Eclipse</a>
+                </li>
+            </ul>
+        </li>
+        <!-- FIN DE MENU MARCAS DESPLEGALE -->
+        
+        <li><a href="contact.php">CONTACTO</a></li>
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 
     </div>

@@ -26,9 +26,47 @@
         <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
         <li><a href="../../app/controlador/FrontController.php?action=principal">INICIO</a></li>
-        <li><a href="about.html">ACERCA DE</a></li>
+        <li><a href="about.php">ACERCA DE</a></li>
         <li><a href="../controlador/FrontController.php?action=academia">ACADEMIA</a></li>
-        <li><a href="#">MARCAS</a></li>
+        
+        <!-- MENU MARCAS DESPLEGABLE -->
+        <script>
+            /*
+             * CODIGO PARA QUE EL MENU DESPLEGABLE ABRA CON MOUSEOVER
+             */
+            $(document).ready(function () {
+               $('.dropdown-toggle').mouseover(function() {
+                   $('.dropdown-menu').show();
+               });
+
+               $('.dropdown-toggle').mouseout(function() {
+                   t = setTimeout(function() {
+                       $('.dropdown-menu').hide();
+                   }, 100);
+
+                   $('.dropdown-menu').on('mouseenter', function() {
+                       $('.dropdown-menu').show();
+                       clearTimeout(t);
+                   }).on('mouseleave', function() {
+                       $('.dropdown-menu').hide();
+                   });
+               });
+            });
+        </script>
+        <li class="dropdown"">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
+            <ul class="dropdown-menu" style="background-color: #ffffff;">
+                <li style="width: 100%">
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">Hubbell</a>
+                </li>
+                
+                <li style="width: 100%">
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">Eclipse</a>
+                </li>
+            </ul>
+        </li>
+        <!-- FIN DE MENU MARCAS DESPLEGALE -->
+        
         <li class="current"><a href="#">CONTACTO</a></li>
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 
@@ -145,8 +183,8 @@
             <br><br>
         </div>
         
-        <div class="col-md-9" style="height: 500px">
-            <img src="img/mapa.jpg" style="margin-top: 50px">
+        <div class="col-md-9">
+            <img src="img/mapa.jpg" style="margin-top: 50px" class="img-responsive">
         </div>
         
     </div>
