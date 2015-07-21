@@ -26,7 +26,11 @@
 <!-- ENCABEZADO -->
 <div class="header">
   <div class="container">
-      <div class="logo"> <a href="../../app/controlador/FrontController.php?action=principal"><img src="img/logo.png"></a> </div>
+      <div class="logo"> <a href="../../app/controlador/FrontController.php?action=principal">
+              <img src="img/logo.png">
+          </a> 
+      </div>
+      
       <div class="menu" style="padding-top: 25px"> 
           <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
@@ -62,11 +66,15 @@
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
-                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">Hubbell</a>
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">
+                        Hubbell
+                    </a>
                 </li>
                 
                 <li style="width: 100%">
-                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">Eclipse</a>
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">
+                        Eclipse
+                    </a>
                 </li>
             </ul>
         </li>
@@ -150,7 +158,9 @@
                 $n = count($_SESSION['productos']);
 
                 for ($i=0; $i<$n; $i++) {
-                        echo "<img src='img/vineta.jpg' style='margin-left: 25px;'><span style='margin-left: 10px; font-weight: bold'>".$_SESSION['productos'][$i]."</span><br>";
+                    echo "<img src='img/vineta.jpg' style='margin-left: 25px;'>"
+                    . "<span style='margin-left: 10px; font-weight: bold'>"
+                    .$_SESSION['productos'][$i]."</span><br>";
                 }
 
                 ?>
@@ -159,7 +169,7 @@
                 <br><br><br><br>
                 <?php
                 echo "<a href='".$_SESSION['rutaCatalogo']."' target=blank><img src=img/btnCatalogo.jpg></a><br><br>";
-                echo "<a href='#'><img src=img/btnSolicitud.jpg></a>";
+                echo "<a href='requestInfo.php'><img src=img/btnSolicitud.jpg></a>";
                 ?>
                 
             </div>
@@ -170,17 +180,17 @@
 <div id="integradoresContenedor" style="background-color: #eeeeee; width: 100%; height: 155px; margin-top: 100px">
     <span style="font-family: arial; font-size: 18px; font-weight: bold; margin-left: 40px">INTEGRADORES</span> 
   
-  <div class="itemIntegrador">
+<div class="itemIntegrador">
     <?php
-        
+
     $n = count($_SESSION['rutaIntegradores']);
-    
+
     for ($i=0; $i<$n; $i++) {
             echo "<img class='imgIntegradores' src=".$_SESSION['rutaIntegradores'][$i].">";
     }
-      
+
     ?>
-  </div>
+</div>
     
     
     

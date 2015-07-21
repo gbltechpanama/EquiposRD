@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -22,7 +23,11 @@
 <!-- ENCABEZADO -->
 <div class="header">
   <div class="container">
-      <div class="logo"> <a href="../../app/controlador/FrontController.php?action=principal"><img src="img/logo.png"></a> </div>
+      <div class="logo"> 
+          <a href="../../app/controlador/FrontController.php?action=principal">
+              <img src="img/logo.png">
+          </a> 
+      </div>
       <div class="menu" style="padding-top: 25px"> 
           <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
@@ -58,11 +63,15 @@
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
-                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">Hubbell</a>
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">
+                        Hubbell
+                    </a>
                 </li>
                 
                 <li style="width: 100%">
-                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">Eclipse</a>
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">
+                        Eclipse
+                    </a>
                 </li>
             </ul>
         </li>

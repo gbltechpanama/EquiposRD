@@ -1,12 +1,15 @@
+<?php ?>
 <!DOCTYPE HTML>
 <html>
 <head>
 <title>VERSION PRUEBAS</title>
+
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <script src="js/jquery.min.js"></script>
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <script type="application/x-javascript"> 
     addEventListener("load", function() { 
         setTimeout(hideURLbar, 0); }, false); 
@@ -21,7 +24,11 @@
 <!-- ENCABEZADO -->
 <div class="header">
   <div class="container">
-      <div class="logo"> <a href="../../app/controlador/FrontController.php?action=principal"><img src="img/logo.png"></a> </div>
+      <div class="logo"> 
+          <a href="../../app/controlador/FrontController.php?action=principal">
+              <img src="img/logo.png">
+          </a> 
+      </div>
       <div class="menu" style="padding-top: 25px"> 
         <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
@@ -57,11 +64,15 @@
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
-                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">Hubbell</a>
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">
+                        Hubbell
+                    </a>
                 </li>
                 
                 <li style="width: 100%">
-                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">Eclipse</a>
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">
+                        Eclipse
+                    </a>
                 </li>
             </ul>
         </li>
@@ -114,7 +125,9 @@
                 <tr>
                     <td class="celdaTablaContactos">
                         <div style="font-size: 14px; color: #f9ca03; font-weight: bold;">ZONA CENTRAL</div>
-                        <div style="color: #888888; font-size: 12px; margin-top: 10px">C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">
+                            C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.
+                        </div>
                     </td>
                 </tr>
                 
@@ -138,7 +151,9 @@
                 <tr>
                     <td class="celdaTablaContactos">
                         <div style="font-size: 14px; color: #489a29; font-weight: bold;">ZONA ORIENTE</div>
-                        <div style="color: #888888; font-size: 12px; margin-top: 10px">C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">
+                            C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.
+                        </div>
                     </td>
                 </tr>
                 
@@ -162,7 +177,9 @@
                 <tr>
                     <td class="celdaTablaContactos">
                         <div style="font-size: 14px; color: #040062; font-weight: bold;">ZONA OCCIDENTE</div>
-                        <div style="color: #888888; font-size: 12px; margin-top: 10px">C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">
+                            C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.
+                        </div>
                     </td>
                 </tr>
                 

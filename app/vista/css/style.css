@@ -1041,3 +1041,11 @@ input.text {
     color: white;
     
 }
+
+#barraSeparador
+{
+    background-color: #eeeeee; 
+    height: 1px; 
+    width: 755px; 
+    margin-top: 12px;
+}

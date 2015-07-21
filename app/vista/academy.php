@@ -24,7 +24,11 @@
 <!-- ENCABEZADO -->
 <div class="header">
   <div class="container">
-      <div class="logo"> <a href="../../app/controlador/FrontController.php?action=principal"><img src="img/logo.png"></a> </div>
+      <div class="logo"> 
+          <a href="../../app/controlador/FrontController.php?action=principal">
+              <img src="img/logo.png">
+          </a> 
+      </div>
       <div class="menu" style="padding-top: 25px"> 
         <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
@@ -60,11 +64,15 @@
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
-                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">Hubbell</a>
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">
+                        Hubbell
+                    </a>
                 </li>
                 
                 <li style="width: 100%">
-                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">Eclipse</a>
+                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">
+                        Eclipse
+                    </a>
                 </li>
             </ul>
         </li>
@@ -131,11 +139,12 @@
             <div id="articuloFecha" style="width: 100%; color: #666666; font-size: 13px">
                 <?php
                     $date = date_create($_SESSION['fechaAcademia'][$i]);
-                    echo "<br><img src=img/iconoCalendario.jpg><span style='padding-left:5px;'>".date_format($date, 'M d, Y')."</span>";
+                    echo "<br><img src=img/iconoCalendario.jpg><span style='padding-left:5px;'>"
+                    .date_format($date, 'M d, Y')."</span>";
                     
                 ?>
               
-                <div id="barraSeparador" style="background-color: #eeeeee; height: 1px; width: 755px; margin-top: 12px"></div>
+                <div id="barraSeparador" style=""></div>
                 <br>
             </div>
             
