@@ -1,7 +1,7 @@
 <?php
 namespace erd;
 
-require '../modelo/Modelo.php';
+require '../modelo/ModeloCliente.php';
 
 class BackController
 {
@@ -26,8 +26,9 @@ class BackController
         
     public function controlPaginaPrincipal()
     {
+       
         $model = new Modelo();
-        
+
         $this->rutaBanners = $model->modelObtenerRutaBanners();
 
         $this->descripcionBanners = $model->modelObtenerDescripcionBanners();
@@ -52,7 +53,7 @@ class BackController
          */
         $model = new Modelo();
 
-        $this->descripcionGeneralNegocio = $model->modelObtenerDescripcionGeneralNegocio($lineaNegocio);
+        $this->descripcionGeneralNegocio = $model->modelObtenerDescripcionLineasNegocios($lineaNegocio);
 
         $this->nombreSubLineasNegocio = $model->modelObtenerNombreSubLineaNegocios($lineaNegocio);
         
@@ -91,7 +92,7 @@ class BackController
          */
         $model = new Modelo();
 
-        $this->descripcionLineaNegocio = $model->modelObtenerDescripcionLineaNegocio($lineaNegocio);
+        $this->descripcionLineaNegocio = $model->modelObtenerDescripcionLineaNegocioEspecifico($lineaNegocio);
 
         $this->productos = $model->modelObtenerProductos($lineaNegocio);
         

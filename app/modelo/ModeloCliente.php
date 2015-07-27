@@ -11,26 +11,26 @@ class Modelo
      */
     public function modelObtenerRutaBanners()
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select rutaBanner from banners order by idBanner";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
     }
 
     public function modelObtenerDescripcionBanners()
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select descripcionBanner from banners order by idBanner";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
     }
@@ -39,16 +39,16 @@ class Modelo
      * LINEAS DE NEGOCIO LEVEL 1
      */
 
-    public function modelObtenerDescripcionGeneralNegocio($lineaNegocio)
+    public function modelObtenerDescripcionLineasNegocios($lineaNegocio)
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select descripcionSubLinea from lineasnegocios where "
                 . "nombreLineaPadre = '".$lineaNegocio."'";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
     }
@@ -56,28 +56,28 @@ class Modelo
     
     public function modelObtenerIntegradores($lineaNegocio) //LEVEL 1 Y LEVEL 2
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select rutaLogo from integradores where "
                 . "nombreLineaPadre = '".$lineaNegocio."' order by idIntegradores";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
     }
     
     public function modelObtenerRutaImagenesSubLinea($lineaNegocio)
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select rutaImagenSubLinea from lineasnegocios where nombreLineaPadre "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
 
@@ -85,14 +85,14 @@ class Modelo
 
     public function modelObtenerNombreSubLineaNegocios($lineaNegocio)
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select nombreSubLineaNegocio from lineasnegocios where nombreLineaPadre "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
                 
         return $data_array;
 
@@ -102,14 +102,14 @@ class Modelo
      * LINEAS DE NEGOCIOS LEVEL 2
      */
 
-    public function modelObtenerDescripcionLineaNegocio($lineaNegocio)
+    public function modelObtenerDescripcionLineaNegocioEspecifico($lineaNegocio)
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select descripcionSubLinea from lineasnegocios where nombreSubLineaNegocio "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
         $row = mysql_fetch_array($resultado);
 
@@ -120,12 +120,12 @@ class Modelo
 
     public function modelObtenerRutaImagenSubLineaEspecifico($lineaNegocio)
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select rutaImagenSubLinea from lineasnegocios where nombreSubLineaNegocio "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
         $row = mysql_fetch_array($resultado);
 
@@ -137,14 +137,14 @@ class Modelo
     
     public function modelObtenerProductos($lineaNegocio)
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select nombreProducto from productos where nombreSubLineaNegocio "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
     }
@@ -152,12 +152,12 @@ class Modelo
 
     public function modelObtenerRutaCatalogo($lineaNegocio)
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select enlaceCatalogo from lineasnegocios where nombreSubLineaNegocio "
                 . "= '".$lineaNegocio."'";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
         $row = mysql_fetch_row($resultado);
 
@@ -167,19 +167,7 @@ class Modelo
     }
 
 
-    /** UTILITARIOS **/
-    public function modelConvertirEnArray($resultado)
-    {
-        $i = 0;
-
-        while ($row = mysql_fetch_row($resultado)) {
-                $data_array[$i] = $row[0];
-                $i++;
-        }
-
-        return $data_array;
-    }
-    /************************************************/
+    
 
 
     /*
@@ -187,52 +175,52 @@ class Modelo
      */
     public function modelObtenerIDArticulosAcademia()
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select idAcademia from academia";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
     }
 
     public function modelObtenerTituloArticulosAcademia()
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select tituloArticulo from academia";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
     }
 
     public function modelObtenerRutaImagenArticulosAcademia()
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select rutaFotoArticulo from academia";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
     }
 
     public function modelObtenerContenidoArticulosAcademia()
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select contenidoArticulo from academia";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
         
@@ -240,13 +228,13 @@ class Modelo
 
     public function modelObtenerfechaArticulosAcademia()
     {
-        $orm = new ORM();
+        $BD = new BaseDatos();
 
         $sql = "Select fechaPublicacion from academia";
 
-        $resultado = $orm->modelQueryDB($sql);
+        $resultado = $BD->modelQueryDB($sql);
 
-        $data_array = $this->modelConvertirEnArray($resultado);
+        $data_array = $BD->modelConvertirEnArray($resultado);
 
         return $data_array;
         

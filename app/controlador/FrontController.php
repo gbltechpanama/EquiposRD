@@ -2,7 +2,7 @@
 
 namespace erd;
 
-require("BackController.php");
+require 'BackControllerCliente.php';
 
 $bc = new BackController();
 
@@ -12,6 +12,7 @@ $action = $_GET['action'];
 /*
  * ROUTING FRONTCONTROLLER
  */
+
 if ($action=="principal") {
     $bc->controlPaginaPrincipal();
 } elseif ($action=="level1neg") {
