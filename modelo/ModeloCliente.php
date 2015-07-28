@@ -1,9 +1,9 @@
 <?php
 namespace erd;
 
-require '../../ORM.php';
+require_once '../ORM.php';
 
-class Modelo
+class ModeloCliente
 {
 
     /*

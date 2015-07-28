@@ -1,11 +1,10 @@
 <?php
 namespace erd;
 
-require '../modelo/ModeloAdmin.php';
-require '../app/modelo/ModeloCliente.php';
+require_once '../modelo/ModeloAdmin.php';
+require_once '../modelo/ModeloCliente.php';
 
-
-class BackController
+class BackControllerAdmin
 {
     private $loginCorrecto;
     private $idBanners;
@@ -17,13 +16,15 @@ class BackController
     public function ctrlLoginAdmin($usuario, $password)
     {
                 
-        $model = new Modelo();
+        $modelAdmin = new ModeloAdmin();
+                
+        $this->loginCorrecto = $modelAdmin->mdlValidarLogin($usuario, $password);
         
-        $this->loginCorrecto = $model->mdlValidarLogin($usuario, $password);
+        session_start();
         
         if ($this->loginCorrecto==true) {
             $_SESSION['login'] = $usuario;
-            header("Location: ../vista/login.php");
+            header("Location: FrontController.php?action=banners");
             
         } else {
             $_SESSION['login'] = "";
@@ -34,20 +35,26 @@ class BackController
     
     public function ctrlAdministrarBanners()
     {
-        $model = new Modelo();
         
+        
+        $modelAdmin = new ModeloAdmin();
+        $modelCliente = new ModeloCliente();
         /*
          * VALIDACION DE USUARIO LOGUEADO
          */
+        
+        session_start();
+        
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
         }
         
-        $this->idBanners = $model->mdlObtenerIDBanners();
         
-        $this->rutaBanners = $model->modelObtenerRutaBanners();
+        $this->idBanners = $modelAdmin->mdlObtenerIDBanners();
         
-        $this->descripcionBanners = $model->modelObtenerDescripcionBanners();
+        $this->rutaBanners = $modelCliente->modelObtenerRutaBanners();
+
+        $this->descripcionBanners = $modelCliente->modelObtenerDescripcionBanners();
         
         
         /*
@@ -69,16 +76,18 @@ class BackController
     
     public function ctrlAgregarNuevoBanner($rutaImagen, $archivoImagen, $descripcionImagen)
     {
-        $model = new Modelo();
+        $modelAdmin = new ModeloAdmin();
         
         /*
          * VALIDACION DE USUARIO LOGUEADO
          */
+        session_start();
+        
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
         }
         
-        $this->uploadCorrecto = $model->mdlNuevoBanner($rutaImagen, $archivoImagen, $descripcionImagen);
+        $this->uploadCorrecto = $modelAdmin->mdlNuevoBanner($rutaImagen, $archivoImagen, $descripcionImagen);
         
         if ($this->uploadCorrecto==true) {
             header("Location: FrontControllerAdmin.php?accion='banners'");

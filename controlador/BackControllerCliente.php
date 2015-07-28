@@ -1,9 +1,9 @@
 <?php
 namespace erd;
 
-require '../modelo/ModeloCliente.php';
+require_once '../modelo/ModeloCliente.php';
 
-class BackController
+class BackControllerCliente
 {
 
     //public static $rutaAplicacion = "http://localhost/erd/";
@@ -26,13 +26,13 @@ class BackController
         
     public function controlPaginaPrincipal()
     {
-       
-        $model = new Modelo();
 
-        $this->rutaBanners = $model->modelObtenerRutaBanners();
+        $modelCliente = new ModeloCliente();
 
-        $this->descripcionBanners = $model->modelObtenerDescripcionBanners();
-        
+        $this->rutaBanners = $modelCliente->modelObtenerRutaBanners();
+    
+        $this->descripcionBanners = $modelCliente->modelObtenerDescripcionBanners();
+ 
         /*
          * ASIGNO EL ARRAY A LAS VARIABLES DE SESION PARA PODERLAS USAR EN LA VISTA
          */
@@ -40,7 +40,7 @@ class BackController
 
         $_SESSION['rutaBanners'] = $this->rutaBanners;
         $_SESSION['descripcionBanners'] = $this->descripcionBanners;
-
+    
         header("Location: ../vista/home.php");
     }
 
@@ -50,15 +50,15 @@ class BackController
         /*
          * LLAMAR LAS FUNCIONES NECESARIAS DEL OBJETO MODELO
          */
-        $model = new Modelo();
+        $modelCliente = new ModeloCliente();
 
-        $this->descripcionGeneralNegocio = $model->modelObtenerDescripcionLineasNegocios($lineaNegocio);
+        $this->descripcionGeneralNegocio = $modelCliente->modelObtenerDescripcionLineasNegocios($lineaNegocio);
 
-        $this->nombreSubLineasNegocio = $model->modelObtenerNombreSubLineaNegocios($lineaNegocio);
+        $this->nombreSubLineasNegocio = $modelCliente->modelObtenerNombreSubLineaNegocios($lineaNegocio);
         
-        $this->rutaIntegradores = $model->modelObtenerIntegradores($lineaNegocio);
+        $this->rutaIntegradores = $modelCliente->modelObtenerIntegradores($lineaNegocio);
   
-        $this->rutaImagenSubLinea = $model->modelObtenerRutaImagenesSubLinea($lineaNegocio);
+        $this->rutaImagenSubLinea = $modelCliente->modelObtenerRutaImagenesSubLinea($lineaNegocio);
 
 
         
@@ -89,15 +89,15 @@ class BackController
         /*
          * LLAMAR LAS FUNCIONES NECESARIAS DEL OBJETO MODELO
          */
-        $model = new Modelo();
+        $modelCliente = new ModeloCliente();
 
-        $this->descripcionLineaNegocio = $model->modelObtenerDescripcionLineaNegocioEspecifico($lineaNegocio);
+        $this->descripcionLineaNegocio = $modelCliente->modelObtenerDescripcionLineaNegocioEspecifico($lineaNegocio);
 
-        $this->productos = $model->modelObtenerProductos($lineaNegocio);
+        $this->productos = $modelCliente->modelObtenerProductos($lineaNegocio);
         
-        $this->rutaCatalogo = $model->modelObtenerRutaCatalogo($lineaNegocio);
+        $this->rutaCatalogo = $modelCliente->modelObtenerRutaCatalogo($lineaNegocio);
 
-        $this->rutaImagenSubLineaEspecifico = $model->modelObtenerRutaImagenSubLineaEspecifico($lineaNegocio);
+        $this->rutaImagenSubLineaEspecifico = $modelCliente->modelObtenerRutaImagenSubLineaEspecifico($lineaNegocio);
                 
 
         /*
@@ -106,7 +106,7 @@ class BackController
         session_start();
  
         //AQUI UTILIZO LA LINEA DE NEGOCIO PADRE
-         $this->rutaIntegradores = $model->modelObtenerIntegradores($_SESSION['lineaNegocio']);
+         $this->rutaIntegradores = $modelCliente->modelObtenerIntegradores($_SESSION['lineaNegocio']);
 
         
          $_SESSION['descripcionLineaNegocio'] = $this->descripcionLineaNegocio;
@@ -133,17 +133,17 @@ class BackController
         /*
          * LLAMAR LAS FUNCIONES NECESARIAS DEL OBJETO MODELO
          */
-        $model = new Modelo();
+        $modelCliente = new ModeloCliente();
 
-        $this->idAcademia=$model->modelObtenerIDArticulosAcademia();
+        $this->idAcademia=$modelCliente->modelObtenerIDArticulosAcademia();
 
-        $this->titulosAcademia=$model->modelObtenerTituloArticulosAcademia();
+        $this->titulosAcademia=$modelCliente->modelObtenerTituloArticulosAcademia();
 
-        $this->contenidoAcademia=$model->modelObtenerContenidoArticulosAcademia();
+        $this->contenidoAcademia=$modelCliente->modelObtenerContenidoArticulosAcademia();
 
-        $this->fechaAcademia=$model->modelObtenerfechaArticulosAcademia();
+        $this->fechaAcademia=$modelCliente->modelObtenerfechaArticulosAcademia();
 
-        $this->rutaImagenesAcademia = $model->modelObtenerRutaImagenArticulosAcademia();
+        $this->rutaImagenesAcademia = $modelCliente->modelObtenerRutaImagenArticulosAcademia();
 
         /*
          * ASIGNO LAS VARIABLES DE SESSION NECESARIAS

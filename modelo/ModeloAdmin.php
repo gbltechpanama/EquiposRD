@@ -1,16 +1,18 @@
 <?php
 namespace erd;
 
-require '../../ORM.php';
+require_once '../ORM.php';
 
-class Modelo
+class ModeloAdmin
 {
 
     public function mdlValidarLogin($usuario, $password)
     {
+        
+        
         $BD = new BaseDatos();
         
-        $sql = "Select * from privilegios where usuario = ".$usuario." and password = md5('".$password."')";
+        $sql = "Select * from usuario where usuario = '".$usuario."' and password = md5('".$password."')";
 
         $resultado = $BD->modelQueryDB($sql);
 

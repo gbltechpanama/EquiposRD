@@ -9,7 +9,7 @@
 
 function redireccion()
 {
-	document.location.href = "controlador/FrontControllerAdmin.php?action=login";
+	document.location.href = "vista/FormLogin.php";
 }
 
 </script>
