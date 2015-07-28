@@ -6,7 +6,7 @@ require '../modelo/ModeloCliente.php';
 class BackController
 {
 
-    public static $rutaAplicacion = "http://localhost/erd/";
+    //public static $rutaAplicacion = "http://localhost/erd/";
     private $descripcionGeneralNegocio;
     private $nombreSubLineaNegocio;
     private $descipcionLineaNegocio;
@@ -41,8 +41,7 @@ class BackController
         $_SESSION['rutaBanners'] = $this->rutaBanners;
         $_SESSION['descripcionBanners'] = $this->descripcionBanners;
 
-       
-        header("Location: ".$this::$rutaAplicacion."app/vista/home.php");
+        header("Location: ../vista/home.php");
     }
 
     public function controlObtenerInformacionGeneral($lineaNegocio)
@@ -82,7 +81,7 @@ class BackController
         /*
          * LLAMAR A LA VISTA CORRESPONDIENTE
          */
-        header("Location: ".$this::$rutaAplicacion."app/vista/level1neg.php");
+        header("Location: ../vista/level1neg.php");
     }
 
     public function controlObtenerInformacionDetalleLinea($lineaNegocio)
@@ -126,7 +125,7 @@ class BackController
          * LLAMAR A LA VISTA CORRESPONDIENTE
          */
 
-        header("Location: ".$this::$rutaAplicacion."app/vista/level2neg.php");
+        header("Location: ../vista/level2neg.php");
     }
     
     public function controlObtenerInformacionAcademia()
@@ -160,6 +159,6 @@ class BackController
         /*
          * LLAMADA A LA VISTA
          */
-        header("Location: ".$this::$rutaAplicacion."app/vista/academy.php");
+        header("Location: ../vista/academy.php");
     }
 }
