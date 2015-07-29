@@ -37,6 +37,6 @@ if ($action=="login") {
     $bkAdmin->ctrlAdministrarBanners();
 
 } elseif ($action=="nuevobanner") {
-    $bkAdmin->ctrlAgregarNuevoBanner($_POST['rutaImagen'], $_POST['archivoImagen'], $_POST['descripcionImagen']);
+    $bkAdmin->ctrlAgregarNuevoBanner($_FILES["objFile"], strtoupper($_POST['descripcionImagen']));
             
 }

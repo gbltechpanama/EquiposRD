@@ -45,10 +45,10 @@
 <div id="barraSuperior"></div>
 
 <!-- CENTRO -->
+<div class="featured_content" id="feature" style="height: 600px">
 
 <form action="../controlador/FrontController.php?action=login" method="post">
-<div class="featured_content" id="feature" style="height: 600px">
-    
+        
     <div class="container" style="height: 600px">
       
     <div class="row text-center">
@@ -98,8 +98,8 @@
             </div>
         </div>
     </div>
-
 </form>
+</div>
 
 
 <div class="clearfix"> </div>

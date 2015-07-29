@@ -110,13 +110,14 @@
     <!-- Slider -->
     <div id="main-slider" class="flexslider">
             <ul class="slides">
+                
             <?php
             
             $n = count($_SESSION["rutaBanners"]);
             
             for ($i=0; $i<$n; $i++) {
                 echo "<li>";
-                echo '<img src="'.trim($_SESSION["rutaBanners"][$i]).'" class="img-responsive">';
+                echo '<img src="'.trim($_SESSION["rutaBanners"][$i]).'" style="width: 1281px; height: 283px">';
                 echo '
                 <div id="descripcion">
                     <p style="padding-top: 25px; text-align: center">

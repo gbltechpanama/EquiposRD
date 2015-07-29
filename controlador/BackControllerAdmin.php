@@ -60,13 +60,11 @@ class BackControllerAdmin
         /*
          * ASIGNO EL ARRAY A LAS VARIABLES DE SESION PARA PODERLAS USAR EN LA VISTA
          */
-        session_start();
-
-        $_SESSION['idBanners'] = $this->rutaBanners;
+        
+        $_SESSION['idBanners'] = $this->idBanners;
         $_SESSION['rutaBanners'] = $this->rutaBanners;
         $_SESSION['descripcionBanners'] = $this->descripcionBanners;
-        
-        
+
         /*
          * LLAMADA A LA VISTA
          */
@@ -90,7 +88,7 @@ class BackControllerAdmin
         $this->uploadCorrecto = $modelAdmin->mdlNuevoBanner($rutaImagen, $archivoImagen, $descripcionImagen);
         
         if ($this->uploadCorrecto==true) {
-            header("Location: FrontControllerAdmin.php?accion='banners'");
+            header("Location: FrontController.php?action=banners");
             
         } else {
             header("Location: ../vista/errorBanner.php");

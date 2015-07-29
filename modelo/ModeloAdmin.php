@@ -37,10 +37,26 @@ class ModeloAdmin
         return $data_array;
     }
     
-    
-    public function mdlNuevoBanner($rutaImagen, $archivoImagen, $descripcionImagen)
+    public function mdlNuevoBanner($objetoFile, $descripcionImagen)
     {
+        $nroRandom = rand(100, 50000);
         
+        $target_file = "../vista/img/".$nroRandom.".jpg";
+        
+        $temporal = move_uploaded_file($objetoFile["tmp_name"], $target_file);
+
+        if ($temporal==true) {
+            /*
+             * GUARDAR EN LA BASE DE DATOS
+             */
+            $BD = new BaseDatos();
+            
+            $sql = "insert into banners values ('','".$descripcionImagen."','img/".$nroRandom.".jpg')";
+
+            $BD->modelQueryDB($sql);
+        }
+        
+        return $temporal;
     }
     
     public function mdlEliminarBanner($idBanner)
