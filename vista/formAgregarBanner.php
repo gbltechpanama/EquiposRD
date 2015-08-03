@@ -70,13 +70,13 @@
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
-                    <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" style="color: #009900">
+                    <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell" style="color: #009900">
                         Hubbell
                     </a>
                 </li>
                 
                 <li style="width: 100%">
-                    <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" style="color: #009900">
+                    <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=eclipse" style="color: #009900">
                         Eclipse
                     </a>
                 </li>
@@ -84,8 +84,8 @@
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
         
-        <li><a href="about.php">PRODUCTOS</a></li>
-        <li><a href="../controlador/FrontController.php?action=academia">INTEGRADORES</a></li>
+        <li><a href="#">PRODUCTOS</a></li>
+        <li><a href="#">INTEGRADORES</a></li>
         
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 

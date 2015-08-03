@@ -162,7 +162,7 @@
       <div class="col-md-6"> 
 
         <p class="m_2" style="margin-top: 45px">
-            <img src="img/hubbell.jpg">
+            <img src="img/hubbell.jpg" width="441px" height="195px">
         </p>
 
         <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" class="feature_btn">Mas</a> 
@@ -173,7 +173,7 @@
       <div class="col-md-6"> 
           
         <p class="m_2" style="margin-top: 45px">
-            <img src="img/ecplise.jpg">
+            <img src="img/eclipse.jpg" width="441px" height="195px">
         </p>
 
         <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" class="feature_btn">Mas</a> 

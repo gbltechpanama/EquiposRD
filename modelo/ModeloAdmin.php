@@ -62,11 +62,32 @@ class ModeloAdmin
     public function mdlEliminarBanner($idBanner)
     {
         $BD = new BaseDatos();
+        
+        /*
+         * TOMAR LA RUTA DEL BANNER A ELIMINAR
+         */
+        $sql = "Select rutaBanner from banners where idBanner = ".$idBanner;
 
+        $resultado = $BD->modelQueryDB($sql);
+
+        $row = mysql_fetch_row($resultado);
+        
+        $ruta = $row[0];
+        
+        
+        /*
+         * ELIMINAR EL BANNER DE LA BD
+         */
         $sql = "delete from banners where idBanner = ".$idBanner;
 
         $BD->modelQueryDB($sql);
-
+        
+        
+        /*
+         * ELIMINAR EL ARCHIVO SUBIDO EN EL DIRECTORIO /IMG
+         */
+        unlink("../vista/".$ruta);
+        
     }
     
     public function mdlObtenerRutaBannerEspecifico($idBanner)
@@ -82,6 +103,7 @@ class ModeloAdmin
         return $row[0];
     }
     
+    
     public function mdlObtenerDescripcionBannerEspecifico($idBanner)
     {
         $BD = new BaseDatos();
@@ -93,5 +115,35 @@ class ModeloAdmin
         $row = mysql_fetch_row($resultado);
         
         return $row[0];
+    }
+    
+    public function mdlSubirImagenPrincipal($lineaNegocio, $objFile)
+    {
+        $target_file = $target_file = "../vista/img/";
+        
+        if ($lineaNegocio=="hubbell") {
+            $target_file = $target_file."hubbell.jpg";
+            
+        } else if($lineaNegocio=="eclipse") {
+            $target_file = $target_file."eclipse.jpg";
+        }
+        
+        move_uploaded_file($objFile["tmp_name"], $target_file);
+        
+    }
+    
+    
+    public function mdlObtenerRutaCatalogos($lineaNegocio)
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select enlaceCatalogo from lineasnegocios where nombreLineaPadre "
+                . "= '".$lineaNegocio."'";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $data_array = $BD->modelConvertirEnArray($resultado);
+
+        return $data_array;
     }
 }

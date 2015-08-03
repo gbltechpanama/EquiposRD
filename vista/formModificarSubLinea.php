@@ -13,7 +13,6 @@
 <link href="js/flexslider.css" rel="stylesheet" />
 
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
     addEventListener("load", function() { 
@@ -24,20 +23,6 @@
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' 
       rel='stylesheet' type='text/css'>
 
-
-<!-- CONFIRMAR ELIMINAR -->
-<script type="text/javascript">
-function confirmarEliminar(idBanner)
-{
-    if(confirm('Desea eliminar este registro?')){
-        
-        document.location.href = "../controlador/FrontController.php?action=elmbanner&idBanner=" + idBanner;
-        
-    }
-    
-}
-    
-</script>
 
 </head>
 <body>
@@ -82,7 +67,7 @@ function confirmarEliminar(idBanner)
             });
         </script>
         <li class="dropdown"">
-            <a href="" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
                     <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell" style="color: #009900">
@@ -114,6 +99,7 @@ function confirmarEliminar(idBanner)
 <div id="barraSuperior"></div>
 
 
+
 <!-- CENTRO -->
 <div class="featured_content" id="feature" style="height: 600px">
     
@@ -124,62 +110,64 @@ function confirmarEliminar(idBanner)
         <div class="col-md-12" style="margin-top: 10px;">
             
             <!-- INDICADOR DE SECCION -->
-            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">BANNERS</div>
-
-            <div style="margin-top: 90px; width: 100%">
-                <a href="formAgregarBanner.php"> 
-                    <img src="img/btnAgregar.jpg" style=" float: left;" border="0">
-                </a>
+            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">
+                <?php
+                    echo 'MODIFICAR SUBLINEA '.strtoupper($_GET['subLineaNegocio']);
+                    
+                ?>
+            </div>
+            <div style="width: 100%; text-align: right; color:navy; font-size: 14px;">
+                <a href="" onclick="history.back();">VOLVER...</a>
             </div>
             
-            <table border="1" style="margin-top: 140px; width: 100%; font-size: 13px; background-color: white">
-                <tr style="font-weight: bold;">
-                    <td style="width: 4%">
-                        ID
-                    </td>
-                    <td style="width: 10%">
-                        RUTA BANNER
-                    </td>
-                    <td style="width: 60%">
-                        DESCRIPCION BANNER
-                    </td>
-                    <td style="width: 5%">
-                        VER
-                    </td>
-                    <td style="width: 5%">
-                        ELM
-                    </td>
-                </tr>
-                
-                <?php
-                
-                $n = count($_SESSION['idBanners']);
-
-                for ($i=0; $i<$n; $i++) {
-                    echo "<tr>";
-                    echo "<td>".$_SESSION['idBanners'][$i]."</td>";
-                    echo "<td>".$_SESSION['rutaBanners'][$i]."</td>";
-                    echo "<td>".$_SESSION['descripcionBanners'][$i]."</td>";
-                    echo "<td>";
-                        echo "<a href='../controlador/FrontController.php?action=verbanner&idBanner=".$_SESSION['idBanners'][$i]."'>";
-                            echo "<img src='img/iconoBuscar.jpg'>";
-                        echo "</a>";
-                    echo "</td>";
-                    
-                    echo "<td>";
-                        echo "<a href='#' onclick='confirmarEliminar(".$_SESSION['idBanners'][$i].")'>";
+            <br><br>
+            <form method="post" action="../controlador/FrontController.php?action=modsublinea" enctype="multipart/form-data">
+                    <table border="0" style="width: 90%; margin-left: auto; margin-right: auto;">
+                        <tr style=" height: 40px">
+                            <td style="text-align: right">
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">NOMBRE SUB LINEA</label>
+                            </td>
+                            <td style="text-align: left; padding-left: 10px">
+                                <input type="text" name="txtNombre" style="width: 400px">
+                            </td>
+                        </tr>
                         
-                        //echo "<a href='../controlador/FrontController.php?action=elmbanner&idBanner=".$_SESSION['idBanners'][$i]."'>";
-                            echo "<img src='img/iconoEliminar.jpg'>";
-                        echo "</a>";
-                    echo "</td>";
-                    
-                    echo "</tr>";
-                }
+                        <tr style=" height: 40px">
+                            <td style="text-align: right">
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA IMAGEN</label>
+                            </td>
+                            <td style="text-align: left; padding-left: 10px">
+                                <input type="file" name="objFileImagen">
+                            </td>
+                        </tr>
+                        <tr style=" height: 40px">
+                            <td style="text-align: right">
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA CATALOGO</label>
+                            </td>
+                            <td style="text-align: left; padding-left: 10px">
+                                <input type="file" name="objFileCatalogo">
+                            </td>
+                        </tr>
+                        <tr style=" height: 40px">
+                            <td style="text-align: right">
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">DESCRIPCION</label>
+                            </td>
+                            <td style="text-align: left; padding-left: 10px">
+                                <textarea class="text" name="txtDescripcion" cols="80" rows="8"></textarea>
 
-                ?>
-                
-            </table>
+                            </td>
+                        </tr>
+                        <tr style=" height: 50px">
+                            <td>
+                             
+                            </td>
+                            <td>
+                                <img src="img/btnAceptar.jpg" 
+                                     style="cursor: pointer" onclick="document.forms[0].submit();">
+                            </td>
+                        </tr>
+                    </table>
+            </form>
 
         </div>
 

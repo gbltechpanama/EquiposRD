@@ -38,5 +38,20 @@ if ($action=="login") {
 
 } elseif ($action=="nuevobanner") {
     $bkAdmin->ctrlAgregarNuevoBanner($_FILES["objFile"], strtoupper($_POST['descripcionImagen']));
+    
+} elseif ($action=="verbanner") {
+    $bkAdmin->ctrlVisualizarBanner($_GET['idBanner']);
             
+} elseif ($action=="elmbanner") {
+    $bkAdmin->ctrlEliminarBanner($_GET['idBanner']);
+    
+} elseif ($action=="lineanegocio") {
+    $bkAdmin->ctrlAdministrarLineasNegocios($_GET['lineaNegocio']);
+    
+} elseif ($action=="cambioImagenPrincipal") {
+    $bkAdmin->ctrlCambiarImagenPrincipal($_GET['lineaNegocio'], $_FILES["objFile"]);
+    
+} elseif ($action=="formmodsublinea") {
+    $bkAdmin->ctrlFormModificarSubLinea($_GET['subLineaNegocio']);
+
 }

@@ -25,20 +25,6 @@
       rel='stylesheet' type='text/css'>
 
 
-<!-- CONFIRMAR ELIMINAR -->
-<script type="text/javascript">
-function confirmarEliminar(idBanner)
-{
-    if(confirm('Desea eliminar este registro?')){
-        
-        document.location.href = "../controlador/FrontController.php?action=elmbanner&idBanner=" + idBanner;
-        
-    }
-    
-}
-    
-</script>
-
 </head>
 <body>
     
@@ -115,62 +101,100 @@ function confirmarEliminar(idBanner)
 
 
 <!-- CENTRO -->
-<div class="featured_content" id="feature" style="height: 600px">
+<div class="featured_content" id="feature" style=" height: 850px">
     
-    <div class="container" style="height: 600px">
+    <div class="container">
       
     <div class="row text-center">
 
         <div class="col-md-12" style="margin-top: 10px;">
             
             <!-- INDICADOR DE SECCION -->
-            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">BANNERS</div>
-
-            <div style="margin-top: 90px; width: 100%">
-                <a href="formAgregarBanner.php"> 
-                    <img src="img/btnAgregar.jpg" style=" float: left;" border="0">
-                </a>
+            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">
+            <?php
+                echo 'MARCA '.strtoupper($_SESSION['nombreLineaNegocio']);
+            ?>
             </div>
             
-            <table border="1" style="margin-top: 140px; width: 100%; font-size: 13px; background-color: white">
+            <div style="margin-top: 30px; height: 230px; text-align: left;">
+                <div style="float: left"> 
+                    <span><b>IMAGEN PRINCIPAL</b></br><br></span>
+                    <?php
+                    
+                    if ($_SESSION['nombreLineaNegocio']=='hubbell') {
+                        echo '<img src ="img/hubbell.jpg" style="width: 441px; height: 195px">';
+
+                    } elseif ($_SESSION['nombreLineaNegocio']=='eclipse') {
+                        echo '<img src ="img/eclipse.jpg" style="width: 441px; height: 195px">';
+                    }
+                    ?>
+                   
+                </div>
+                
+                <div style=" width: 160px; float: left; margin-top: 180px; margin-left: 45px;">
+                    <?php
+                        echo '<a href="formCambiarImagenPrincipal.php?lineaNegocio='.$_SESSION['nombreLineaNegocio'].'">';
+                    ?>
+                        <img src="img/btnCambioImagen.jpg">
+                    </a>
+                </div>
+
+            </div>
+            
+            <!-- SEPARADOR -->
+            <div style="height: 1px; width: 100%; background-color: #009900; clear: both; margin-top: 50px"></div>
+
+            
+            <div>
+            <div style="text-align: left"></br><br><br><b>SUB LINEA DE NEGOCIOS:</b></br><br></div>   
+            <table border="1" style="margin-top: 20px; width: 100%; font-size: 13px; background-color: white">
                 <tr style="font-weight: bold;">
-                    <td style="width: 4%">
-                        ID
+                    <td>
+                        R
                     </td>
-                    <td style="width: 10%">
-                        RUTA BANNER
+                    <td>
+                       NOMBRE SUB LINEA
                     </td>
-                    <td style="width: 60%">
-                        DESCRIPCION BANNER
+                    <td>
+                        RUTA CATALOGO
                     </td>
-                    <td style="width: 5%">
+                    <td>
+                        RUTA IMAGEN
+                    </td>
+                    <td style=" width: 600px;">
+                        DESCRIPCION
+                    </td>
+                    <td>
                         VER
                     </td>
-                    <td style="width: 5%">
-                        ELM
+                    <td>
+                        EDIT
                     </td>
                 </tr>
                 
                 <?php
-                
-                $n = count($_SESSION['idBanners']);
+
+                $n = count($_SESSION['nombreSubLineas']);
 
                 for ($i=0; $i<$n; $i++) {
+                    $cont = $cont + 1;
+                    
                     echo "<tr>";
-                    echo "<td>".$_SESSION['idBanners'][$i]."</td>";
-                    echo "<td>".$_SESSION['rutaBanners'][$i]."</td>";
-                    echo "<td>".$_SESSION['descripcionBanners'][$i]."</td>";
+                    echo "<td>".$cont."</td>";
+                    echo "<td>".$_SESSION['nombreSubLineas'][$i]."</td>";
+                    echo "<td>".$_SESSION['rutaCatalogos'][$i]."</td>";
+                    echo "<td>".$_SESSION['rutaImagenesSubLineas'][$i]."</td>";
+                    echo "<td>".$_SESSION['descripcionSubLineas'][$i]."</td>";
                     echo "<td>";
-                        echo "<a href='../controlador/FrontController.php?action=verbanner&idBanner=".$_SESSION['idBanners'][$i]."'>";
+                        echo "<a href='#'>";
                             echo "<img src='img/iconoBuscar.jpg'>";
                         echo "</a>";
                     echo "</td>";
                     
                     echo "<td>";
-                        echo "<a href='#' onclick='confirmarEliminar(".$_SESSION['idBanners'][$i].")'>";
-                        
-                        //echo "<a href='../controlador/FrontController.php?action=elmbanner&idBanner=".$_SESSION['idBanners'][$i]."'>";
-                            echo "<img src='img/iconoEliminar.jpg'>";
+                        echo "<a href='../controlador/FrontController.php?"
+                              . "action=formmodsublinea&subLineaNegocio=".$_SESSION['nombreSubLineas'][$i]."'>";
+                            echo "<img src='img/iconoEditar.jpg'>";
                         echo "</a>";
                     echo "</td>";
                     
@@ -180,7 +204,7 @@ function confirmarEliminar(idBanner)
                 ?>
                 
             </table>
-
+            </div>
         </div>
 
       </div>

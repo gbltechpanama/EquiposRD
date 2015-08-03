@@ -39,7 +39,7 @@ class ModeloCliente
      * LINEAS DE NEGOCIO LEVEL 1
      */
 
-    public function modelObtenerDescripcionLineasNegocios($lineaNegocio)
+    public function modelObtenerDescripcionSubLineas($lineaNegocio)
     {
         $BD = new BaseDatos();
 
@@ -83,7 +83,7 @@ class ModeloCliente
 
     }
 
-    public function modelObtenerNombreSubLineaNegocios($lineaNegocio)
+    public function modelObtenerNombreSubLinea($lineaNegocio)
     {
         $BD = new BaseDatos();
 
@@ -150,12 +150,12 @@ class ModeloCliente
     }
 
 
-    public function modelObtenerRutaCatalogo($lineaNegocio)
+    public function modelObtenerRutaCatalogoEspecifico($subLineaNegocio)
     {
         $BD = new BaseDatos();
 
         $sql = "Select enlaceCatalogo from lineasnegocios where nombreSubLineaNegocio "
-                . "= '".$lineaNegocio."'";
+                . "= '".$subLineaNegocio."'";
 
         $resultado = $BD->modelQueryDB($sql);
 

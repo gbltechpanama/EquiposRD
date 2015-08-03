@@ -52,9 +52,9 @@ class BackControllerCliente
          */
         $modelCliente = new ModeloCliente();
 
-        $this->descripcionGeneralNegocio = $modelCliente->modelObtenerDescripcionLineasNegocios($lineaNegocio);
+        $this->descripcionGeneralNegocio = $modelCliente->modelObtenerDescripcionSubLineas($lineaNegocio);
 
-        $this->nombreSubLineasNegocio = $modelCliente->modelObtenerNombreSubLineaNegocios($lineaNegocio);
+        $this->nombreSubLineasNegocio = $modelCliente->modelObtenerNombreSubLinea($lineaNegocio);
         
         $this->rutaIntegradores = $modelCliente->modelObtenerIntegradores($lineaNegocio);
   
@@ -95,7 +95,7 @@ class BackControllerCliente
 
         $this->productos = $modelCliente->modelObtenerProductos($lineaNegocio);
         
-        $this->rutaCatalogo = $modelCliente->modelObtenerRutaCatalogo($lineaNegocio);
+        $this->rutaCatalogo = $modelCliente->modelObtenerRutaCatalogoEspecifico($lineaNegocio);
 
         $this->rutaImagenSubLineaEspecifico = $modelCliente->modelObtenerRutaImagenSubLineaEspecifico($lineaNegocio);
                 

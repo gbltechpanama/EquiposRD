@@ -13,7 +13,6 @@
 <link href="js/flexslider.css" rel="stylesheet" />
 
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
     addEventListener("load", function() { 
@@ -24,20 +23,6 @@
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' 
       rel='stylesheet' type='text/css'>
 
-
-<!-- CONFIRMAR ELIMINAR -->
-<script type="text/javascript">
-function confirmarEliminar(idBanner)
-{
-    if(confirm('Desea eliminar este registro?')){
-        
-        document.location.href = "../controlador/FrontController.php?action=elmbanner&idBanner=" + idBanner;
-        
-    }
-    
-}
-    
-</script>
 
 </head>
 <body>
@@ -82,9 +67,9 @@ function confirmarEliminar(idBanner)
             });
         </script>
         <li class="dropdown"">
-            <a href="" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
-                <li style="width: 100%">
+               <li style="width: 100%">
                     <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell" style="color: #009900">
                         Hubbell
                     </a>
@@ -114,8 +99,9 @@ function confirmarEliminar(idBanner)
 <div id="barraSuperior"></div>
 
 
+
 <!-- CENTRO -->
-<div class="featured_content" id="feature" style="height: 600px">
+<div class="featured_content" id="feature" style="height: 600px;">
     
     <div class="container" style="height: 600px">
       
@@ -124,62 +110,27 @@ function confirmarEliminar(idBanner)
         <div class="col-md-12" style="margin-top: 10px;">
             
             <!-- INDICADOR DE SECCION -->
-            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">BANNERS</div>
+            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">VER BANNER</div>
 
-            <div style="margin-top: 90px; width: 100%">
-                <a href="formAgregarBanner.php"> 
-                    <img src="img/btnAgregar.jpg" style=" float: left;" border="0">
-                </a>
+            <div style="width: 100%; text-align: right; color:navy; font-size: 14px;">
+                <a href="" onclick="history.back();">VOLVER...</a>
             </div>
             
-            <table border="1" style="margin-top: 140px; width: 100%; font-size: 13px; background-color: white">
-                <tr style="font-weight: bold;">
-                    <td style="width: 4%">
-                        ID
-                    </td>
-                    <td style="width: 10%">
-                        RUTA BANNER
-                    </td>
-                    <td style="width: 60%">
-                        DESCRIPCION BANNER
-                    </td>
-                    <td style="width: 5%">
-                        VER
-                    </td>
-                    <td style="width: 5%">
-                        ELM
-                    </td>
-                </tr>
-                
+            <!-- IMAGEN -->
+            <div style=" width: 800px; height: 200px; clear: both; margin-left: auto; margin-right: auto; margin-top: 50px">
                 <?php
-                
-                $n = count($_SESSION['idBanners']);
-
-                for ($i=0; $i<$n; $i++) {
-                    echo "<tr>";
-                    echo "<td>".$_SESSION['idBanners'][$i]."</td>";
-                    echo "<td>".$_SESSION['rutaBanners'][$i]."</td>";
-                    echo "<td>".$_SESSION['descripcionBanners'][$i]."</td>";
-                    echo "<td>";
-                        echo "<a href='../controlador/FrontController.php?action=verbanner&idBanner=".$_SESSION['idBanners'][$i]."'>";
-                            echo "<img src='img/iconoBuscar.jpg'>";
-                        echo "</a>";
-                    echo "</td>";
-                    
-                    echo "<td>";
-                        echo "<a href='#' onclick='confirmarEliminar(".$_SESSION['idBanners'][$i].")'>";
-                        
-                        //echo "<a href='../controlador/FrontController.php?action=elmbanner&idBanner=".$_SESSION['idBanners'][$i]."'>";
-                            echo "<img src='img/iconoEliminar.jpg'>";
-                        echo "</a>";
-                    echo "</td>";
-                    
-                    echo "</tr>";
-                }
-
+                    echo "<span style='float: left'><b>Ruta Banner:</b> ".$_SESSION['rutaBannerEspecifico']."</span><br><br>";
+                    echo "<img src='".$_SESSION['rutaBannerEspecifico']."' style='width: 800px; height: 180px;'>";
                 ?>
-                
-            </table>
+            </div>         
+            
+            <!-- DESCRIPCION -->
+            <div style=" width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 50px">
+                <?php
+                    echo "<span style='float: left'><b>Descripcion Banner:</b></span><br><br>";
+                    echo "<div style='border-color: #cccccc; border-style: solid; border-width: 1px; height:80px'>".$_SESSION['descripcionBannerEspecifico']."</div>";
+                ?>
+            </div>         
 
         </div>
 
