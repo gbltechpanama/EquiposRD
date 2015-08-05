@@ -146,4 +146,60 @@ class ModeloAdmin
 
         return $data_array;
     }
+    
+    public function mdlModificarSubLineaNegocio($subLineaNegocio, $nombreNuevo, $objImagen, $rutaCatalogo, $descripcion)
+    {
+
+        
+        $BD = new BaseDatos();
+        
+        /*
+         * SUBIR IMAGEN
+         */
+        $nroRandom = rand(100, 50000);
+        
+        $target_file = "../vista/img/".$nroRandom.".jpg";
+
+        move_uploaded_file($objImagen["tmp_name"], $target_file);
+       
+
+        /*
+         * TOMAR LA RUTA DE LA IMAGEN ACTUAL
+         */
+        $sql = "Select rutaImagenSubLinea from lineasnegocios where nombreSubLineaNegocio='".$subLineaNegocio."'";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $row = mysql_fetch_row($resultado);
+        
+        $rutaImagenAnterior = $row[0];
+        
+        
+        /*
+         * ESCRIBIR DATOS EN LA BD
+         */
+        if ($objImagen["tmp_name"]!="") {
+            $sql = "update lineasnegocios set nombreSubLineaNegocio='".$nombreNuevo.
+                "', descripcionSubLinea='".$descripcion."', enlaceCatalogo='".$rutaCatalogo.
+                "', rutaImagenSubLinea='".$target_file."' where nombreSubLineaNegocio='".$subLineaNegocio."'";
+            
+            //EJECUTAR QUERY
+            $BD->modelQueryDB($sql);
+            
+            
+            //ELIMINAR IMAGEN ANTERIOR
+            unlink("../vista/".$rutaImagenAnterior);
+            
+        } else {
+            $sql = "update lineasnegocios set nombreSubLineaNegocio='".$nombreNuevo.
+                "', descripcionSubLinea='".$descripcion."', enlaceCatalogo='".$rutaCatalogo.
+                "' where nombreSubLineaNegocio='".$subLineaNegocio."'";
+            
+            //EJECUTAR QUERY
+            $BD->modelQueryDB($sql);
+            
+        }
+        
+
+    }
 }

@@ -34,7 +34,7 @@
       <div class="menu" style="padding-top: 25px"> 
           <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
-        <li class="current"><a href="../../app/controlador/FrontController.php?action=principal">INICIO</a></li>
+        <li><a href="../controlador/FrontController.php?action=principal">INICIO</a></li>
         <li><a href="about.php">ACERCA DE</a></li>
         <li><a href="../controlador/FrontController.php?action=academia">ACADEMIA</a></li>
         

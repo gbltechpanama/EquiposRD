@@ -121,14 +121,21 @@
             </div>
             
             <br><br>
-            <form method="post" action="../controlador/FrontController.php?action=modsublinea" enctype="multipart/form-data">
+            <?php
+                echo '<form method="post" action="../controlador/FrontController.php?action=modsublinea&subLineaNegocio='.$_GET['subLineaNegocio'].'" enctype="multipart/form-data">';
+            ?>
+            
+            <!--<form method="post" action="../controlador/FrontController.php?action=modsublinea&" enctype="multipart/form-data"> -->
                     <table border="0" style="width: 90%; margin-left: auto; margin-right: auto;">
                         <tr style=" height: 40px">
                             <td style="text-align: right">
                                 <label style=" font-family: arial; font-size: 12px; font-weight: bold">NOMBRE SUB LINEA</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <input type="text" name="txtNombre" style="width: 400px">
+                                <?php
+                                echo '<input type="text" name="txtNombre" value="'.$_GET['subLineaNegocio']
+                                        .'" style="width: 400px">';
+                                ?>
                             </td>
                         </tr>
                         
@@ -145,7 +152,10 @@
                                 <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA CATALOGO</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <input type="file" name="objFileCatalogo">
+                                <?php
+                                echo '<input type="text" name="txtRutaCatalogo" value="'.$_SESSION['rutaCatalogoEspecifico']
+                                        .'" style="width: 400px">';
+                                ?>
                             </td>
                         </tr>
                         <tr style=" height: 40px">
@@ -153,7 +163,9 @@
                                 <label style=" font-family: arial; font-size: 12px; font-weight: bold">DESCRIPCION</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <textarea class="text" name="txtDescripcion" cols="80" rows="8"></textarea>
+                                <?php
+                                echo '<textarea class="text" name="txtDescripcion" cols="80" rows="8">'.$_SESSION['descripcionSubLineaEspecifico'].'</textarea>';
+                                ?>
 
                             </td>
                         </tr>

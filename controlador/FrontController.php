@@ -54,4 +54,6 @@ if ($action=="login") {
 } elseif ($action=="formmodsublinea") {
     $bkAdmin->ctrlFormModificarSubLinea($_GET['subLineaNegocio']);
 
+} elseif ($action=="modsublinea") {
+    $bkAdmin->ctrlModificarSubLinea($_GET['subLineaNegocio'], $_POST['txtNombre'], $_FILES['objFileImagen'], $_POST['txtRutaCatalogo'], $_POST['txtDescripcion']);
 }

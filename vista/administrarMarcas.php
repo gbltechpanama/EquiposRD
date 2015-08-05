@@ -164,9 +164,7 @@
                     <td style=" width: 600px;">
                         DESCRIPCION
                     </td>
-                    <td>
-                        VER
-                    </td>
+                    
                     <td>
                         EDIT
                     </td>
@@ -182,14 +180,10 @@
                     echo "<tr>";
                     echo "<td>".$cont."</td>";
                     echo "<td>".$_SESSION['nombreSubLineas'][$i]."</td>";
-                    echo "<td>".$_SESSION['rutaCatalogos'][$i]."</td>";
-                    echo "<td>".$_SESSION['rutaImagenesSubLineas'][$i]."</td>";
+                    echo "<td><a href='".$_SESSION['rutaCatalogos'][$i]."' targert=blank><u>".$_SESSION['rutaCatalogos'][$i]."</u></a></td>";
+                    echo "<td><a href='".$_SESSION['rutaImagenesSubLineas'][$i]."' targert=blank><u>".$_SESSION['rutaImagenesSubLineas'][$i]."</u></a></td>";
                     echo "<td>".$_SESSION['descripcionSubLineas'][$i]."</td>";
-                    echo "<td>";
-                        echo "<a href='#'>";
-                            echo "<img src='img/iconoBuscar.jpg'>";
-                        echo "</a>";
-                    echo "</td>";
+                   
                     
                     echo "<td>";
                         echo "<a href='../controlador/FrontController.php?"

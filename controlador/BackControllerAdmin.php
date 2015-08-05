@@ -255,4 +255,27 @@ class BackControllerAdmin
         header("Location: ../vista/formModificarSubLinea.php?subLineaNegocio=".$subLineaNegocio);
         
     }
+    
+    public function ctrlModificarSubLinea($subLineaNegocio, $nombreNuevo, $objImagen, $rutaCatalogo, $descripcion)
+    {
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        $modelAdmin->mdlModificarSubLineaNegocio($subLineaNegocio, $nombreNuevo, $objImagen, $rutaCatalogo, $descripcion);
+        
+        
+        /*
+         * LLAMAR A LA VISTA
+         */
+        header("Location: FrontController.php?action=lineanegocio&lineaNegocio=".$_SESSION['nombreLineaNegocio']);
+        
+    }
 }

@@ -32,7 +32,7 @@
       <div class="menu" style="padding-top: 25px"> 
         <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
         <ul class="nav" id="nav">
-        <li><a href="../../app/controlador/FrontController.php?action=principal">INICIO</a></li>
+        <li><a href="../controlador/FrontController.php?action=principal">INICIO</a></li>
         <li><a href="about.php">ACERCA DE</a></li>
         <li><a href="../controlador/FrontController.php?action=academia">ACADEMIA</a></li>
         
@@ -124,9 +124,9 @@
             <table border="1" class="tablaContactos">
                 <tr>
                     <td class="celdaTablaContactos">
-                        <div style="font-size: 14px; color: #f9ca03; font-weight: bold;">ZONA CENTRAL</div>
+                        <div style="font-size: 14px; color: #f9ca03; font-weight: bold;">ZONA CENTRO Y GRAN CARACAS</div>
                         <div style="color: #888888; font-size: 12px; margin-top: 10px">
-                            C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.
+                            --
                         </div>
                     </td>
                 </tr>
@@ -134,14 +134,14 @@
                 <tr>
                     <td class="celdaTablaContactos">
                         <div style="font-size: 14px; color: #888888; font-weight: bold">Telefono</div>
-                        <div style="color: #888888; font-size: 12px; margin-top: 10px">+58 268.72.93</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">+58 414 2422812</div>
                     </td>
                 </tr>
                 
                 <tr class="celdaTablaContactos">
                     <td style="padding-left: 20px; padding-right: 20px">
                         <div style="font-size: 14px; color: #888888; font-weight: bold">Email</div>
-                        <div style="color: #888888; font-size: 12px; margin-top: 10px">info@erd.com</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">jcarrillo@ryd.com.ve</div>
                     </td>
                 </tr>
             </table>
@@ -152,7 +152,7 @@
                     <td class="celdaTablaContactos">
                         <div style="font-size: 14px; color: #489a29; font-weight: bold;">ZONA ORIENTE</div>
                         <div style="color: #888888; font-size: 12px; margin-top: 10px">
-                            C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.
+                            ---
                         </div>
                     </td>
                 </tr>
@@ -160,14 +160,14 @@
                 <tr>
                     <td class="celdaTablaContactos">
                         <div style="font-size: 14px; color: #888888; font-weight: bold">Telefono</div>
-                        <div style="color: #888888; font-size: 12px; margin-top: 10px">+58 268.72.93</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">+58 424 4193773</div>
                     </td>
                 </tr>
                 
                 <tr class="celdaTablaContactos">
                     <td style="padding-left: 20px; padding-right: 20px">
                         <div style="font-size: 14px; color: #888888; font-weight: bold">Email</div>
-                        <div style="color: #888888; font-size: 12px; margin-top: 10px">info@erd.com</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">jvelasquez@ryd.com.ve</div>
                     </td>
                 </tr>
             </table>
@@ -178,7 +178,7 @@
                     <td class="celdaTablaContactos">
                         <div style="font-size: 14px; color: #040062; font-weight: bold;">ZONA OCCIDENTE</div>
                         <div style="color: #888888; font-size: 12px; margin-top: 10px">
-                            C. C. Novocentro, Piso 1, Oficina 1-12, Puerto la Cruz- Anzoátegui, Venezuela.
+                            ---
                         </div>
                     </td>
                 </tr>
@@ -186,14 +186,14 @@
                 <tr>
                     <td class="celdaTablaContactos">
                         <div style="font-size: 14px; color: #888888; font-weight: bold">Telefono</div>
-                        <div style="color: #888888; font-size: 12px; margin-top: 10px">+58 268.72.93</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">+58 414 6930151</div>
                     </td>
                 </tr>
                 
                 <tr class="celdaTablaContactos">
                     <td style="padding-left: 20px; padding-right: 20px">
                         <div style="font-size: 14px; color: #888888; font-weight: bold">Email</div>
-                        <div style="color: #888888; font-size: 12px; margin-top: 10px">info@erd.com</div>
+                        <div style="color: #888888; font-size: 12px; margin-top: 10px">obaptista@ryd.com.ve</div>
                     </td>
                 </tr>
             </table>
@@ -217,12 +217,12 @@
         <div class="col-md-3">
           <ul class="social_left">
             <li class="facebook">
-                <a href="#">
+                <a href="https://www.facebook.com/pedrocachazo">
                     <i class="fa fa-facebook-square fa-3x" style="color: #3b5998"></i>
                 </a>
             </li>
             <li class="fb_text">
-              <h4><a href="#">Follow us on Facebook</a></h4>
+              <h4><a href="https://www.facebook.com/pedrocachazo">Follow us on Facebook</a></h4>
             </li>
             <div class="clearfix"> </div>
           </ul>
@@ -231,12 +231,12 @@
         <div class="col-md-3">
           <ul class="social_left">
             <li class="facebook">
-                <a href="#">
+                <a href="https://twitter.com/EquiposRYD">
                     <i class="fa fa-twitter-square fa-3x" style="color: #00aced"></i>
                 </a>
             </li>
             <li class="fb_text">
-              <h4><a href="#">Follow us on Twitter</a></h4>
+              <h4><a href="https://twitter.com/EquiposRYD">Follow us on Twitter</a></h4>
             </li>
             <div class="clearfix"> </div>
           </ul>
@@ -261,12 +261,12 @@
         <div class="col-md-3">
           <ul class="social_left">
             <li class="facebook">
-                <a href="#">
+                <a href="https://www.linkedin.com/company/equipos-y-controles-r&d-c-a-">
                     <i class="fa fa-linkedin-square fa-3x" style="color: #007bb6"></i>
                 </a>
             </li>
             <li class="fb_text">
-              <h4><a href="#">Follow us on LinkedIn</a></h4>
+              <h4><a href="https://www.linkedin.com/company/equipos-y-controles-r&d-c-a-">Follow us on LinkedIn</a></h4>
             </li>
             
             <div class="clearfix"> </div>
