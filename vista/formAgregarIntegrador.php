@@ -111,10 +111,9 @@
             
             <!-- INDICADOR DE SECCION -->
             <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">
-                <?php
-                    echo 'MODIFICAR SUBLINEA '.strtoupper($_GET['subLineaNegocio']);
-                    
-                ?>
+            <?php
+                    echo 'AGREGAR INTEGRADOR -- '.strtoupper($_SESSION['lineaNegocio']);
+            ?>
             </div>
             <div style="width: 100%; text-align: right; color:navy; font-size: 14px;">
                 <a href="" onclick="history.back();">VOLVER...</a>
@@ -122,58 +121,21 @@
             
             <br><br>
             <?php
-                echo '<form method="post" action="../controlador/FrontController.php?action=modsublinea&subLineaNegocio='.$_GET['subLineaNegocio'].'" enctype="multipart/form-data">';
+                echo '<form method="post" action="../controlador/FrontController.php?action=agregarintegrador&lineaNegocio='.$_GET['lineaNegocio'].'" enctype="multipart/form-data">';
             ?>
-            
-            <!--<form method="post" action="../controlador/FrontController.php?action=modsublinea&" enctype="multipart/form-data"> -->
-                    <table border="0" style="width: 90%; margin-left: auto; margin-right: auto;">
+                    <table border="0" style="width: 400px; margin-left: auto; margin-right: auto;">
                         <tr style=" height: 40px">
                             <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">NOMBRE SUB LINEA</label>
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA LOGO</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <?php
-                                echo '<input type="text" name="txtNombre" value="'.$_GET['subLineaNegocio']
-                                        .'" style="width: 400px">';
-                                ?>
-                            </td>
-                        </tr>
-                        
-                        <tr style=" height: 40px">
-                            <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA IMAGEN</label>
-                            </td>
-                            <td style="text-align: left; padding-left: 10px">
-                                <input type="file" name="objFileImagen">
-                            </td>
-                        </tr>
-                        <tr style=" height: 40px">
-                            <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA CATALOGO</label>
-                            </td>
-                            <td style="text-align: left; padding-left: 10px">
-                                <?php
-                                echo '<input type="text" name="txtRutaCatalogo" value="'.$_SESSION['rutaCatalogoEspecifico']
-                                        .'" style="width: 400px">';
-                                ?>
-                            </td>
-                        </tr>
-                        <tr style=" height: 40px">
-                            <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">DESCRIPCION</label>
-                            </td>
-                            <td style="text-align: left; padding-left: 10px">
-                                <?php
-                                echo '<textarea class="text" name="txtDescripcion" cols="80" rows="8">'.$_SESSION['descripcionSubLineaEspecifico'].'</textarea>';
-                                ?>
-
+                                <input type="file" name="objFile">
                             </td>
                         </tr>
                         <tr style=" height: 50px">
                             <td>
-                             
                             </td>
-                            <td>
+                            <td style="text-align: left; padding-left: 15px">
                                 <img src="img/btnAceptar.jpg" 
                                      style="cursor: pointer" onclick="document.forms[0].submit();">
                             </td>

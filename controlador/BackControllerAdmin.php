@@ -20,6 +20,12 @@ class BackControllerAdmin
     private $descripcionSubLineaEspecifico;
     private $rutaCatalogos;
     private $rutaCatalogoEspecifico;
+    private $idProductos;
+    private $productos;
+    private $nombreLineasNegocio;
+    private $idIntegradores;
+    private $integradores;
+    
     
     public function ctrlLoginAdmin($usuario, $password)
     {
@@ -60,9 +66,9 @@ class BackControllerAdmin
         
         $this->idBanners = $modelAdmin->mdlObtenerIDBanners();
         
-        $this->rutaBanners = $modelCliente->modelObtenerRutaBanners();
+        $this->rutaBanners = $modelCliente->mdlObtenerRutaBanners();
 
-        $this->descripcionBanners = $modelCliente->modelObtenerDescripcionBanners();
+        $this->descripcionBanners = $modelCliente->mdlObtenerDescripcionBanners();
         
         
         /*
@@ -192,11 +198,11 @@ class BackControllerAdmin
         /*
          * METODOS DEL MODELO
          */
-        $this->rutaImagenesSubLineas = $modelCliente->modelObtenerRutaImagenesSubLinea($lineaNegocio);
+        $this->rutaImagenesSubLineas = $modelCliente->mdlObtenerRutaImagenesSubLinea($lineaNegocio);
         
-        $this->nombreSubLineas= $modelCliente->modelObtenerNombreSubLinea($lineaNegocio);
+        $this->nombreSubLineas= $modelCliente->mdlObtenerNombreSubLinea($lineaNegocio);
         
-        $this->descripcionSubLineas = $modelCliente->modelObtenerDescripcionSubLineas($lineaNegocio);
+        $this->descripcionSubLineas = $modelCliente->mdlObtenerDescripcionSubLineas($lineaNegocio);
         
         $this->rutaCatalogos = $modelAdmin->mdlObtenerRutaCatalogos($lineaNegocio);
         
@@ -231,12 +237,12 @@ class BackControllerAdmin
             header("Location: ../vista/errorLogin.php");
         }
         
-        $this->rutaCatalogoEspecifico = $modelCliente->modelObtenerRutaCatalogoEspecifico($subLineaNegocio);
+        $this->rutaCatalogoEspecifico = $modelCliente->mdlObtenerRutaCatalogoEspecifico($subLineaNegocio);
         
-        $this->rutaImagenSubLineaEspecifico = $modelCliente->modelObtenerRutaImagenSubLineaEspecifico($subLineaNegocio);
+        $this->rutaImagenSubLineaEspecifico = $modelCliente->mdlObtenerRutaImagenSubLineaEspecifico($subLineaNegocio);
         
         $this->descripcionSubLineaEspecifico =
-                $modelCliente->modelObtenerDescripcionLineaNegocioEspecifico($subLineaNegocio);
+                $modelCliente->mdlObtenerDescripcionLineaNegocioEspecifico($subLineaNegocio);
         
         
         /*
@@ -276,6 +282,227 @@ class BackControllerAdmin
          * LLAMAR A LA VISTA
          */
         header("Location: FrontController.php?action=lineanegocio&lineaNegocio=".$_SESSION['nombreLineaNegocio']);
+        
+    }
+
+    
+    public function ctrlCargarSubLineasNegocios()
+    {
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        
+        $this->nombreSubLineas = $modelAdmin->mdlObtenerTodasSubLineasNegocios();
+        
+        
+        /*
+         * VARIABLE DE SESION QUE SE UTILIZARA EN LA VISTA
+         */
+        $_SESSION['todasSubLineasNegocio'] = $this->nombreSubLineas;
+        
+        
+        /*
+         * LLAMADA A LA VISTA
+         */
+        header("Location: ../vista/formSeleccionSubLinea.php");
+        
+    }
+    
+    public function ctrlAdministrarProductos($subLinea)
+    {
+        
+        $modelAdmin = new ModeloAdmin();
+        $modelCliente = new ModeloCliente();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        /*
+         * METODOS DEL OBJETO MODELO
+         */
+        $this->idProductos = $modelAdmin->mdlObtenerIdProducto($subLinea);
+        
+        $this->productos = $modelCliente->mdlObtenerProductos($subLinea);
+        
+        /*
+         * VARIABLES DE SESION
+         */
+        $_SESSION['idProductos'] = $this->idProductos;
+        $_SESSION['productos'] = $this->productos;
+        $_SESSION['subLineaNegocios'] = $subLinea;
+        
+        /*
+         * LLAMADA A LA VISTA
+         */
+        header("Location: ../vista/administrarProductos.php");
+    }
+    
+    
+    public function ctrlAgregarProducto($subLinea, $nombreProducto)
+    {
+        $modelAdmin = new ModeloAdmin();
+      
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        $modelAdmin->mdlAgregarProducto($subLinea, $nombreProducto);
+        
+        
+        /*
+         * LLAMAR A LA VISTA
+         */
+        header("Location: FrontController.php?action=productos&subLinea=".$subLinea);
+    }
+    
+    
+    public function ctrlEliminarProducto($idProducto)
+    {
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        $modelAdmin->mdlEliminarProducto($idProducto);
+        
+        /*
+         * LLAMAR A LA VISTA
+         */
+        header("Location: FrontController.php?action=productos&subLinea=".$_SESSION['subLineaNegocios']);
+        
+    }
+    
+    public function ctrlCargarLineasNegocios()
+    {
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        
+        $this->nombreLineasNegocio = $modelAdmin->mdlObtenerTodasLineasNegocios();
+       
+        
+        /*
+         * VARIABLE DE SESION QUE SE UTILIZARA EN LA VISTA
+         */
+        $_SESSION['todasLineasNegocio'] = $this->nombreLineasNegocio;
+        
+        
+        /*
+         * LLAMADA A LA VISTA
+         */
+        header("Location: ../vista/formSeleccionLineaNegocio.php");
+        
+    }
+    
+    public function ctrlAdministrarIntegradores($lineaNegocio)
+    {
+        $modelAdmin = new ModeloAdmin();
+        $modelCliente = new ModeloCliente();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        $this->idIntegradores = $modelAdmin->mdlObtenerIdIntegradores($lineaNegocio);
+        
+        $this->integradores = $modelCliente->mdlObtenerIntegradores($lineaNegocio);
+        
+        /*
+         * VARIABLES DE SESION
+         */
+        $_SESSION['idIntegradores'] = $this->idIntegradores;
+        $_SESSION['integradores'] = $this->integradores;
+        $_SESSION['lineaNegocio'] = $lineaNegocio;
+        
+        
+        /*
+         * LLAMAR A LA VISTA
+         */
+         header("Location: ../vista/administrarIntegradores.php");
+        
+    }
+    
+    public function ctrlEliminarIntegrador($idIntegrador)
+    {
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        $modelAdmin->mdlEliminarIntegrador($idIntegrador);
+        
+        /*
+         * LLAMAR A LA VISTA
+         */
+        header("Location: FrontController.php?action=integradores&lineaNegocio=".$_SESSION['lineaNegocio']);
+        
+    }
+    
+    
+    public function ctrlAgregarIntegrador($lineaNegocio, $objFile)
+    {
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        $modelAdmin->mdlAgregarIntegrador($lineaNegocio, $objFile);
+        
+        /*
+         * LLAMAR A LA VISTA
+         */
+        header("Location: FrontController.php?action=integradores&lineaNegocio=".$lineaNegocio);
         
     }
 }

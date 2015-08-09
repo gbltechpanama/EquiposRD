@@ -13,6 +13,7 @@
 <link href="js/flexslider.css" rel="stylesheet" />
 
 
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
     addEventListener("load", function() { 
@@ -23,6 +24,19 @@
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' 
       rel='stylesheet' type='text/css'>
 
+<!-- CONFIRMAR ELIMINAR -->
+<script type="text/javascript">
+function confirmarEliminar(idProducto)
+{
+    if(confirm('Desea eliminar este registro?')){
+        
+        document.location.href = "../controlador/FrontController.php?action=eliminarproducto&idProducto="+idProducto;
+        
+    }
+    
+}
+    
+</script>
 
 </head>
 <body>
@@ -67,7 +81,7 @@
             });
         </script>
         <li class="dropdown"">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
+            <a href="" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
                     <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell" style="color: #009900">
@@ -99,11 +113,10 @@
 <div id="barraSuperior"></div>
 
 
-
 <!-- CENTRO -->
-<div class="featured_content" id="feature" style="height: 600px">
+<div class="featured_content" id="feature" style=" height: 850px">
     
-    <div class="container" style="height: 600px">
+    <div class="container">
       
     <div class="row text-center">
 
@@ -111,76 +124,57 @@
             
             <!-- INDICADOR DE SECCION -->
             <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">
-                <?php
-                    echo 'MODIFICAR SUBLINEA '.strtoupper($_GET['subLineaNegocio']);
-                    
-                ?>
-            </div>
-            <div style="width: 100%; text-align: right; color:navy; font-size: 14px;">
-                <a href="" onclick="history.back();">VOLVER...</a>
-            </div>
-            
-            <br><br>
             <?php
-                echo '<form method="post" action="../controlador/FrontController.php?action=modsublinea&subLineaNegocio='.$_GET['subLineaNegocio'].'" enctype="multipart/form-data">';
+                echo 'PRODUCTOS -- '.strtoupper($_SESSION['subLineaNegocios']);
             ?>
+            </div>
             
-            <!--<form method="post" action="../controlador/FrontController.php?action=modsublinea&" enctype="multipart/form-data"> -->
-                    <table border="0" style="width: 90%; margin-left: auto; margin-right: auto;">
-                        <tr style=" height: 40px">
-                            <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">NOMBRE SUB LINEA</label>
-                            </td>
-                            <td style="text-align: left; padding-left: 10px">
-                                <?php
-                                echo '<input type="text" name="txtNombre" value="'.$_GET['subLineaNegocio']
-                                        .'" style="width: 400px">';
-                                ?>
-                            </td>
-                        </tr>
-                        
-                        <tr style=" height: 40px">
-                            <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA IMAGEN</label>
-                            </td>
-                            <td style="text-align: left; padding-left: 10px">
-                                <input type="file" name="objFileImagen">
-                            </td>
-                        </tr>
-                        <tr style=" height: 40px">
-                            <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA CATALOGO</label>
-                            </td>
-                            <td style="text-align: left; padding-left: 10px">
-                                <?php
-                                echo '<input type="text" name="txtRutaCatalogo" value="'.$_SESSION['rutaCatalogoEspecifico']
-                                        .'" style="width: 400px">';
-                                ?>
-                            </td>
-                        </tr>
-                        <tr style=" height: 40px">
-                            <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">DESCRIPCION</label>
-                            </td>
-                            <td style="text-align: left; padding-left: 10px">
-                                <?php
-                                echo '<textarea class="text" name="txtDescripcion" cols="80" rows="8">'.$_SESSION['descripcionSubLineaEspecifico'].'</textarea>';
-                                ?>
+            <div style="margin-top: 90px; width: 100%">
+                <a href="formAgregarProducto.php"> 
+                    <img src="img/btnAgregar.jpg" style=" float: left;" border="0">
+                </a>
+            </div>
+           
+            <div>
+                <br><br>
+            <table border="1" style="margin-top: 20px; width: 100%; font-size: 13px; background-color: white">
+                <tr style="font-weight: bold;">
+                    <td style="width: 100px">
+                        ID PRODUCTO
+                    </td>
+                    <td>
+                       NOMBRE PRODUCTO
+                    </td> 
+                    <td>
+                        ELM
+                    </td>
+                </tr>
+                
+                <?php
 
-                            </td>
-                        </tr>
-                        <tr style=" height: 50px">
-                            <td>
-                             
-                            </td>
-                            <td>
-                                <img src="img/btnAceptar.jpg" 
-                                     style="cursor: pointer" onclick="document.forms[0].submit();">
-                            </td>
-                        </tr>
-                    </table>
-            </form>
+                $n = count($_SESSION['idProductos']);
 
+                for ($i=0; $i<$n; $i++) {
+                    $cont = $cont + 1;
+                    
+                    echo "<tr>";
+                    echo "<td>".$_SESSION['idProductos'][$i]."</td>";
+                    echo "<td>".$_SESSION['productos'][$i]."</td>";
+                    
+                    echo "<td>";
+                    
+                        echo "<a href='#' onclick='confirmarEliminar(".$_SESSION['idProductos'][$i].")'>";
+                            echo "<img src='img/iconoEliminar.jpg'>";
+                        echo "</a>";
+                    echo "</td>";
+                    
+                    echo "</tr>";
+                }
+
+                ?>
+                
+            </table>
+            </div>
         </div>
 
       </div>

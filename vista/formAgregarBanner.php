@@ -84,8 +84,8 @@
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
         
-        <li><a href="#">PRODUCTOS</a></li>
-        <li><a href="#">INTEGRADORES</a></li>
+        <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
+        <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
         
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 

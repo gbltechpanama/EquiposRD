@@ -9,7 +9,7 @@ class ModeloCliente
     /*
      * PAGINA PRINCIPAL
      */
-    public function modelObtenerRutaBanners()
+    public function mdlObtenerRutaBanners()
     {
         $BD = new BaseDatos();
 
@@ -22,7 +22,7 @@ class ModeloCliente
         return $data_array;
     }
 
-    public function modelObtenerDescripcionBanners()
+    public function mdlObtenerDescripcionBanners()
     {
         $BD = new BaseDatos();
 
@@ -39,7 +39,7 @@ class ModeloCliente
      * LINEAS DE NEGOCIO LEVEL 1
      */
 
-    public function modelObtenerDescripcionSubLineas($lineaNegocio)
+    public function mdlObtenerDescripcionSubLineas($lineaNegocio)
     {
         $BD = new BaseDatos();
 
@@ -54,7 +54,7 @@ class ModeloCliente
     }
 
     
-    public function modelObtenerIntegradores($lineaNegocio) //LEVEL 1 Y LEVEL 2
+    public function mdlObtenerIntegradores($lineaNegocio) //LEVEL 1 Y LEVEL 2
     {
         $BD = new BaseDatos();
 
@@ -68,7 +68,7 @@ class ModeloCliente
         return $data_array;
     }
     
-    public function modelObtenerRutaImagenesSubLinea($lineaNegocio)
+    public function mdlObtenerRutaImagenesSubLinea($lineaNegocio)
     {
         $BD = new BaseDatos();
 
@@ -83,7 +83,7 @@ class ModeloCliente
 
     }
 
-    public function modelObtenerNombreSubLinea($lineaNegocio)
+    public function mdlObtenerNombreSubLinea($lineaNegocio)
     {
         $BD = new BaseDatos();
 
@@ -102,7 +102,7 @@ class ModeloCliente
      * LINEAS DE NEGOCIOS LEVEL 2
      */
 
-    public function modelObtenerDescripcionLineaNegocioEspecifico($lineaNegocio)
+    public function mdlObtenerDescripcionLineaNegocioEspecifico($lineaNegocio)
     {
         $BD = new BaseDatos();
 
@@ -118,7 +118,7 @@ class ModeloCliente
         return $data;
     }
 
-    public function modelObtenerRutaImagenSubLineaEspecifico($lineaNegocio)
+    public function mdlObtenerRutaImagenSubLineaEspecifico($lineaNegocio)
     {
         $BD = new BaseDatos();
 
@@ -135,12 +135,12 @@ class ModeloCliente
         return $data;
     }
     
-    public function modelObtenerProductos($lineaNegocio)
+    public function mdlObtenerProductos($lineaNegocio)
     {
         $BD = new BaseDatos();
 
         $sql = "Select nombreProducto from productos where nombreSubLineaNegocio "
-                . "= '".$lineaNegocio."'";
+                . "= '".$lineaNegocio."' order by idproductos";
 
         $resultado = $BD->modelQueryDB($sql);
 
@@ -150,7 +150,7 @@ class ModeloCliente
     }
 
 
-    public function modelObtenerRutaCatalogoEspecifico($subLineaNegocio)
+    public function mdlObtenerRutaCatalogoEspecifico($subLineaNegocio)
     {
         $BD = new BaseDatos();
 
@@ -173,7 +173,7 @@ class ModeloCliente
     /*
      * ACADEMIA
      */
-    public function modelObtenerIDArticulosAcademia()
+    public function mdlObtenerIDArticulosAcademia()
     {
         $BD = new BaseDatos();
 
@@ -186,7 +186,7 @@ class ModeloCliente
         return $data_array;
     }
 
-    public function modelObtenerTituloArticulosAcademia()
+    public function mdlObtenerTituloArticulosAcademia()
     {
         $BD = new BaseDatos();
 
@@ -199,7 +199,7 @@ class ModeloCliente
         return $data_array;
     }
 
-    public function modelObtenerRutaImagenArticulosAcademia()
+    public function mdlObtenerRutaImagenArticulosAcademia()
     {
         $BD = new BaseDatos();
 
@@ -212,7 +212,7 @@ class ModeloCliente
         return $data_array;
     }
 
-    public function modelObtenerContenidoArticulosAcademia()
+    public function mdlObtenerContenidoArticulosAcademia()
     {
         $BD = new BaseDatos();
 
@@ -226,7 +226,7 @@ class ModeloCliente
         
     }
 
-    public function modelObtenerfechaArticulosAcademia()
+    public function mdlObtenerfechaArticulosAcademia()
     {
         $BD = new BaseDatos();
 

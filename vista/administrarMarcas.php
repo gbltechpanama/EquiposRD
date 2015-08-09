@@ -85,8 +85,8 @@
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
         
-        <li><a href="#">PRODUCTOS</a></li>
-        <li><a href="#">INTEGRADORES</a></li>
+        <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
+        <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
         
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 
@@ -180,8 +180,8 @@
                     echo "<tr>";
                     echo "<td>".$cont."</td>";
                     echo "<td>".$_SESSION['nombreSubLineas'][$i]."</td>";
-                    echo "<td><a href='".$_SESSION['rutaCatalogos'][$i]."' targert=blank><u>".$_SESSION['rutaCatalogos'][$i]."</u></a></td>";
-                    echo "<td><a href='".$_SESSION['rutaImagenesSubLineas'][$i]."' targert=blank><u>".$_SESSION['rutaImagenesSubLineas'][$i]."</u></a></td>";
+                    echo "<td><a href='".$_SESSION['rutaCatalogos'][$i]."' target='_blank'><u>".$_SESSION['rutaCatalogos'][$i]."</u></a></td>";
+                    echo "<td><a href='".$_SESSION['rutaImagenesSubLineas'][$i]."' target='_blank'><u>".$_SESSION['rutaImagenesSubLineas'][$i]."</u></a></td>";
                     echo "<td>".$_SESSION['descripcionSubLineas'][$i]."</td>";
                    
                     

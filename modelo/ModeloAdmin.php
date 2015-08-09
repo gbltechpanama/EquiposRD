@@ -181,7 +181,7 @@ class ModeloAdmin
         if ($objImagen["tmp_name"]!="") {
             $sql = "update lineasnegocios set nombreSubLineaNegocio='".$nombreNuevo.
                 "', descripcionSubLinea='".$descripcion."', enlaceCatalogo='".$rutaCatalogo.
-                "', rutaImagenSubLinea='".$target_file."' where nombreSubLineaNegocio='".$subLineaNegocio."'";
+                "', rutaImagenSubLinea='img/".$nroRandom.".jpg' where nombreSubLineaNegocio='".$subLineaNegocio."'";
             
             //EJECUTAR QUERY
             $BD->modelQueryDB($sql);
@@ -199,7 +199,133 @@ class ModeloAdmin
             $BD->modelQueryDB($sql);
             
         }
-        
+    }
+    
+    public function mdlObtenerIdProducto($subLinea)
+    {
+        $BD = new BaseDatos();
 
+        $sql = "Select idProductos from productos where nombreSubLineaNegocio "
+                . "= '".$subLinea."' order by idproductos";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $data_array = $BD->modelConvertirEnArray($resultado);
+
+        return $data_array;
+    }
+    
+    public function mdlAgregarProducto($subLinea, $nombreProducto)
+    {
+        $BD = new BaseDatos();
+            
+        $sql = "insert into productos values ('','".$subLinea."','".$nombreProducto."')";
+
+        $BD->modelQueryDB($sql);
+    }
+    
+    public function mdlEliminarProducto($idProducto)
+    {
+        $BD = new BaseDatos();
+
+        $sql = "delete from productos where idProductos = ".$idProducto;
+
+        $BD->modelQueryDB($sql);
+    }
+    
+    public function mdlObtenerTodasSubLineasNegocios()
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select nombreSubLineaNegocio from lineasNegocios";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $data_array = $BD->modelConvertirEnArray($resultado);
+
+        return $data_array;
+        
+    }
+    
+    public function mdlObtenerTodasLineasNegocios()
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select distinct(nombreLineaPadre) from lineasNegocios";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $data_array = $BD->modelConvertirEnArray($resultado);
+
+        return $data_array;
+        
+    }
+    
+    public function mdlObtenerIdIntegradores($lineaNegocio)
+    {
+        
+        $BD = new BaseDatos();
+
+        $sql = "Select idIntegradores from integradores where nombreLineaPadre = '"
+                .$lineaNegocio."' order by idIntegradores";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $data_array = $BD->modelConvertirEnArray($resultado);
+
+        return $data_array;
+        
+    }
+    
+    public function mdlEliminarIntegrador($idIntegrador)
+    {
+        $BD = new BaseDatos();
+
+        /*
+         * TOMAR LA RUTA DE LA IMAGEN ACTUAL DEL INTEGRADOR A ELIMINAR
+         */
+        $sql = "select rutaLogo from integradores where idIntegradores = ".$idIntegrador;
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $row = mysql_fetch_row($resultado);
+        
+        $rutaLogoAnterior = $row[0];
+        
+        
+        /*
+         * ELIMINO DE LA BD EL REGISTRO
+         */
+        $sql = "delete from integradores where idIntegradores = ".$idIntegrador;
+
+        $BD->modelQueryDB($sql);
+        
+        
+        /*
+         * ELIMINO EL ARCHIVO FISICO EN EL DIRECTORIO
+         */
+        unlink('../vista/'.$rutaLogoAnterior);
+    }
+    
+    public function mdlAgregarIntegrador($lineaNegocio, $objFile)
+    {
+        $nroRandom = rand(100, 50000);
+        
+        $target_file = "../vista/img/".$nroRandom.".jpg";
+        
+        $temporal = move_uploaded_file($objFile["tmp_name"], $target_file);
+
+        if ($temporal==true) {
+            /*
+             * GUARDAR EN LA BASE DE DATOS
+             */
+            $BD = new BaseDatos();
+            
+            $sql = "insert into integradores values ('','img/".$nroRandom.".jpg','".$lineaNegocio."')";
+
+            $BD->modelQueryDB($sql);
+        }
+        
+        return $temporal;
     }
 }

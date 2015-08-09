@@ -2,6 +2,8 @@
 
 namespace erd;
 
+session_start();
+
 require_once 'BackControllerCliente.php';
 require_once 'BackControllerAdmin.php';
 
@@ -10,20 +12,22 @@ $bkAdmin = new BackControllerAdmin();
 
 $action = $_GET['action'];
 
+
+
 /*
  * ROUTING FRONTCONTROLLER CLIENTE
  */
 if ($action=="principal") {
-    $bkCliente->controlPaginaPrincipal();
+    $bkCliente->ctrlPaginaPrincipal();
 } elseif ($action=="level1neg") {
     $linea = $_GET['linea'];
-    $bkCliente->controlObtenerInformacionGeneral($linea);
+    $bkCliente->ctrlObtenerInformacionGeneral($linea);
 } elseif ($action=="level2neg") {
     $linea = $_GET['linea'];
-    $bkCliente->controlObtenerInformacionDetalleLinea($linea);
+    $bkCliente->ctrlObtenerInformacionDetalleLinea($linea);
 } elseif ($action=="academia") {
     $linea = $_GET['linea'];
-    $bkCliente->controlObtenerInformacionAcademia();
+    $bkCliente->ctrlObtenerInformacionAcademia();
 }
 
 /*
@@ -56,4 +60,29 @@ if ($action=="login") {
 
 } elseif ($action=="modsublinea") {
     $bkAdmin->ctrlModificarSubLinea($_GET['subLineaNegocio'], $_POST['txtNombre'], $_FILES['objFileImagen'], $_POST['txtRutaCatalogo'], $_POST['txtDescripcion']);
+    
+} elseif ($action=="cargarsublineas") {
+    $bkAdmin->ctrlCargarSubLineasNegocios();
+    
+} elseif ($action=="productos") {
+    $bkAdmin->ctrlAdministrarProductos($_REQUEST['subLinea']);
+    
+} elseif ($action=="agregarproducto") {
+    $subLinea = $_SESSION['subLineaNegocios'];
+    $bkAdmin->ctrlAgregarProducto($subLinea, $_REQUEST['nombreProducto']);
+    
+} elseif ($action=="eliminarproducto") {
+    $bkAdmin->ctrlEliminarProducto($_REQUEST['idProducto']);
+    
+} elseif ($action=="cargarlineas") {
+    $bkAdmin->ctrlCargarLineasNegocios();
+    
+} elseif ($action=="integradores") {
+    $bkAdmin->ctrlAdministrarIntegradores($_REQUEST['lineaNegocio']);
+    
+} elseif ($action=="eliminarintegrador") {
+    $bkAdmin->ctrlEliminarIntegrador($_REQUEST['idIntegrador']);
+    
+} elseif ($action=="agregarintegrador") {
+    $bkAdmin->ctrlAgregarIntegrador($_REQUEST['lineaNegocio'], $_FILES['objFile']);
 }

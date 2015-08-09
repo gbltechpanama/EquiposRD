@@ -24,14 +24,14 @@ class BackControllerCliente
     private $contenidoAcademia;
     private $fechaAcademia;
         
-    public function controlPaginaPrincipal()
+    public function ctrlPaginaPrincipal()
     {
 
         $modelCliente = new ModeloCliente();
 
-        $this->rutaBanners = $modelCliente->modelObtenerRutaBanners();
+        $this->rutaBanners = $modelCliente->mdlObtenerRutaBanners();
     
-        $this->descripcionBanners = $modelCliente->modelObtenerDescripcionBanners();
+        $this->descripcionBanners = $modelCliente->mdlObtenerDescripcionBanners();
  
         /*
          * ASIGNO EL ARRAY A LAS VARIABLES DE SESION PARA PODERLAS USAR EN LA VISTA
@@ -44,7 +44,7 @@ class BackControllerCliente
         header("Location: ../vista/home.php");
     }
 
-    public function controlObtenerInformacionGeneral($lineaNegocio)
+    public function ctrlObtenerInformacionGeneral($lineaNegocio)
     {
         
         /*
@@ -52,13 +52,13 @@ class BackControllerCliente
          */
         $modelCliente = new ModeloCliente();
 
-        $this->descripcionGeneralNegocio = $modelCliente->modelObtenerDescripcionSubLineas($lineaNegocio);
+        $this->descripcionGeneralNegocio = $modelCliente->mdlObtenerDescripcionSubLineas($lineaNegocio);
 
-        $this->nombreSubLineasNegocio = $modelCliente->modelObtenerNombreSubLinea($lineaNegocio);
+        $this->nombreSubLineasNegocio = $modelCliente->mdlObtenerNombreSubLinea($lineaNegocio);
         
-        $this->rutaIntegradores = $modelCliente->modelObtenerIntegradores($lineaNegocio);
+        $this->rutaIntegradores = $modelCliente->mdlObtenerIntegradores($lineaNegocio);
   
-        $this->rutaImagenSubLinea = $modelCliente->modelObtenerRutaImagenesSubLinea($lineaNegocio);
+        $this->rutaImagenSubLinea = $modelCliente->mdlObtenerRutaImagenesSubLinea($lineaNegocio);
 
 
         
@@ -84,20 +84,20 @@ class BackControllerCliente
         header("Location: ../vista/level1neg.php");
     }
 
-    public function controlObtenerInformacionDetalleLinea($lineaNegocio)
+    public function ctrlObtenerInformacionDetalleLinea($lineaNegocio)
     {
         /*
          * LLAMAR LAS FUNCIONES NECESARIAS DEL OBJETO MODELO
          */
         $modelCliente = new ModeloCliente();
 
-        $this->descripcionLineaNegocio = $modelCliente->modelObtenerDescripcionLineaNegocioEspecifico($lineaNegocio);
+        $this->descripcionLineaNegocio = $modelCliente->mdlObtenerDescripcionLineaNegocioEspecifico($lineaNegocio);
 
-        $this->productos = $modelCliente->modelObtenerProductos($lineaNegocio);
+        $this->productos = $modelCliente->mdlObtenerProductos($lineaNegocio);
         
-        $this->rutaCatalogo = $modelCliente->modelObtenerRutaCatalogoEspecifico($lineaNegocio);
+        $this->rutaCatalogo = $modelCliente->mdlObtenerRutaCatalogoEspecifico($lineaNegocio);
 
-        $this->rutaImagenSubLineaEspecifico = $modelCliente->modelObtenerRutaImagenSubLineaEspecifico($lineaNegocio);
+        $this->rutaImagenSubLineaEspecifico = $modelCliente->mdlObtenerRutaImagenSubLineaEspecifico($lineaNegocio);
                 
 
         /*
@@ -106,7 +106,7 @@ class BackControllerCliente
         session_start();
  
         //AQUI UTILIZO LA LINEA DE NEGOCIO PADRE
-         $this->rutaIntegradores = $modelCliente->modelObtenerIntegradores($_SESSION['lineaNegocio']);
+         $this->rutaIntegradores = $modelCliente->mdlObtenerIntegradores($_SESSION['lineaNegocio']);
 
         
          $_SESSION['descripcionLineaNegocio'] = $this->descripcionLineaNegocio;
@@ -128,22 +128,22 @@ class BackControllerCliente
         header("Location: ../vista/level2neg.php");
     }
     
-    public function controlObtenerInformacionAcademia()
+    public function ctrlObtenerInformacionAcademia()
     {
         /*
          * LLAMAR LAS FUNCIONES NECESARIAS DEL OBJETO MODELO
          */
         $modelCliente = new ModeloCliente();
 
-        $this->idAcademia=$modelCliente->modelObtenerIDArticulosAcademia();
+        $this->idAcademia=$modelCliente->mdlObtenerIDArticulosAcademia();
 
-        $this->titulosAcademia=$modelCliente->modelObtenerTituloArticulosAcademia();
+        $this->titulosAcademia=$modelCliente->mdlObtenerTituloArticulosAcademia();
 
-        $this->contenidoAcademia=$modelCliente->modelObtenerContenidoArticulosAcademia();
+        $this->contenidoAcademia=$modelCliente->mdlObtenerContenidoArticulosAcademia();
 
-        $this->fechaAcademia=$modelCliente->modelObtenerfechaArticulosAcademia();
+        $this->fechaAcademia=$modelCliente->mdlObtenerfechaArticulosAcademia();
 
-        $this->rutaImagenesAcademia = $modelCliente->modelObtenerRutaImagenArticulosAcademia();
+        $this->rutaImagenesAcademia = $modelCliente->mdlObtenerRutaImagenArticulosAcademia();
 
         /*
          * ASIGNO LAS VARIABLES DE SESSION NECESARIAS
