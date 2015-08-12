@@ -25,6 +25,11 @@ class BackControllerAdmin
     private $nombreLineasNegocio;
     private $idIntegradores;
     private $integradores;
+    private $idArticulosAcademia;
+    private $titulosAcademia;
+    private $fotosArticulosAcademia;
+    private $fechaArticulosAcademia;
+    private $contenidoArticulosAcademia;
     
     
     public function ctrlLoginAdmin($usuario, $password)
@@ -503,6 +508,65 @@ class BackControllerAdmin
          * LLAMAR A LA VISTA
          */
         header("Location: FrontController.php?action=integradores&lineaNegocio=".$lineaNegocio);
+        
+    }
+    
+    public function ctrlAdministrarAcademia()
+    {
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        $this->idArticulosAcademia = $modelAdmin->mdlObtenerIdAcademia();
+        
+        $this->titulosAcademia = $modelAdmin->mdlObtenerTitulosAcademia();
+        
+        $this->fotosArticulosAcademia = $modelAdmin->mdlObtenerFotosAcademia();
+        
+        $this->fechaArticulosAcademia = $modelAdmin->mdlObtenerFechaArticulosAcademia();
+        
+        $this->contenidoArticulosAcademia = $modelAdmin->mdlObtenerContenidoArticulosAcademia();
+        
+        $_SESSION['idArticulosAcademia'] = $this->idArticulosAcademia;
+        $_SESSION['titulosAcademia'] = $this->titulosAcademia;
+        $_SESSION['fotosArticulosAcademia'] = $this->fotosArticulosAcademia;
+        $_SESSION['fechaArticulosAcademia'] = $this->fechaArticulosAcademia;
+        $_SESSION['contenidoAcademia'] = $this->contenidoArticulosAcademia;
+        
+        /*
+         * LLAMAR A LA VISTA
+         */
+        header("Location: ../vista/administrarAcademia.php");
+    }
+    
+    public function ctrlAgregarArticuloAcademia($tituloArticulo, $objetoFoto, $fechaArticulo, $contenidoArticulo)
+    {
+
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        $modelAdmin->mdlNuevoArticulo($tituloArticulo, $objetoFoto, $fechaArticulo, $contenidoArticulo);
+        
+                
+        /*
+         * LLAMAR A LA VISTA
+         */
+        header("Location: FrontController.php?action=administraracademia");
         
     }
 }

@@ -24,14 +24,13 @@
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' 
       rel='stylesheet' type='text/css'>
 
-
 <!-- CONFIRMAR ELIMINAR -->
 <script type="text/javascript">
-function confirmarEliminar(idBanner)
+function confirmarEliminar(idIntegrador)
 {
     if(confirm('Desea eliminar este registro?')){
         
-        document.location.href = "../controlador/FrontController.php?action=elmbanner&idBanner=" + idBanner;
+        document.location.href = "../controlador/FrontController.php?action=eliminarintegrador&idIntegrador="+idIntegrador;
         
     }
     
@@ -101,7 +100,6 @@ function confirmarEliminar(idBanner)
         
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
-        <li><a href="../controlador/FrontController.php?action=administraracademia">ACADEMIA</a></li>
         
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 
@@ -116,70 +114,99 @@ function confirmarEliminar(idBanner)
 
 
 <!-- CENTRO -->
-<div class="featured_content" id="feature" style="height: 600px">
+<div class="featured_content" id="feature" style=" height: 850px">
     
-    <div class="container" style="height: 600px">
+    <div class="container">
       
     <div class="row text-center">
 
         <div class="col-md-12" style="margin-top: 10px;">
             
             <!-- INDICADOR DE SECCION -->
-            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">BANNERS</div>
-
+            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">
+                ACADEMIA
+            </div>
+            
             <div style="margin-top: 90px; width: 100%">
-                <a href="formAgregarBanner.php"> 
+                <a href="formAgregarAcademia.php"> 
                     <img src="img/btnAgregar.jpg" style=" float: left;" border="0">
                 </a>
             </div>
-            
-            <table border="1" style="margin-top: 140px; width: 100%; font-size: 13px; background-color: white">
+           
+            <div>
+                <br><br>
+            <table border="1" style="margin-top: 20px; width: 100%; font-size: 13px; background-color: white">
                 <tr style="font-weight: bold;">
-                    <td style="width: 4%">
+                    <td style="width: 100px">
                         ID
                     </td>
-                    <td style="width: 10%">
-                        RUTA BANNER
+                    
+                    <td>
+                       TITULO ARTICULO
+                    </td> 
+                    
+                    <td>
+                        RUTA FOTO
                     </td>
-                    <td style="width: 60%">
-                        DESCRIPCION BANNER
+                    
+                    <td>
+                        FECHA PUBLICACION
                     </td>
-                    <td style="width: 5%">
+                    
+                    <td>
+                        CONTENIDO ARTICULO
+                    </td>
+                    
+                    <td>
                         VER
                     </td>
-                    <td style="width: 5%">
+                    
+                    <td>
                         ELM
                     </td>
                 </tr>
                 
                 <?php
-                
-                $n = count($_SESSION['idBanners']);
+
+                $n = count($_SESSION['idArticulosAcademia']);
 
                 for ($i=0; $i<$n; $i++) {
+                    $cont = $cont + 1;
+                    
                     echo "<tr>";
-                    echo "<td>".$_SESSION['idBanners'][$i]."</td>";
-                    echo "<td>".$_SESSION['rutaBanners'][$i]."</td>";
-                    echo "<td>".$_SESSION['descripcionBanners'][$i]."</td>";
+                    echo "<td>".$_SESSION['idArticulosAcademia'][$i]."</td>";
+                    echo "<td>".$_SESSION['titulosAcademia'][$i]."</td>";
+                    
                     echo "<td>";
-                        echo "<a href='../controlador/FrontController.php?action=verbanner&idBanner=".$_SESSION['idBanners'][$i]."'>";
+                        echo $_SESSION['fotosArticulosAcademia'][$i];
+                    echo "</td>";
+                    
+                    echo "<td>".$_SESSION['fechaArticulosAcademia'][$i]."</td>";
+                    
+                    echo "<td>".substr($_SESSION['contenidoAcademia'][$i], 0, 100) .".....</td>";
+                    
+                    echo "<td>";
+                    
+                        echo "<a href='../controlador/FrontController.php?action=veracademia&idAcademia=".$_SESSION['idArticulosAcademia'][$i]."'>";
                             echo "<img src='img/iconoBuscar.jpg'>";
                         echo "</a>";
+                        
                     echo "</td>";
                     
                     echo "<td>";
-                        echo "<a href='#' onclick='confirmarEliminar(".$_SESSION['idBanners'][$i].")'>";
+                    
+                        echo "<a href='#' onclick='confirmarEliminar(".$_SESSION['idArticulosAcademia'][$i].")'>";
                             echo "<img src='img/iconoEliminar.jpg'>";
                         echo "</a>";
+                        
                     echo "</td>";
-                    
                     echo "</tr>";
                 }
 
                 ?>
                 
             </table>
-
+            </div>
         </div>
 
       </div>

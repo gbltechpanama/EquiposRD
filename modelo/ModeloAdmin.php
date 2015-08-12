@@ -328,4 +328,97 @@ class ModeloAdmin
         
         return $temporal;
     }
+    
+    public function mdlObtenerIdAcademia()
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select idAcademia from academia order by idAcademia";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $data_array = $BD->modelConvertirEnArray($resultado);
+
+        return $data_array;
+        
+    }
+    
+    public function mdlObtenerTitulosAcademia()
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select tituloArticulo from academia order by idAcademia";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $data_array = $BD->modelConvertirEnArray($resultado);
+
+        return $data_array;
+        
+    }
+    
+    public function mdlObtenerFotosAcademia()
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select rutaFotoArticulo from academia order by idAcademia";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $data_array = $BD->modelConvertirEnArray($resultado);
+
+        return $data_array;
+        
+    }
+    
+    public function mdlObtenerFechaArticulosAcademia()
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select fechaPublicacion from academia order by idAcademia";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $data_array = $BD->modelConvertirEnArray($resultado);
+
+        return $data_array;
+    }
+    
+    public function mdlObtenerContenidoArticulosAcademia()
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select contenidoArticulo from academia order by idAcademia";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $data_array = $BD->modelConvertirEnArray($resultado);
+
+        return $data_array;
+    }
+    
+    public function mdlNuevoArticulo($tituloArticulo, $objetoFoto, $fechaArticulo, $contenidoArticulo)
+    {
+
+        
+        $nroRandom = rand(100, 50000);
+        
+        $target_file = "../vista/img/".$nroRandom.".jpg";
+        
+        $temporal = move_uploaded_file($objetoFoto["tmp_name"], $target_file);
+
+        if ($temporal==true) {
+            /*
+             * GUARDAR EN LA BASE DE DATOS
+             */
+            $BD = new BaseDatos();
+            
+            $sql = "insert into academia values ('','".$tituloArticulo."','".$contenidoArticulo."','img/".$nroRandom.".jpg','".$fechaArticulo."')";
+
+            $BD->modelQueryDB($sql);
+        }
+        
+        return $temporal;
+        
+    }
 }

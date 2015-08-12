@@ -85,4 +85,10 @@ if ($action=="login") {
     
 } elseif ($action=="agregarintegrador") {
     $bkAdmin->ctrlAgregarIntegrador($_REQUEST['lineaNegocio'], $_FILES['objFile']);
+    
+} elseif ($action=="administraracademia") {
+    $bkAdmin->ctrlAdministrarAcademia();
+    
+} elseif ($action=="nuevoacademia") {
+    $bkAdmin->ctrlAgregarArticuloAcademia($_REQUEST['tituloArticulo'], $_FILES['objFoto'], $_REQUEST['fechaArticulo'], $_REQUEST['contenidoArticulo']);
 }
