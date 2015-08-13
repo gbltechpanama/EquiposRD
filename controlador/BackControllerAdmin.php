@@ -569,4 +569,27 @@ class BackControllerAdmin
         header("Location: FrontController.php?action=administraracademia");
         
     }
+    
+    public function ctrlEliminarAcademia($idAcademia)
+    {
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        $modelAdmin->mdlEliminarAcademia($idAcademia);
+        
+                
+        /*
+         * LLAMAR A LA VISTA
+         */
+        header("Location: FrontController.php?action=administraracademia");
+        
+    }
 }

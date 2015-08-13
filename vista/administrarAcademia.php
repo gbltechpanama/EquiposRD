@@ -26,11 +26,11 @@
 
 <!-- CONFIRMAR ELIMINAR -->
 <script type="text/javascript">
-function confirmarEliminar(idIntegrador)
+function confirmarEliminar(idAcademia)
 {
     if(confirm('Desea eliminar este registro?')){
         
-        document.location.href = "../controlador/FrontController.php?action=eliminarintegrador&idIntegrador="+idIntegrador;
+        document.location.href = "../controlador/FrontController.php?action=eliminaracademia&idAcademia="+idAcademia;
         
     }
     
@@ -100,6 +100,7 @@ function confirmarEliminar(idIntegrador)
         
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
+        <li><a href="../controlador/FrontController.php?action=administraracademia">ACADEMIA</a></li>
         
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 

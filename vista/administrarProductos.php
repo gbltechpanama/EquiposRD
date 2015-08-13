@@ -100,6 +100,7 @@ function confirmarEliminar(idProducto)
         
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
+        <li><a href="../controlador/FrontController.php?action=administraracademia">ACADEMIA</a></li>
         
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 

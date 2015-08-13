@@ -421,4 +421,34 @@ class ModeloAdmin
         return $temporal;
         
     }
+    
+    public function mdlEliminarAcademia($idAcademia)
+    {
+        $BD = new BaseDatos();
+
+        /*
+         * TOMAR LA RUTA DE LA IMAGEN ACTUAL DEL INTEGRADOR A ELIMINAR
+         */
+        $sql = "select rutaFotoArticulo from academia where idAcademia = ".$idAcademia;
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $row = mysql_fetch_row($resultado);
+        
+        $rutaImagenAnterior = $row[0];
+        
+        /*
+         * ELIMINO EL REGISTRO DESDE LA BD
+         */
+        $sql = "delete from academia where idAcademia = ".$idAcademia;
+
+        $BD->modelQueryDB($sql);
+        
+        
+        /*
+         * ELIMINO EL ARCHIVO FISICO EN EL DIRECTORIO
+         */
+        unlink('../vista/'.$rutaImagenAnterior);
+        
+    }
 }
