@@ -72,6 +72,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         
@@ -108,6 +109,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $this->uploadCorrecto = $modelAdmin->mdlNuevoBanner($objetoImagen, $descripcionImagen);
@@ -132,6 +134,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         /*
@@ -156,6 +159,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $this->rutaBannersEspecifico = $modelAdmin->mdlObtenerRutaBannerEspecifico($idBanner);
@@ -181,6 +185,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $modelAdmin->mdlSubirImagenPrincipal($lineaNegocio, $objFile);
@@ -203,6 +208,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         
@@ -236,7 +242,7 @@ class BackControllerAdmin
     
     public function ctrlFormModificarSubLinea($subLineaNegocio)
     {
-        $modelAdmin = new ModeloAdmin();
+
         $modelCliente = new ModeloCliente();
         
         /*
@@ -246,6 +252,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $this->rutaCatalogoEspecifico = $modelCliente->mdlObtenerRutaCatalogoEspecifico($subLineaNegocio);
@@ -284,6 +291,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $modelAdmin->mdlModificarSubLineaNegocio($subLineaNegocio, $nombreNuevo, $objImagen, $rutaCatalogo, $descripcion);
@@ -308,22 +316,23 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
-        
         $this->nombreSubLineas = $modelAdmin->mdlObtenerTodasSubLineasNegocios();
-        
-        
+
+
         /*
          * VARIABLE DE SESION QUE SE UTILIZARA EN LA VISTA
          */
         $_SESSION['todasSubLineasNegocio'] = $this->nombreSubLineas;
-        
-        
+
+
         /*
          * LLAMADA A LA VISTA
          */
         header("Location: ../vista/formSeleccionSubLinea.php");
+        
         
     }
     
@@ -340,6 +349,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         /*
@@ -375,6 +385,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $modelAdmin->mdlAgregarProducto($subLinea, $nombreProducto);
@@ -398,6 +409,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $modelAdmin->mdlEliminarProducto($idProducto);
@@ -420,22 +432,23 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
+
         }
-        
-        
         $this->nombreLineasNegocio = $modelAdmin->mdlObtenerTodasLineasNegocios();
-       
-        
+
+
         /*
          * VARIABLE DE SESION QUE SE UTILIZARA EN LA VISTA
          */
         $_SESSION['todasLineasNegocio'] = $this->nombreLineasNegocio;
-        
-        
+
+
         /*
          * LLAMADA A LA VISTA
          */
         header("Location: ../vista/formSeleccionLineaNegocio.php");
+        
         
     }
     
@@ -451,6 +464,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $this->idIntegradores = $modelAdmin->mdlObtenerIdIntegradores($lineaNegocio);
@@ -483,6 +497,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $modelAdmin->mdlEliminarIntegrador($idIntegrador);
@@ -506,6 +521,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $this->cantIntegradores = $modelAdmin->mdlObtenerCantidadIntegradores($lineaNegocio);
@@ -536,6 +552,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $this->idArticulosAcademia = $modelAdmin->mdlObtenerIdAcademia();
@@ -572,6 +589,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $modelAdmin->mdlNuevoArticulo($tituloArticulo, $objetoFoto, $fechaArticulo, $contenidoArticulo);
@@ -595,6 +613,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         $modelAdmin->mdlEliminarAcademia($idAcademia);
@@ -618,6 +637,7 @@ class BackControllerAdmin
         
         if ($_SESSION['login']=="") {
             header("Location: ../vista/errorLogin.php");
+            return;
         }
         
         
@@ -640,11 +660,30 @@ class BackControllerAdmin
          * LLAMAR A LA VISTA
          */
         header("Location: ../vista/mostrarAcademia.php");
-        
-        
-        
-        
+
     }
     
-    
+    public function ctrlCambioClaveAdmin($nvaClave)
+    {
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+            return;
+        }
+        
+        $modelAdmin->mdlCambiarClaveAdmin($nvaClave);
+        
+        /*
+         * LLAMAR A LA VISTA ERROR LOGIN PARA FORZAR QUE INICIEN SESION NUEVAMENTE
+         */
+        $_SESSION['login'] = "";
+        header("Location: ../vista/errorLogin.php");
+                
+    }
 }

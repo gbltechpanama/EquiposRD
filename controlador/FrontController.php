@@ -97,4 +97,7 @@ if ($action=="login") {
     
 } elseif ($action=="veracademia") {
     $bkAdmin->ctrlVisualizarAcademia($_REQUEST['idAcademia']);
+    
+} elseif ($action=="cambioclave") {
+    $bkAdmin->ctrlCambioClaveAdmin($_REQUEST['nvaClave']);
 }

@@ -3,9 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ERD/vista/administrarMarcas.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/administrarBanners.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/administrarAcademia.php</file>
             <file>file:/C:/xampp/htdocs/ERD/vista/administrarIntegradores.php</file>
-            <file>file:/C:/xampp/htdocs/ERD/modelo/ModeloAdmin.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/administrarMarcas.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/administrarProductos.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/errorBanner.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/formAgregarAcademia.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/formAgregarBanner.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/formAgregarIntegrador.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/formAgregarProducto.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/formCambiarImagenPrincipal.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/formCambioClave.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/formLogin.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/formModificarSubLinea.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/formSeleccionLineaNegocio.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/vista/formSeleccionSubLinea.php</file>
+            <file>file:/C:/xampp/htdocs/ERD/controlador/FrontController.php</file>
         </group>
     </open-files>
 </project-private>

@@ -224,11 +224,16 @@
   </div>
     
     
-  <!-- PIE DE PAGINA -->
+ <!-- PIE DE PAGINA -->
   <div class="footer_bottom">
     <div class="copy">
-      <p>&copy; 2015 Equipos y Controles R&D, C.A. RIF: J-31371156-1 TODOS LOS DERECHOS RESERVADOS.</p>
-    </div>
+      <p>
+          &copy; 2015 Equipos y Controles R&D, C.A. RIF: J-31371156-1 TODOS LOS DERECHOS RESERVADOS.
+          <br>
+          <a href="http://www.gbltechpanama.com" target="_blank">
+              <img src="img/gbltech.png" style="width: 100px;">
+          </a>
+      </p>
   </div>
   
 

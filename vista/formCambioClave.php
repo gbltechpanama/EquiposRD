@@ -12,11 +12,6 @@
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="js/flexslider.css" rel="stylesheet" />
 
-<script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
@@ -117,59 +112,25 @@
         <div class="col-md-12" style="margin-top: 10px;">
             
             <!-- INDICADOR DE SECCION -->
-            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">
-            AGREGAR ACADEMIA
-            </div>
-            <div style="width: 100%; text-align: right; color:navy; font-size: 14px;">
-                <a href="" onclick="history.back();">VOLVER...</a>
-            </div>
+            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">CAMBIO CLAVE ADMIN</div>
             
             <br><br>
-                <form method="post" action="../controlador/FrontController.php?action=nuevoacademia" enctype="multipart/form-data">
-            
-                    <table border="0" style="width: 900px; margin-left: auto; margin-right: auto;">
-                        <tr style=" height: 40px">
-                            <td style="text-align: right;">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">TITULO ARTICULO</label>
-                            </td>
-                            <td style="text-align: left; padding-left: 10px">
-                                <input type="text" name="tituloArticulo" style="width: 450px">
-                            </td>
-                        </tr>
-                        
+            <form method="post" action="../controlador/FrontController.php?action=cambioclave">
+                    <table border="0" style="width: 500px; margin-left: auto; margin-right: auto;">
                         
                         <tr style=" height: 40px">
                             <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">FOTO ARTICULO</label>
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">NVA. CLAVE ADMIN</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <input type="file" name="objFoto">
+                                <input type="password" class="text" name="nvaClave" style="width: 200px"/>
                             </td>
                         </tr>
-                        
-                        <tr style=" height: 40px">
-                            <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">FECHA ARTICULO</label>
-                            </td>
-                            <td style="text-align: left; padding-left: 10px">
-                                <input type="date" name="fechaArticulo" style="height: 30px">
-                            </td>
-                        </tr>
-                        
-                        <tr style=" height: 40px">
-                            <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">CONT. ARTICULO</label>
-                            </td>
-                            <td style="text-align: left; padding-left: 10px">
-                                <textarea name="contenidoArticulo" rows="10" cols="100"></textarea>
-                            </td>
-                        </tr>
-                        
-                        
                         <tr style=" height: 50px">
                             <td>
+                             
                             </td>
-                            <td style="text-align: left; padding-left: 15px">
+                            <td>
                                 <img src="img/btnAceptar.jpg" 
                                      style="cursor: pointer" onclick="document.forms[0].submit();">
                             </td>
@@ -198,7 +159,6 @@
           </a>
       </p>
   </div>
-  
   
 </div>
 

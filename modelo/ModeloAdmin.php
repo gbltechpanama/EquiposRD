@@ -530,4 +530,12 @@ class ModeloAdmin
         return $data;
         
     }
+    public function mdlCambiarClaveAdmin($nvaClave)
+    {
+        $BD = new BaseDatos();
+
+        $sql = "update usuario set password = md5('".$nvaClave."') where usuario = 'admin'";
+
+        $BD->modelQueryDB($sql);
+    }
 }

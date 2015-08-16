@@ -104,8 +104,8 @@
 
 <div class="text-center banner">
     
-    <div class="container" style="background-color: #ffffff; padding-left: 0px; 
-         padding-right: 0px; padding-bottom: 0px; padding-top: 0px">
+    <div class="container" style="padding-left: 0px; 
+         padding-right: 0px; padding-bottom: 0px; padding-top: 0px; width: 100%">
 
     <!-- Slider -->
     <div id="main-slider" class="flexslider">
@@ -117,7 +117,7 @@
             
             for ($i=0; $i<$n; $i++) {
                 echo "<li>";
-                echo '<img src="'.trim($_SESSION["rutaBanners"][$i]).'" style="width: 1281px; height: 283px">';
+                echo '<img src="'.trim($_SESSION["rutaBanners"][$i]).'" style="width: 1281px; height: 283px; margin-left:auto; margin-right:auto">';
                 echo '
                 <div id="descripcion">
                     <p style="padding-top: 25px; text-align: center">
@@ -131,7 +131,7 @@
             
             ?>  
             </ul>
-        </div>
+    </div>
     <!-- end slider -->
     </div>
 </div>
@@ -256,8 +256,13 @@
   <!-- PIE DE PAGINA -->
   <div class="footer_bottom">
     <div class="copy">
-      <p>&copy; 2015 Equipos y Controles R&D, C.A. RIF: J-31371156-1 TODOS LOS DERECHOS RESERVADOS.</p>
-    </div>
+      <p>
+          &copy; 2015 Equipos y Controles R&D, C.A. RIF: J-31371156-1 TODOS LOS DERECHOS RESERVADOS.
+          <br>
+          <a href="http://www.gbltechpanama.com" target="_blank">
+              <img src="img/gbltech.png" style="width: 100px;">
+          </a>
+      </p>
   </div>
   
   

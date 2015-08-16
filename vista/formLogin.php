@@ -65,11 +65,11 @@
                     <br><br>
                     <table border="0" style="width: 360px; margin-left: auto; margin-right: auto;">
                         <tr style=" height: 40px">
-                            <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">USUARIO</label>
+                            <td style="text-align: right;">
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">USUARIO  </label>
                             </td>
                             <td>
-                                <input type="text" class="text" name="txtUsuario" style="width: 250px"/>
+                                <input type="text" class="text" name="txtUsuario" style="width: 250px;"/>
                             </td>
                         </tr>
                         <tr style=" height: 40px">
@@ -103,11 +103,18 @@
 
 
 <div class="clearfix"> </div>
-  <!-- PIE DE PAGINA -->
+
+
+<!-- PIE DE PAGINA -->
   <div class="footer_bottom">
     <div class="copy">
-      <p>&copy; 2015 Equipos y Controles R&D, C.A. RIF: J-31371156-1 TODOS LOS DERECHOS RESERVADOS.</p>
-    </div>
+      <p>
+          &copy; 2015 Equipos y Controles R&D, C.A. RIF: J-31371156-1 TODOS LOS DERECHOS RESERVADOS.
+          <br>
+          <a href="http://www.gbltechpanama.com" target="_blank">
+              <img src="img/gbltech.png" style="width: 100px;">
+          </a>
+      </p>
   </div>
   
   

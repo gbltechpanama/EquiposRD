@@ -63,20 +63,19 @@
                     <br><br>
                     <div id="escrito">
                         <span style="font-family:arial; font-size: 14px; font-weight: bold">
-                            USTED SOLO PUEDE CARGAR HASTA <BR>5 LOGO DE INTEGRADORES. <br><br><br>
+                            USTED DEBE INICIAR SESION PARA INGRESAR AL ADMINISTRADOR DE CONTENIDOS. <br><br><br>
                         </span>
-                        
-                        <div style="width: 100%; text-align: center; color:navy; font-size: 14px;">
-                            <a href="" onclick="history.back();">VOLVER...</a>
-                        </div>
+                        <a href="formLogin.php"> Ir al Inicio... </a>
                         
                     </div>
+
                 </div>
                 
+               
+                </div>
             </div>
         </div>
     </div>
-  </div>
 </div>
 
 

@@ -63,20 +63,21 @@
                     <br><br>
                     <div id="escrito">
                         <span style="font-family:arial; font-size: 14px; font-weight: bold">
-                            USTED SOLO PUEDE CARGAR HASTA <BR>5 LOGO DE INTEGRADORES. <br><br><br>
+                            ERROR AL SUBIR EL BANNER AL SERVIDOR, DEBE SELECCIONAR UNA IMAGEN Y LUEGO PRESIONE ACEPTAR. <br><br><br>
                         </span>
-                        
                         <div style="width: 100%; text-align: center; color:navy; font-size: 14px;">
                             <a href="" onclick="history.back();">VOLVER...</a>
                         </div>
                         
                     </div>
+
                 </div>
                 
+               
+                </div>
             </div>
         </div>
     </div>
-  </div>
 </div>
 
 

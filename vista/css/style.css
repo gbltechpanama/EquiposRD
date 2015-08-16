@@ -381,6 +381,8 @@ ul.social_left li.fb_text {
 .footer_bottom {
 	padding: 2em 0;
 	background: #489a29;
+        font-family: arial;
+        font-size: 10px;
 
 }
 .copy {
@@ -1049,4 +1051,12 @@ input.text {
     height: 1px; 
     width: 755px; 
     margin-top: 12px;
+}
+
+#imagen
+{
+    float: left; 
+    clear: both; 
+    width: 180px; 
+    height: 202px;
 }
