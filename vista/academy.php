@@ -132,14 +132,14 @@
             
             <div id="articuloFoto" style="width: 100%;">
                 <?php
-                    echo "<img src=".$_SESSION['rutaImagenesAcademia'][$i].">";
+                    echo "<img src=".$_SESSION['rutaImagenesAcademia'][$i]." style='width: 755px; height: 280px;'>";
                 ?>
             </div>
             
             <div id="articuloFecha" style="width: 100%; color: #666666; font-size: 13px">
                 <?php
                     $date = date_create($_SESSION['fechaAcademia'][$i]);
-                    echo "<br><img src=img/iconoCalendario.jpg><span style='padding-left:5px;'>"
+                    echo "<br><img src=img/iconoCalendario.jpg ><span style='padding-left:5px;'>"
                     .date_format($date, 'M d, Y')."</span>";
                     
                 ?>
@@ -163,8 +163,6 @@
        
     </div>
     
-<!-- SECCION REDES SOCIALES -->
-
 <div class="footer">
   <div class="footer_midle">
     <div class='container'>
@@ -173,12 +171,12 @@
         <div class="col-md-3">
           <ul class="social_left">
             <li class="facebook">
-                <a href="#">
+                <a href="https://www.facebook.com/pedrocachazo">
                     <i class="fa fa-facebook-square fa-3x" style="color: #3b5998"></i>
                 </a>
             </li>
             <li class="fb_text">
-              <h4><a href="#">Follow us on Facebook</a></h4>
+              <h4><a href="https://www.facebook.com/pedrocachazo">Follow us on Facebook</a></h4>
             </li>
             <div class="clearfix"> </div>
           </ul>
@@ -187,12 +185,12 @@
         <div class="col-md-3">
           <ul class="social_left">
             <li class="facebook">
-                <a href="#">
+                <a href="https://twitter.com/EquiposRYD">
                     <i class="fa fa-twitter-square fa-3x" style="color: #00aced"></i>
                 </a>
             </li>
             <li class="fb_text">
-              <h4><a href="#">Follow us on Twitter</a></h4>
+              <h4><a href="https://twitter.com/EquiposRYD">Follow us on Twitter</a></h4>
             </li>
             <div class="clearfix"> </div>
           </ul>
@@ -217,12 +215,12 @@
         <div class="col-md-3">
           <ul class="social_left">
             <li class="facebook">
-                <a href="#">
+                <a href="https://www.linkedin.com/company/equipos-y-controles-r&d-c-a-">
                     <i class="fa fa-linkedin-square fa-3x" style="color: #007bb6"></i>
                 </a>
             </li>
             <li class="fb_text">
-              <h4><a href="#">Follow us on LinkedIn</a></h4>
+              <h4><a href="https://www.linkedin.com/company/equipos-y-controles-r&d-c-a-">Follow us on LinkedIn</a></h4>
             </li>
             
             <div class="clearfix"> </div>

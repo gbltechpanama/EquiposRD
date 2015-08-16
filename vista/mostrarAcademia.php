@@ -12,22 +12,6 @@
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="js/flexslider.css" rel="stylesheet" />
 
-<!-- SE INCLUYEN LA LIBRERIA JQUERY, FANCYBOX Y EL ESTILO DE FANCYBOX.CSS -->
-<script type="text/javascript" src="js/fancybox/jquery.fancybox.js"></script>
-<link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css" media="screen" />
-
-
-<!-- SCRIPT ARRANQUE FANCYBOX -->
-<script>
-
-    $(document).ready(function() {
-            <!-- FANCYBOX -->
-            $(".fancybox").fancybox();
-    
-            $("a#single_image").fancybox();
-    });
-
-</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
@@ -39,19 +23,6 @@
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' 
       rel='stylesheet' type='text/css'>
 
-<!-- CONFIRMAR ELIMINAR -->
-<script type="text/javascript">
-function confirmarEliminar(idIntegrador)
-{
-    if(confirm('Desea eliminar este registro?')){
-        
-        document.location.href = "../controlador/FrontController.php?action=eliminarintegrador&idIntegrador="+idIntegrador;
-        
-    }
-    
-}
-    
-</script>
 
 </head>
 <body>
@@ -96,9 +67,9 @@ function confirmarEliminar(idIntegrador)
             });
         </script>
         <li class="dropdown"">
-            <a href="" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
-                <li style="width: 100%">
+               <li style="width: 100%">
                     <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell" style="color: #009900">
                         Hubbell
                     </a>
@@ -117,6 +88,7 @@ function confirmarEliminar(idIntegrador)
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
         <li><a href="../controlador/FrontController.php?action=administraracademia">ACADEMIA</a></li>
         
+        
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 
     </div>
@@ -129,71 +101,58 @@ function confirmarEliminar(idIntegrador)
 <div id="barraSuperior"></div>
 
 
+
 <!-- CENTRO -->
-<div class="featured_content" id="feature" style=" height: 850px">
+<div class="featured_content" id="feature" style="height: auto">
     
-    <div class="container">
+    <div class="container" style="height: auto">
       
     <div class="row text-center">
 
         <div class="col-md-12" style="margin-top: 10px;">
             
             <!-- INDICADOR DE SECCION -->
-            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">
-            <?php
-                echo 'INTEGRADORES -- '.strtoupper($_SESSION['lineaNegocio']);
-            ?>
+            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">VER ACADEMIA</div>
+
+            <div style="width: 100%; text-align: right; color:navy; font-size: 14px;">
+                <a href="" onclick="history.back();">VOLVER...</a>
             </div>
             
-            <div style="margin-top: 90px; width: 100%">
-                <a href="formAgregarIntegrador.php?lineaNegocio=<?php echo $_SESSION['lineaNegocio'] ?>"> 
-                    <img src="img/btnAgregar.jpg" style=" float: left;" border="0">
-                </a>
-            </div>
-           
-            <div>
-                <br><br>
-            <table border="1" style="margin-top: 20px; width: 100%; font-size: 13px; background-color: white">
-                <tr style="font-weight: bold;">
-                    <td style="width: 100px">
-                        ID INTEGRADOR
-                    </td>
-                    <td>
-                       RUTA LOGO
-                    </td> 
-                    <td>
-                        ELM
-                    </td>
-                </tr>
+             <!-- TITULO PUBLICACION -->
+            <?php
                 
+                echo "<div style='width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 30px'>";
+                echo "<span style='float: left'><b>Titulo de la Publicacion: </b>".strtoupper($_SESSION['tituloArticuloEspecifico'])."</span>";
+                echo "</div><br>";
+            ?>
+            
+            <!-- FECHA PUBLICACION -->
+            <?php
+                $date = date_create($_SESSION['fechaArticuloEspecifico']);
+            
+                echo "<div style='width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 30px'>";
+                echo "<span style='float: left'><b>Fecha de Publicacion: </b>".date_format($date, 'M d, Y')."</span>";
+                echo "</div><br>";
+            ?>
+            
+            <!-- IMAGEN -->
+            <div style=" width: 800px; height: 300px; clear: both; margin-left: auto; margin-right: auto; margin-top: 30px">
                 <?php
-
-                $n = count($_SESSION['idIntegradores']);
-
-                for ($i=0; $i<$n; $i++) {
-                    $cont = $cont + 1;
-                    
-                    echo "<tr>";
-                    echo "<td>".$_SESSION['idIntegradores'][$i]."</td>";
-                    echo "<td><a id='single_image' href='".$_SESSION['integradores'][$i]."'>".$_SESSION['integradores'][$i]."</a></td>";
-                    
-                    echo "<td>";
-                    
-                        echo "<a href='#' onclick='confirmarEliminar(".$_SESSION['idIntegradores'][$i].")'>";
-                            echo "<img src='img/iconoEliminar.jpg'>";
-                        echo "</a>";
-                        
-                    echo "</td>";
-                    
-                    echo "</tr>";
-                }
-
+                    echo "<span style='float: left'><b>Ruta Foto:</b> ".$_SESSION['fotoArticuloEspecifico']."</span><br><br>";
+                    echo "<img src='".$_SESSION['fotoArticuloEspecifico']."' style='width: 755px; height: 280px;'>";
                 ?>
-                
-            </table>
-            </div>
-        </div>
-
+            </div>         
+            
+            
+            <!-- DESCRIPCION -->
+            <div style=" width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 50px">
+                <?php
+                    echo "<div style='float: left'><b>Contenido Articulo:</b></div><br><br>";
+                    echo "<div style='background-color: white; border-color: #cccccc; border-style: solid; border-width: 1px;'>".$_SESSION['contenidoArticuloEspecifico']."</div>";
+                    echo "<br><br>";
+                ?>
+            </div>         
+        </div> 
       </div>
 
   </div>

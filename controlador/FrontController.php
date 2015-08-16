@@ -91,6 +91,10 @@ if ($action=="login") {
     
 } elseif ($action=="nuevoacademia") {
     $bkAdmin->ctrlAgregarArticuloAcademia($_REQUEST['tituloArticulo'], $_FILES['objFoto'], $_REQUEST['fechaArticulo'], $_REQUEST['contenidoArticulo']);
+    
 } elseif ($action=="eliminaracademia") {
     $bkAdmin->ctrlEliminarAcademia($_REQUEST['idAcademia']);
+    
+} elseif ($action=="veracademia") {
+    $bkAdmin->ctrlVisualizarAcademia($_REQUEST['idAcademia']);
 }

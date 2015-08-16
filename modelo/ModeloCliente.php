@@ -190,7 +190,7 @@ class ModeloCliente
     {
         $BD = new BaseDatos();
 
-        $sql = "Select tituloArticulo from academia";
+        $sql = "Select tituloArticulo from academia order by idAcademia desc";
 
         $resultado = $BD->modelQueryDB($sql);
 
@@ -203,7 +203,7 @@ class ModeloCliente
     {
         $BD = new BaseDatos();
 
-        $sql = "Select rutaFotoArticulo from academia";
+        $sql = "Select rutaFotoArticulo from academia order by idAcademia desc";
 
         $resultado = $BD->modelQueryDB($sql);
 
@@ -216,7 +216,7 @@ class ModeloCliente
     {
         $BD = new BaseDatos();
 
-        $sql = "Select contenidoArticulo from academia";
+        $sql = "Select contenidoArticulo from academia order by idAcademia desc";
 
         $resultado = $BD->modelQueryDB($sql);
 
@@ -230,7 +230,7 @@ class ModeloCliente
     {
         $BD = new BaseDatos();
 
-        $sql = "Select fechaPublicacion from academia";
+        $sql = "Select fechaPublicacion from academia order by idAcademia desc";
 
         $resultado = $BD->modelQueryDB($sql);
 

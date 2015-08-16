@@ -12,7 +12,22 @@
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="js/flexslider.css" rel="stylesheet" />
 
+<!-- SE INCLUYEN LA LIBRERIA JQUERY, FANCYBOX Y EL ESTILO DE FANCYBOX.CSS -->
+<script type="text/javascript" src="js/fancybox/jquery.fancybox.js"></script>
+<link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css" media="screen" />
 
+
+<!-- SCRIPT ARRANQUE FANCYBOX -->
+<script>
+
+    $(document).ready(function() {
+            <!-- FANCYBOX -->
+            $(".fancybox").fancybox();
+    
+            $("a#single_image").fancybox();
+    });
+
+</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
@@ -182,7 +197,7 @@
                     echo "<td>".$cont."</td>";
                     echo "<td>".$_SESSION['nombreSubLineas'][$i]."</td>";
                     echo "<td><a href='".$_SESSION['rutaCatalogos'][$i]."' target='_blank'><u>".$_SESSION['rutaCatalogos'][$i]."</u></a></td>";
-                    echo "<td><a href='".$_SESSION['rutaImagenesSubLineas'][$i]."' target='_blank'><u>".$_SESSION['rutaImagenesSubLineas'][$i]."</u></a></td>";
+                    echo "<td><a id='single_image' href='".$_SESSION['rutaImagenesSubLineas'][$i]."' target='_blank'><u>".$_SESSION['rutaImagenesSubLineas'][$i]."</u></a></td>";
                     echo "<td>".$_SESSION['descripcionSubLineas'][$i]."</td>";
                    
                     

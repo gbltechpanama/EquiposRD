@@ -333,7 +333,7 @@ class ModeloAdmin
     {
         $BD = new BaseDatos();
 
-        $sql = "Select idAcademia from academia order by idAcademia";
+        $sql = "Select idAcademia from academia order by idAcademia desc";
 
         $resultado = $BD->modelQueryDB($sql);
 
@@ -361,7 +361,7 @@ class ModeloAdmin
     {
         $BD = new BaseDatos();
 
-        $sql = "Select rutaFotoArticulo from academia order by idAcademia";
+        $sql = "Select rutaFotoArticulo from academia order by idAcademia desc";
 
         $resultado = $BD->modelQueryDB($sql);
 
@@ -375,7 +375,7 @@ class ModeloAdmin
     {
         $BD = new BaseDatos();
 
-        $sql = "Select fechaPublicacion from academia order by idAcademia";
+        $sql = "Select fechaPublicacion from academia order by idAcademia desc";
 
         $resultado = $BD->modelQueryDB($sql);
 
@@ -388,7 +388,7 @@ class ModeloAdmin
     {
         $BD = new BaseDatos();
 
-        $sql = "Select contenidoArticulo from academia order by idAcademia";
+        $sql = "Select contenidoArticulo from academia order by idAcademia desc";
 
         $resultado = $BD->modelQueryDB($sql);
 
@@ -449,6 +449,85 @@ class ModeloAdmin
          * ELIMINO EL ARCHIVO FISICO EN EL DIRECTORIO
          */
         unlink('../vista/'.$rutaImagenAnterior);
+        
+    }
+    
+    public function mdlObtenerFotoArticuloEspecifico($idAcademia)
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select rutaFotoArticulo from academia where idAcademia = ".$idAcademia;
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $row = mysql_fetch_row($resultado);
+        
+        $data = $row[0];
+                
+        return $data;
+
+    }
+
+    public function mdlObtenerTituloArticuloEspecifico($idAcademia)
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select tituloArticulo from academia where idAcademia = ".$idAcademia;
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $row = mysql_fetch_row($resultado);
+        
+        $data = $row[0];
+                
+        return $data;
+    }
+    
+    
+    public function mdlObtenerFechaArticuloEspecifico($idAcademia)
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select fechaPublicacion from academia where idAcademia = ".$idAcademia;
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $row = mysql_fetch_row($resultado);
+        
+        $data = $row[0];
+                
+        return $data;
+    }
+    
+    
+    public function mdlObtenerContenidoArticuloEspecifico($idAcademia)
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select contenidoArticulo from academia where idAcademia = ".$idAcademia;
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $row = mysql_fetch_row($resultado);
+        
+        $data = $row[0];
+                
+        return $data;
+    }
+    
+    public function mdlObtenerCantidadIntegradores($lineaNegocio)
+    {
+        $BD = new BaseDatos();
+
+        $sql = "Select COUNT(*) from integradores where nombreLineaPadre = '".$lineaNegocio."'";
+
+        $resultado = $BD->modelQueryDB($sql);
+
+        $row = mysql_fetch_row($resultado);
+        
+        $data = $row[0];
+                
+        return $data;
         
     }
 }

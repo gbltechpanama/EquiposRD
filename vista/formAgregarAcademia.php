@@ -121,13 +121,13 @@
             <br><br>
                 <form method="post" action="../controlador/FrontController.php?action=nuevoacademia" enctype="multipart/form-data">
             
-                    <table border="0" style="width: 400px; margin-left: auto; margin-right: auto;">
+                    <table border="0" style="width: 900px; margin-left: auto; margin-right: auto;">
                         <tr style=" height: 40px">
-                            <td style="text-align: right">
+                            <td style="text-align: right;">
                                 <label style=" font-family: arial; font-size: 12px; font-weight: bold">TITULO ARTICULO</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <input type="text" name="tituloArticulo">
+                                <input type="text" name="tituloArticulo" style="width: 450px">
                             </td>
                         </tr>
                         
@@ -152,10 +152,10 @@
                         
                         <tr style=" height: 40px">
                             <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">CONTENIDO ARTICULO</label>
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">CONT. ARTICULO</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <textarea name="contenidoArticulo"></textarea>
+                                <textarea name="contenidoArticulo" rows="10" cols="100"></textarea>
                             </td>
                         </tr>
                         

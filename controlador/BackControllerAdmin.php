@@ -25,12 +25,18 @@ class BackControllerAdmin
     private $nombreLineasNegocio;
     private $idIntegradores;
     private $integradores;
+    private $cantIntegradores;
+    
     private $idArticulosAcademia;
     private $titulosAcademia;
     private $fotosArticulosAcademia;
     private $fechaArticulosAcademia;
     private $contenidoArticulosAcademia;
     
+    private $tituloArticuloEspecifico;
+    private $fotoArticuloEspecifico;
+    private $fechaArticuloEspecifico;
+    private $contenidoArticuloEspecifico;
     
     public function ctrlLoginAdmin($usuario, $password)
     {
@@ -502,12 +508,20 @@ class BackControllerAdmin
             header("Location: ../vista/errorLogin.php");
         }
         
-        $modelAdmin->mdlAgregarIntegrador($lineaNegocio, $objFile);
+        $this->cantIntegradores = $modelAdmin->mdlObtenerCantidadIntegradores($lineaNegocio);
         
-        /*
-         * LLAMAR A LA VISTA
-         */
-        header("Location: FrontController.php?action=integradores&lineaNegocio=".$lineaNegocio);
+        
+        if ($this->cantIntegradores < 5) {
+            $modelAdmin->mdlAgregarIntegrador($lineaNegocio, $objFile);
+            
+            //LLAMAR A LA VISTA DONDE APARECEN TODOS LOS INTEGRADORES
+            header("Location: FrontController.php?action=integradores&lineaNegocio=".$lineaNegocio);
+            
+        } else {
+            //LLAMAR A VISTA DE ERROR POR CANTIDAD DE INTEGRADORES
+            header("Location: ../vista/errorCantidadIntegradores.php");
+            
+        }
         
     }
     
@@ -592,4 +606,45 @@ class BackControllerAdmin
         header("Location: FrontController.php?action=administraracademia");
         
     }
+    
+    public function ctrlVisualizarAcademia($idAcademia)
+    {
+        $modelAdmin = new ModeloAdmin();
+        
+        /*
+         * VALIDACION DE USUARIO LOGUEADO
+         */
+        session_start();
+        
+        if ($_SESSION['login']=="") {
+            header("Location: ../vista/errorLogin.php");
+        }
+        
+        
+        $this->tituloArticuloEspecifico = $modelAdmin->mdlObtenerTituloArticuloEspecifico($idAcademia);
+        
+        $this->fotoArticuloEspecifico = $modelAdmin->mdlObtenerFotoArticuloEspecifico($idAcademia);
+        
+        $this->fechaArticuloEspecifico = $modelAdmin->mdlObtenerFechaArticuloEspecifico($idAcademia);
+        
+        $this->contenidoArticuloEspecifico = $modelAdmin->mdlObtenerContenidoArticuloEspecifico($idAcademia);
+        
+        
+
+        $_SESSION['tituloArticuloEspecifico'] = $this->tituloArticuloEspecifico;
+        $_SESSION['fotoArticuloEspecifico'] = $this->fotoArticuloEspecifico;
+        $_SESSION['fechaArticuloEspecifico'] = $this->fechaArticuloEspecifico;
+        $_SESSION['contenidoArticuloEspecifico'] = $this->contenidoArticuloEspecifico;
+        
+        /*
+         * LLAMAR A LA VISTA
+         */
+        header("Location: ../vista/mostrarAcademia.php");
+        
+        
+        
+        
+    }
+    
+    
 }
