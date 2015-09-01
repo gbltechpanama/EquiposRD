@@ -237,7 +237,7 @@ class ModeloAdmin
     {
         $BD = new BaseDatos();
 
-        $sql = "Select nombreSubLineaNegocio from lineasNegocios";
+        $sql = "Select nombreSubLineaNegocio from lineasnegocios";
 
         $resultado = $BD->modelQueryDB($sql);
 
@@ -251,7 +251,7 @@ class ModeloAdmin
     {
         $BD = new BaseDatos();
 
-        $sql = "Select distinct(nombreLineaPadre) from lineasNegocios";
+        $sql = "Select distinct(nombreLineaPadre) from lineasnegocios";
 
         $resultado = $BD->modelQueryDB($sql);
 

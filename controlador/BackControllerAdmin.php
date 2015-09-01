@@ -215,9 +215,9 @@ class BackControllerAdmin
         /*
          * METODOS DEL MODELO
          */
-        $this->rutaImagenesSubLineas = $modelCliente->mdlObtenerRutaImagenesSubLinea($lineaNegocio);
+        $this->rutaImagenesSubLineas = $modelCliente->mdlObtenerRutaImagenSubLinea($lineaNegocio);
         
-        $this->nombreSubLineas= $modelCliente->mdlObtenerNombreSubLinea($lineaNegocio);
+        $this->nombreSubLineas= $modelCliente->mdlObtenerNombreSubLineasNegocios($lineaNegocio);
         
         $this->descripcionSubLineas = $modelCliente->mdlObtenerDescripcionSubLineas($lineaNegocio);
         

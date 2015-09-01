@@ -68,7 +68,7 @@ class ModeloCliente
         return $data_array;
     }
     
-    public function mdlObtenerRutaImagenesSubLinea($lineaNegocio)
+    public function mdlObtenerRutaImagenSubLinea($lineaNegocio)
     {
         $BD = new BaseDatos();
 
@@ -83,7 +83,7 @@ class ModeloCliente
 
     }
 
-    public function mdlObtenerNombreSubLinea($lineaNegocio)
+    public function mdlObtenerNombreSubLineasNegocios($lineaNegocio)
     {
         $BD = new BaseDatos();
 

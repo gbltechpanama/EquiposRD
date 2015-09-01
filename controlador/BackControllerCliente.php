@@ -54,11 +54,11 @@ class BackControllerCliente
 
         $this->descripcionGeneralNegocio = $modelCliente->mdlObtenerDescripcionSubLineas($lineaNegocio);
 
-        $this->nombreSubLineasNegocio = $modelCliente->mdlObtenerNombreSubLinea($lineaNegocio);
+        $this->nombreSubLineasNegocio = $modelCliente->mdlObtenerNombreSubLineasNegocios($lineaNegocio);
         
         $this->rutaIntegradores = $modelCliente->mdlObtenerIntegradores($lineaNegocio);
   
-        $this->rutaImagenSubLinea = $modelCliente->mdlObtenerRutaImagenesSubLinea($lineaNegocio);
+        $this->rutaImagenSubLinea = $modelCliente->mdlObtenerRutaImagenSubLinea($lineaNegocio);
 
 
         
