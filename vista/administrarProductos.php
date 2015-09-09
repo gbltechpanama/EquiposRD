@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>VERSION PRUEBAS</title>
+<title>Equipos Y Controles R&D</title>
 
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -155,7 +155,7 @@ function confirmarEliminar(idProducto)
                 <?php
 
                 $n = count($_SESSION['idProductos']);
-
+                $cont = 0;
                 for ($i=0; $i<$n; $i++) {
                     $cont = $cont + 1;
                     

@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>VERSION PRUEBAS</title>
+<title>Equipos Y Controles R&D</title>
 
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -35,12 +35,15 @@
   <div class="container">
       <div class="logo"> 
           <a href="../../app/controlador/FrontController.php?action=principal">
-              <img src="img/logo.png">
+              <img src="img/logo.png" class="img-responsive">
           </a> 
       </div>
       <div class="menu" style="padding-top: 25px"> 
-          <a class="toggleMenu" href="#"><img src="img/nav_icon.png" alt="" /> </a>
+          <a class="toggleMenu" href="#">
+              <img src="img/nav_icon.png" alt="" /> 
+          </a>
         <ul class="nav" id="nav">
+            
         <li><a href="../controlador/FrontController.php?action=principal">INICIO</a></li>
         <li><a href="about.php">ACERCA DE</a></li>
         <li><a href="../controlador/FrontController.php?action=academia">ACADEMIA</a></li>
@@ -69,7 +72,9 @@
                });
             });
         </script>
-        <li class="dropdown"">
+        
+        
+        <li class="dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
@@ -102,13 +107,13 @@
 
 <!-- BANNER -->
 
-<div class="text-center banner">
+<div class="text-center banner" style="clear: both">
     
     <div class="container" style="padding-left: 0px; 
          padding-right: 0px; padding-bottom: 0px; padding-top: 0px; width: 100%">
 
     <!-- Slider -->
-    <div id="main-slider" class="flexslider">
+    <div id="main-slider" class="flexslider col-lg-12 col-md-12">
             <ul class="slides">
                 
             <?php
@@ -117,7 +122,7 @@
             
             for ($i=0; $i<$n; $i++) {
                 echo "<li>";
-                echo '<img src="'.trim($_SESSION["rutaBanners"][$i]).'" style="width: 1281px; height: 283px; margin-left:auto; margin-right:auto">';
+                echo '<img src="'.trim($_SESSION["rutaBanners"][$i]).'" style="margin-left:auto; margin-right:auto" class="img-responsive center-block">';
                 echo '
                 <div id="descripcion">
                     <p style="padding-top: 25px; text-align: center">
@@ -136,14 +141,6 @@
     </div>
 </div>
 
-<!-- DESCRIPCION >
-<div id="descripcion">
-    <p style="padding-top: 25px; text-align: center">
-        <?php
-            echo $_SESSION['descripcionBanners'][0];
-        ?>
-    </p>
-</div-->
 
 <!-- COMENTARIO -->    
 <div class="main">
@@ -153,16 +150,17 @@
 </div>
     
 <!-- LINEAS NEGOCIO -->
+
 <div class="featured_content" id="feature">
     
   <div class="container">
       
     <div class="row text-center">
         
-      <div class="col-md-6"> 
+      <div class="col-lg-6 col-md-12"> 
 
         <p class="m_2" style="margin-top: 45px">
-            <img src="img/hubbell.jpg" width="441px" height="195px">
+            <img src="img/hubbell.jpg" width="441px" height="195px" class="img-responsive center-block">
         </p>
 
         <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell" class="feature_btn">Mas</a> 
@@ -170,10 +168,10 @@
       </div>
         
         
-      <div class="col-md-6"> 
+      <div class="col-lg-6 col-md-12"> 
           
         <p class="m_2" style="margin-top: 45px">
-            <img src="img/eclipse.jpg" width="441px" height="195px">
+            <img src="img/eclipse.jpg" width="441px" height="195px" class="img-responsive center-block">
         </p>
 
         <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse" class="feature_btn">Mas</a> 
@@ -183,13 +181,14 @@
     </div>
   </div>
 </div>
+
     
-<div class="footer">
-  <div class="footer_midle">
+
+<div class="footer_midle">
     <div class='container'>
       <div class="row">
           
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.facebook.com/pedrocachazo">
@@ -203,7 +202,7 @@
           </ul>
         </div>
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://twitter.com/EquiposRYD">
@@ -218,7 +217,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="#">
@@ -233,7 +232,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.linkedin.com/company/equipos-y-controles-r&d-c-a-">

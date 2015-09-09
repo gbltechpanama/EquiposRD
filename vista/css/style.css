@@ -193,8 +193,9 @@ a.banner-btn span:hover {
 }
 .featured_content {
 /*	background: #f6f6f6;*/
-        background-color: #e8e8e8; 
-        height: 365px
+        background-color: #e8e8e8;
+        /*height: 365px;*/
+        height: auto;
 }
 .feature_grid1 {
 	width: 23.5%;
@@ -237,6 +238,7 @@ p.m_2 {
 	outline: none;
 	margin-top: 10px;
 	border-radius: 5px;
+        margin-bottom: 60px;
 }
 .feature_btn:hover {
 	background: #fff;
@@ -764,7 +766,7 @@ ul.sidebar li a {
 	width: 23%;
 }
 .banner {
-	height: 450px;
+	/*height: 450px;*/
         
 }
 .banner-info {
@@ -808,7 +810,7 @@ div.list.custom-list ul li h5 a {
 	font-size: 2em;
 }
 .banner {
-	min-height: 400px;
+	/*min-height: 400px;*/
 }
 .feature_grid2 {
 	width: 100%;
