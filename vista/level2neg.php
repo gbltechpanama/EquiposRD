@@ -26,8 +26,9 @@
 <!-- ENCABEZADO -->
 <div class="header">
   <div class="container">
-      <div class="logo"> <a href="../../app/controlador/FrontController.php?action=principal">
-              <img src="img/logo.png">
+      <div class="logo"> 
+          <a href="../controlador/FrontController.php?action=principal">
+              <img src="img/logo.png" class="img-responsive">
           </a> 
       </div>
       
@@ -122,13 +123,13 @@
 
     <div class="row">
         
-        <div class="col-md-6 col-lg-6">
+        <div class="col-md-6 col-lg-6 col-sm-12">
             
-            <table style="margin-left: auto; margin-right: auto; margin-top: 30px; width: 400px">
+            <table style="margin-left: auto; margin-right: auto; margin-top: 30px; max-width: 400px">
                 <tr>
                     <td>
                     <?php
-                        echo '<img src='.$_SESSION['rutaImagenSubLineaEspecifico'].' width=441px; height=195px>';
+                        echo '<img src='.$_SESSION['rutaImagenSubLineaEspecifico'].' class="img-responsive center-block">';
                     ?>
                     </td>
                 <tr>
@@ -149,10 +150,10 @@
         </div>
         
         
-        <div class="col-md-6 col-lg-6" style="height: 300px;">
-            <div class="col-md-6" style="margin-top: 30px">
+        <div class="col-md-6 col-lg-6 col-sm-12" style="height: 300px;">
+            <div class="col-md-6" style="margin-top: 30px; text-align: left;">
                 <span style="font-weight: bold"> PRODUCTOS</span>
-            <br><br>
+                <br><br>
                 <?php
 
                 $n = count($_SESSION['productos']);
@@ -165,7 +166,7 @@
 
                 ?>
             </div>
-            <div class="col-md-6" style="height: 300px; font-weight: bold">
+            <div class="col-md-6" style="height: 300px; font-weight: bold;">
                 <br><br><br><br>
                 <?php
                 echo "<a href='".$_SESSION['rutaCatalogo']."' target=blank><img src=img/btnCatalogo.jpg></a><br><br>";
@@ -177,7 +178,7 @@
     </div>
     
 <!--SECCION INTEGRADORES-->
-<div id="integradoresContenedor" style="background-color: #eeeeee; width: 100%; height: 155px; margin-top: 100px">
+<div id="integradoresContenedor" style="background-color: #eeeeee; width: 100%; min-height: 155px; margin-top: 100px">
     <span style="font-family: arial; font-size: 18px; font-weight: bold; margin-left: 40px">INTEGRADORES</span> 
   
 <div class="itemIntegrador">
@@ -200,12 +201,12 @@
 </div>
 
 
-<div class="footer">
+
   <div class="footer_midle">
     <div class='container'>
       <div class="row">
           
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.facebook.com/pedrocachazo">
@@ -219,7 +220,7 @@
           </ul>
         </div>
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://twitter.com/EquiposRYD">
@@ -234,7 +235,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="#">
@@ -249,7 +250,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.linkedin.com/company/equipos-y-controles-r&d-c-a-">

@@ -1005,9 +1005,11 @@ input.text {
 
 .imgIntegradores
 {
-    width: 185px;
-    height: 100px;
+    max-width: 185px;
+    max-height: 100px;
     margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
@@ -1051,7 +1053,7 @@ input.text {
 {
     background-color: #eeeeee; 
     height: 1px; 
-    width: 755px; 
+    max-width: 755px; 
     margin-top: 12px;
 }
 

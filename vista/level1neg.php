@@ -26,8 +26,9 @@
 <!-- ENCABEZADO -->
 <div class="header">
   <div class="container">
-      <div class="logo"> <a href="../../app/controlador/FrontController.php?action=principal">
-              <img src="img/logo.png">
+      <div class="logo"> 
+          <a href="../controlador/FrontController.php?action=principal">
+              <img src="img/logo.png" class="img-responsive">
           </a> 
       </div>
       <div class="menu" style="padding-top: 25px"> 
@@ -119,14 +120,14 @@
 <div style="background-color: #e8e8e8">
     <div class="container">
         
-        <div class="col-md-6" style=" border-right-color: #bcbcbc; border-right-style: solid; border-right-width: 1px">
+        <div class="col-md-6" style="border-right-color: #bcbcbc; border-right-style: solid; border-right-width: 1px">
             
-            <table style="width: 440px; margin-left: auto; margin-right: auto; margin-top: 45px">
+            <table style="max-width: 440px; margin-left: auto; margin-right: auto; margin-top: 45px">
                 <tr>
                     <td>
                     <?php
                         
-                        echo '<img src='.$_SESSION['rutaImagenSubLineas'][0].' width=441px; height=195px>';
+                        echo '<img src='.$_SESSION['rutaImagenSubLineas'][0].' class="img-responsive center-block">';
                     ?>
                     </td>
                 <tr>
@@ -161,11 +162,11 @@
         
         <div class="col-md-6">
             
-            <table style="width: 440px; margin-left: auto; margin-right: auto; margin-top: 45px">
+            <table style="max-width: 440px; margin-left: auto; margin-right: auto; margin-top: 45px">
                 <tr>
                     <td>
                     <?php
-                        echo '<img src='.$_SESSION['rutaImagenSubLineas'][1].' width=441px; height=195px>';
+                        echo '<img src='.$_SESSION['rutaImagenSubLineas'][1].' class="img-responsive center-block">';
                     ?>
                     </td>
                 <tr>
@@ -198,7 +199,7 @@
     </div>
     
 <!--SECCION INTEGRADORES-->
-<div id="integradoresContenedor" style="background-color: #eeeeee; width: 100%; height: 155px">
+<div id="integradoresContenedor" style="background-color: #eeeeee; width: 100%; min-height: 155px">
     <span style="font-family: arial; font-size: 18px; font-weight: bold; margin-left: 40px">INTEGRADORES</span> 
   
   <div class="itemIntegrador">
@@ -207,26 +208,22 @@
     $n = count($_SESSION['rutaIntegradores']);
     
     for ($i=0; $i<$n; $i++) {
+            
             echo "<img class='imgIntegradores' src=".$_SESSION['rutaIntegradores'][$i].">";
+            
     }
       
     ?>
   </div>
-    
-    
-    
-    
-    
-    
 </div>
 
 
-<div class="footer">
+
   <div class="footer_midle">
     <div class='container'>
       <div class="row">
           
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.facebook.com/pedrocachazo">
@@ -240,7 +237,7 @@
           </ul>
         </div>
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://twitter.com/EquiposRYD">
@@ -255,7 +252,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="#">
@@ -270,7 +267,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.linkedin.com/company/equipos-y-controles-r&d-c-a-">

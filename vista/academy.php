@@ -25,8 +25,8 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-          <a href="../../app/controlador/FrontController.php?action=principal">
-              <img src="img/logo.png">
+          <a href="../controlador/FrontController.php?action=principal">
+              <img src="img/logo.png" class="img-responsive">
           </a> 
       </div>
       <div class="menu" style="padding-top: 25px"> 
@@ -114,7 +114,7 @@
 <!-- CONTENIDO -->
 <div class="clearfix"></div>
 
-    <div class="row" style="margin-top: 30px; width: 755px">
+    <div class="row" style="margin-top: 30px; max-width: 755px">
         
         <div class="col-md-12" style="padding-left: 30px;">
             
@@ -132,7 +132,7 @@
             
             <div id="articuloFoto" style="width: 100%;">
                 <?php
-                    echo "<img src=".$_SESSION['rutaImagenesAcademia'][$i]." style='width: 755px; height: 280px;'>";
+                    echo "<img src=".$_SESSION['rutaImagenesAcademia'][$i]." class='img-responsive'>";
                 ?>
             </div>
             
@@ -148,7 +148,7 @@
                 <br>
             </div>
             
-            <div id="articuloContenido" style="width: 755px; text-align: justify; color: #666666">
+            <div id="articuloContenido" style="text-align: justify; color: #666666" class="col-lg-12">
                 <?php
                     echo $_SESSION['contenidoAcademia'][$i]."<br><br><br>";
                 ?>
@@ -163,12 +163,12 @@
        
     </div>
     
-<div class="footer">
+
   <div class="footer_midle">
     <div class='container'>
       <div class="row">
           
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.facebook.com/pedrocachazo">
@@ -182,7 +182,7 @@
           </ul>
         </div>
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://twitter.com/EquiposRYD">
@@ -197,7 +197,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="#">
@@ -212,7 +212,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.linkedin.com/company/equipos-y-controles-r&d-c-a-">

@@ -34,7 +34,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-          <a href="../../app/controlador/FrontController.php?action=principal">
+          <a href="../controlador/FrontController.php?action=principal">
               <img src="img/logo.png" class="img-responsive">
           </a> 
       </div>

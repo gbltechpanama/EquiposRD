@@ -24,7 +24,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-          <a href="../../app/controlador/FrontController.php?action=principal">
+          <a href="../controlador/FrontController.php?action=principal">
               <img src="img/logo.png">
           </a> 
       </div>
@@ -92,7 +92,7 @@
 
 <!-- NOMBRE LINEA -->    
 <div class="main">
-    <div style=" background-image: url('img/backHeaderLine.jpg'); text-align: left; height: 108px">
+    <div style=" background-image: url('img/backHeaderLine.jpg'); text-align: left; height: 108px" class="img-responsive">
 
        <div id="contenedorInterno">
            <br>
@@ -115,21 +115,21 @@
 
 <br><br>     
 
-    <div class="col-md-3" style="font-size: 24px; font-weight: bold; text-align: center">
+    <!--div class="col-lg-12" style="font-size: 24px; font-weight: bold; text-align:left; background-color: red; float: left">
         EQUIPOS Y CONTROLES R&D
-    </div>
+    </div-->
 
     <div class="clearfix"></div>
     <div class="container">
     <div class="row" style="margin-top: 30px">
        
-        <div class="col-md-9">
+        <div class="col-lg-9">
 
             <div style="width: 355px; float:left;">
-                <img src="img/acercaImagen.jpg">
+                <img src="img/acercaImagen.jpg" class="img-responsive">
             </div>
             
-            <div class="col-md-6" style="text-align:justify; float:left; margin-left: 32px">
+            <div class="col-lg-6" style="text-align:justify; float:left; margin-left: 0px">
                 <span>
                     Lorem Ipsum es simplemente el texto de relleno de las imprentas 
                     y archivos de texto. Lorem Ipsum ha sido el texto de relleno 
@@ -148,19 +148,19 @@
             </div>
         </div>
         
-        <div class="col-md-3" style="text-align: center;">
+        <div class="col-lg-3" style="text-align: center;">
            <img src="img/acercaLogos.jpg">
         </div>
         
     </div>
   </div>
     
-<div class="footer">
+
   <div class="footer_midle">
     <div class='container'>
       <div class="row">
           
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.facebook.com/pedrocachazo">
@@ -174,7 +174,7 @@
           </ul>
         </div>
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://twitter.com/EquiposRYD">
@@ -189,7 +189,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="#">
@@ -204,7 +204,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.linkedin.com/company/equipos-y-controles-r&d-c-a-">

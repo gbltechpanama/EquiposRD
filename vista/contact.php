@@ -25,7 +25,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-          <a href="../../app/controlador/FrontController.php?action=principal">
+          <a href="../controlador/FrontController.php?action=principal">
               <img src="img/logo.png">
           </a> 
       </div>
@@ -209,12 +209,12 @@
     
 <!-- SECCION REDES SOCIALES -->
 
-<div class="footer">
+
   <div class="footer_midle">
     <div class='container'>
       <div class="row">
           
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.facebook.com/pedrocachazo">
@@ -228,7 +228,7 @@
           </ul>
         </div>
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://twitter.com/EquiposRYD">
@@ -243,7 +243,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="#">
@@ -258,7 +258,7 @@
         </div>
           
           
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
           <ul class="social_left">
             <li class="facebook">
                 <a href="https://www.linkedin.com/company/equipos-y-controles-r&d-c-a-">
