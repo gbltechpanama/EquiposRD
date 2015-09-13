@@ -38,7 +38,7 @@
               <img src="img/logo.png" class="img-responsive">
           </a> 
       </div>
-      <div class="menu" style="padding-top: 25px"> 
+      <div class="menu" style="padding-top: 25px;"> 
           <a class="toggleMenu" href="#">
               <img src="img/nav_icon.png" alt="" /> 
           </a>
@@ -74,7 +74,7 @@
         </script>
         
         
-        <li class="dropdown">
+        <li class="dropdown hidden-xs hidden-sm">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
@@ -91,6 +91,15 @@
             </ul>
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell">MARCA HUBBELL</a>
+        </li>
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse">MARCA ECLIPSE</a>
+        </li>
+        
         
         <li><a href="contact.php">CONTACTO</a></li>
       </ul>

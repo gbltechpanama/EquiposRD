@@ -25,7 +25,7 @@
   <div class="container">
       <div class="logo"> 
           <a href="../controlador/FrontController.php?action=principal">
-              <img src="img/logo.png">
+              <img src="img/logo.png" class="img-responsive">
           </a> 
       </div>
       <div class="menu" style="padding-top: 25px"> 
@@ -59,7 +59,8 @@
                });
             });
         </script>
-        <li class="dropdown"">
+        
+         <li class="dropdown hidden-xs hidden-sm">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
@@ -76,6 +77,14 @@
             </ul>
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=level1neg&linea=hubbell">MARCA HUBBELL</a>
+        </li>
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=level1neg&linea=eclipse">MARCA ECLIPSE</a>
+        </li>
         
         <li><a href="contact.php">CONTACTO</a></li>
       </ul>
@@ -123,35 +132,38 @@
     <div class="container">
     <div class="row" style="margin-top: 30px">
        
-        <div class="col-lg-9">
+       
 
-            <div style="width: 355px; float:left;">
-                <img src="img/acercaImagen.jpg" class="img-responsive">
-            </div>
-            
-            <div class="col-lg-6" style="text-align:justify; float:left; margin-left: 0px">
-                <span>
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas 
-                    y archivos de texto. Lorem Ipsum ha sido el texto de relleno 
-                    estándar de las industrias desde el año 1500, cuando un impresor 
-                    (N. del T. persona que se dedica a la imprenta) desconocido usó 
-                    una galería de textos y los mezcló de tal manera que logró hacer 
-                    un libro de textos especimen. No sólo sobrevivió 500 años, sino 
-                    que tambien ingresó como texto de relleno en documentos electrónicos, 
-                    quedando esencialmente igual al original. <br><br>Fue popularizado en 
-                    los 60s con la creación de las hojas "Letraset", las cuales 
-                    contenian pasajes de Lorem Ipsum, y más recientemente con software 
-                    de autoedición, como por ejemplo Aldus PageMaker, el cual incluye 
-                    versiones de Lorem Ipsum.
-                    <br><br><br>
-                </span>
-            </div>
+        <div class="col-lg-4 col-md-5 col-sm-12" style="float:left;">
+            <img src="img/acercaImagen.jpg" class="img-responsive">
         </div>
-        
-        <div class="col-lg-3" style="text-align: center;">
-           <img src="img/acercaLogos.jpg">
+
+        <div class="col-lg-8 col-md-7 col-sm-12" style=" float:left; text-align:justify; ">
+
+                <?php
+
+                echo utf8_decode('
+                Somos una empresa venezolana, con más de 10 años de experiencia en venta, atención, 
+                y asesorías a proyectos tecnológicos industriales, comerciales y residenciales. 
+                Nos especializamos en la comercialización, distribución y venta al mayor de equipos para 
+                proyectos de: cableado estructurado de la marca Hubbell Premise, tanto en cobre con las 
+                categorías 5E, 6 y 6A, como en fibra óptica monomodo y multimodo y todas las soluciones 
+                pasivas para proyectos de data centers y sistemas de redes, electricidad industrial y 
+                doméstica de la marca Hubbell Wiring Devices, sistemas de video vigilancia con circuito 
+                cerrado de televisión y sistemas de control de acceso de la marca Eclipse.
+                <br><br>
+                Adicionalmente contamos con bandejas porta cables tipo rejillas, nacionales de altísima calidad,
+                tipo Cablofil, muy versátiles por su gran rapidez de instalación y al requerir un mínimo de 
+                accesorios solo para unión y fijación. 
+                <br><br>
+                Prestamos servicios de consultoría y asesoría en nuestras áreas de competencia, talleres 
+                inductivos y cursos de Certificación HUBBELL Premise Wiring para integradores y usuarios
+                finales.');
+                ?>
+                <br><br>
+
         </div>
-        
+     
     </div>
   </div>
     

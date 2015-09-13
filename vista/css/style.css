@@ -104,7 +104,7 @@ body a {
 	background: #051619;
 	top: 86px;
 	z-index: 9999;
-	border: 1px solid #B11D1D;
+	border: 1px solid #009900;
 }
 .menu li a span {
 	text-align: center;
@@ -131,7 +131,8 @@ body a {
 	position: static;
 }
 .nav li a {
-	border-top: 1px solid #B11D1D;
+	/*border-top: 1px solid #B11D1D;*/
+        border-top: 1px solid #009900;
 	background: #fff;
 }
 .nav li:first-child a {
