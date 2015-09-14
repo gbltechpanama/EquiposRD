@@ -32,7 +32,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-        <img src="img/logo.png">  
+        <img src="img/logo.png" class="img-responsive">  
       </div>
 
     
@@ -55,29 +55,35 @@
 
         <div class="col-md-12" style="margin-top: 100px">
             
-            <div style="width: 565px; height: 202px; background-color: white; margin-left: auto; margin-right: auto">
+            <div style="max-width: 565px; height: 202px; background-color: white; 
+                 margin-left: auto; margin-right: auto">
                 
-                <div id="imagen" style="float: left; clear: both; width: 180px; height: 202px;">
-                    <img src="img/candado.jpg">
+                <div id="imagen" style="float: left; clear: both; width: 180px; height: 202px;" class="hidden-xs">
+                    <img src="img/candado.jpg" class="img-responsive">
                 </div>
 
                 <div>
                     <br><br>
-                    <table border="0" style="width: 360px; margin-left: auto; margin-right: auto;">
+                    <table border="0" style="max-width: 360px; margin-left: auto; margin-right: auto;">
                         <tr style=" height: 40px">
                             <td style="text-align: right;">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">USUARIO  </label>
+                                <label style="font-family: arial; font-size: 12px; 
+                                       font-weight: bold; padding-right: 10px">USUARIO
+                                </label>
                             </td>
                             <td>
-                                <input type="text" class="text" name="txtUsuario" style="width: 250px;"/>
+                                <input type="text" class="text" name="txtUsuario"/>
                             </td>
                         </tr>
                         <tr style=" height: 40px">
                             <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">PASSWORD</label>
+                                <label style=" font-family: arial; font-size: 12px; 
+                                       font-weight: bold; padding-right: 10px">
+                                    PASSWORD
+                                </label>
                             </td>
                             <td>
-                                <input type="password" name="txtPassword" style="width: 250px"/>
+                                <input type="password" name="txtPassword" style="max-width: 250px"/>
                             </td>
                         </tr>
                         <tr style=" height: 50px">

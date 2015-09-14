@@ -48,7 +48,7 @@ function confirmarEliminar(idAcademia)
 <div class="header">
   <div class="container">
       <div class="logo"> 
-        <img src="img/logo.png">
+        <img src="img/logo.png" class="img-responsive">
       </div>
       
       <div class="menu" style="padding-top: 25px"> 
@@ -80,7 +80,7 @@ function confirmarEliminar(idAcademia)
                });
             });
         </script>
-        <li class="dropdown"">
+        <li class="dropdown hidden-sm hidden-xs">
             <a href="" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
@@ -97,6 +97,14 @@ function confirmarEliminar(idAcademia)
             </ul>
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell">MARCA HUBBELL</a>
+        </li>
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=eclipse">MARCA ECLIPSE</a>
+        </li>
         
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
@@ -139,7 +147,7 @@ function confirmarEliminar(idAcademia)
                 <br><br>
             <table border="1" style="margin-top: 20px; width: 100%; font-size: 13px; background-color: white">
                 <tr style="font-weight: bold;">
-                    <td style="width: 100px">
+                    <td style="width: 20px">
                         ID
                     </td>
                     
@@ -147,7 +155,7 @@ function confirmarEliminar(idAcademia)
                        TITULO ARTICULO
                     </td> 
                     
-                    <td>
+                    <td class="hidden-xs">
                         RUTA FOTO
                     </td>
                     
@@ -155,7 +163,7 @@ function confirmarEliminar(idAcademia)
                         FECHA PUBLICACION
                     </td>
                     
-                    <td>
+                    <td class="hidden-xs">
                         CONTENIDO ARTICULO
                     </td>
                     
@@ -179,13 +187,13 @@ function confirmarEliminar(idAcademia)
                     echo "<td>".$_SESSION['idArticulosAcademia'][$i]."</td>";
                     echo "<td>".$_SESSION['titulosAcademia'][$i]."</td>";
                     
-                    echo "<td>";
+                    echo "<td class='hidden-xs'>";
                         echo $_SESSION['fotosArticulosAcademia'][$i];
                     echo "</td>";
                     
                     echo "<td>".$_SESSION['fechaArticulosAcademia'][$i]."</td>";
                     
-                    echo "<td>".substr($_SESSION['contenidoAcademia'][$i], 0, 100) .".....</td>";
+                    echo "<td class='hidden-xs'>".substr($_SESSION['contenidoAcademia'][$i], 0, 100) .".....</td>";
                     
                     echo "<td>";
                     

@@ -32,7 +32,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-        <img src="img/logo.png">  
+        <img src="img/logo.png" class="img-responsive">  
       </div>
 
     

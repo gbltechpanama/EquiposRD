@@ -130,7 +130,7 @@
 
 <div style="background-color: #e8e8e8">
 
-    <div class="row">
+    <div class="row" style="width: 100%">
         
         <div class="col-md-6 col-lg-6 col-sm-12">
             
@@ -138,14 +138,15 @@
                 <tr>
                     <td>
                     <?php
-                        echo '<img src='.$_SESSION['rutaImagenSubLineaEspecifico'].' class="img-responsive center-block">';
+                        echo '<img src='.$_SESSION['rutaImagenSubLineaEspecifico'].' '
+                                . 'class="img-responsive center-block">';
                     ?>
                     </td>
                 <tr>
                     
                 <tr valign = top>
                     <td>
-                    <p style="text-align: justify">
+                    <p style="text-align: justify; padding-left: 5px; padding-right: 5px">
                         <br>
                         <?php
                             echo $_SESSION['descripcionLineaNegocio'];
@@ -160,7 +161,7 @@
         
         
         <div class="col-md-6 col-lg-6 col-sm-12" style="height: 300px;">
-            <div class="col-md-6" style="margin-top: 30px; text-align: left;">
+            <div class="col-lg-6 col-md-6" style="margin-top: 30px; text-align: left;">
                 <span style="font-weight: bold"> PRODUCTOS</span>
                 <br><br>
                 <?php
@@ -175,7 +176,7 @@
 
                 ?>
             </div>
-            <div class="col-md-6" style="height: 300px; font-weight: bold;">
+            <div class="col-lg-6 col-md-6" style="height: 300px; font-weight: bold;">
                 <br><br><br><br>
                 <?php
                 echo "<a href='".$_SESSION['rutaCatalogo']."' target=blank><img src=img/btnCatalogo.jpg></a><br><br>";

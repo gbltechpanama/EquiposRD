@@ -34,7 +34,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-        <img src="img/logo.png">
+        <img src="img/logo.png" class="img-responsive">
       </div>
       
       <div class="menu" style="padding-top: 25px"> 
@@ -66,7 +66,7 @@
                });
             });
         </script>
-        <li class="dropdown"">
+        <li class="dropdown hidden-sm hidden-xs">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
@@ -83,6 +83,14 @@
             </ul>
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell">MARCA HUBBELL</a>
+        </li>
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=eclipse">MARCA ECLIPSE</a>
+        </li>
         
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
@@ -127,46 +135,56 @@
                 echo '<form method="post" action="../controlador/FrontController.php?action=modsublinea&subLineaNegocio='.$_GET['subLineaNegocio'].'" enctype="multipart/form-data">';
             ?>
             
-            <!--<form method="post" action="../controlador/FrontController.php?action=modsublinea&" enctype="multipart/form-data"> -->
                     <table border="0" style="width: 90%; margin-left: auto; margin-right: auto;">
                         <tr style=" height: 40px">
                             <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">NOMBRE SUB LINEA</label>
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">
+                                    NOMBRE SUB LINEA
+                                </label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
                                 <?php
                                 echo '<input type="text" name="txtNombre" value="'.$_GET['subLineaNegocio']
-                                        .'" style="width: 400px">';
+                                        .'" style="width: 90%">';
                                 ?>
                             </td>
                         </tr>
                         
                         <tr style=" height: 40px">
                             <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA IMAGEN</label>
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">
+                                    RUTA IMAGEN
+                                </label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <input type="file" name="objFileImagen">
+                                <input type="file" name="objFileImagen" style="width: 90%">
+                                
                             </td>
                         </tr>
                         <tr style=" height: 40px">
                             <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA CATALOGO</label>
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">
+                                    RUTA CATALOGO
+                                </label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
                                 <?php
-                                echo '<input type="text" name="txtRutaCatalogo" value="'.$_SESSION['rutaCatalogoEspecifico']
-                                        .'" style="width: 400px">';
+                                echo '<input type="text" name="txtRutaCatalogo" value="'
+                                        .$_SESSION['rutaCatalogoEspecifico'].'" style="width: 90%">';
                                 ?>
                             </td>
                         </tr>
                         <tr style=" height: 40px">
                             <td style="text-align: right">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">DESCRIPCION</label>
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">
+                                    DESCRIPCION
+                                </label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
                                 <?php
-                                echo '<textarea class="text" name="txtDescripcion" cols="80" rows="8">'.$_SESSION['descripcionSubLineaEspecifico'].'</textarea>';
+                                echo '<textarea class="text" name="txtDescripcion" rows="8" style="width: 90%">'
+                                        .$_SESSION['descripcionSubLineaEspecifico']
+                                        .'</textarea>';
                                 ?>
 
                             </td>

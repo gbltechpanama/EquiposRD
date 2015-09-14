@@ -50,7 +50,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-        <img src="img/logo.png">
+        <img src="img/logo.png" class="img-responsive">
       </div>
       
       <div class="menu" style="padding-top: 25px"> 
@@ -82,7 +82,7 @@
                });
             });
         </script>
-        <li class="dropdown"">
+        <li class="dropdown hidden-sm hidden-xs">
             <a href="" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
@@ -99,6 +99,14 @@
             </ul>
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell">MARCA HUBBELL</a>
+        </li>
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=eclipse">MARCA ECLIPSE</a>
+        </li>
         
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
@@ -118,7 +126,7 @@
 
 
 <!-- CENTRO -->
-<div class="featured_content" id="feature" style=" height: 850px">
+<div class="featured_content" id="feature" style="min-height: 850px">
     
     <div class="container">
       
@@ -139,10 +147,10 @@
                     <?php
                     
                     if ($_SESSION['nombreLineaNegocio']=='hubbell') {
-                        echo '<img src ="img/hubbell.jpg" style="width: 441px; height: 195px">';
+                        echo '<img src ="img/hubbell.jpg" class="img-responsive">';
 
                     } elseif ($_SESSION['nombreLineaNegocio']=='eclipse') {
-                        echo '<img src ="img/eclipse.jpg" style="width: 441px; height: 195px">';
+                        echo '<img src ="img/eclipse.jpg" class="img-responsive">';
                     }
                     ?>
                    
@@ -150,7 +158,8 @@
                 
                 <div style=" width: 160px; float: left; margin-top: 180px; margin-left: 45px;">
                     <?php
-                        echo '<a href="formCambiarImagenPrincipal.php?lineaNegocio='.$_SESSION['nombreLineaNegocio'].'">';
+                        echo '<a href="formCambiarImagenPrincipal.php?lineaNegocio='
+                                .$_SESSION['nombreLineaNegocio'].'">';
                     ?>
                         <img src="img/btnCambioImagen.jpg">
                     </a>
@@ -159,7 +168,7 @@
             </div>
             
             <!-- SEPARADOR -->
-            <div style="height: 1px; width: 100%; background-color: #009900; clear: both; margin-top: 50px"></div>
+            <div id="separador_verde" class="col-lg-12"></div>
 
             
             <div>
@@ -169,13 +178,13 @@
                     <td>
                         R
                     </td>
-                    <td>
+                    <td >
                        NOMBRE SUB LINEA
                     </td>
-                    <td>
+                    <td class="hidden-xs">
                         RUTA CATALOGO
                     </td>
-                    <td>
+                    <td class="hidden-xs">
                         RUTA IMAGEN
                     </td>
                     <td style=" width: 600px;">
@@ -188,7 +197,7 @@
                 </tr>
                 
                 <?php
-
+                
                 $n = count($_SESSION['nombreSubLineas']);
                 $cont = 0;
                 for ($i=0; $i<$n; $i++) {
@@ -197,8 +206,8 @@
                     echo "<tr>";
                     echo "<td>".$cont."</td>";
                     echo "<td>".$_SESSION['nombreSubLineas'][$i]."</td>";
-                    echo "<td><a href='".$_SESSION['rutaCatalogos'][$i]."' target='_blank'><u>".$_SESSION['rutaCatalogos'][$i]."</u></a></td>";
-                    echo "<td><a id='single_image' href='".$_SESSION['rutaImagenesSubLineas'][$i]."' target='_blank'><u>".$_SESSION['rutaImagenesSubLineas'][$i]."</u></a></td>";
+                    echo "<td class='hidden-xs'><a href='".$_SESSION['rutaCatalogos'][$i]."' target='_blank'><u>".$_SESSION['rutaCatalogos'][$i]."</u></a></td>";
+                    echo "<td class='hidden-xs'><a id='single_image' href='".$_SESSION['rutaImagenesSubLineas'][$i]."' target='_blank'><u>".$_SESSION['rutaImagenesSubLineas'][$i]."</u></a></td>";
                     echo "<td>".$_SESSION['descripcionSubLineas'][$i]."</td>";
                    
                     
@@ -227,7 +236,7 @@
   
     
  <!-- PIE DE PAGINA -->
-  <div class="footer_bottom">
+  <div class="footer_bottom" style="margin-top: 10px">
     <div class="copy">
       <p>
           &copy; 2015 Equipos y Controles R&D, C.A. RIF: J-31371156-1 TODOS LOS DERECHOS RESERVADOS.

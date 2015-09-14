@@ -34,7 +34,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-        <img src="img/logo.png">
+        <img src="img/logo.png" class="img-responsive">
       </div>
       
       <div class="menu" style="padding-top: 25px"> 
@@ -66,7 +66,7 @@
                });
             });
         </script>
-        <li class="dropdown"">
+        <li class="dropdown hidden-sm hidden-xs">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
@@ -83,6 +83,14 @@
             </ul>
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell">MARCA HUBBELL</a>
+        </li>
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=eclipse">MARCA ECLIPSE</a>
+        </li>
         
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
@@ -119,21 +127,24 @@
             
             <br><br>
             <form method="post" action="../controlador/FrontController.php?action=nuevobanner" enctype="multipart/form-data">
-                    <table border="0" style="width: 90%; margin-left: auto; margin-right: auto;">
-                        <tr style=" height: 40px">
+                    <table border="0" style="margin-left: auto; margin-right: auto; max-width: 90%">
+                        <tr style="height: 40px">
+                            
                             <td style="text-align: right">
                                 <label style=" font-family: arial; font-size: 12px; font-weight: bold">RUTA</label>
                             </td>
+                            
                             <td style="text-align: left; padding-left: 10px">
-                                <input type="file" name="objFile">
+                                <input type="file" name="objFile" style="width: 90%">
                             </td>
                         </tr>
+                        
                         <tr style=" height: 40px">
                             <td style="text-align: right">
                                 <label style=" font-family: arial; font-size: 12px; font-weight: bold">DESCRIPCION</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <input type="text" class="text" name="descripcionImagen" style="width: 90%"/>
+                                <input type="text" class="text" name="descripcionImagen" style=""/>
                             </td>
                         </tr>
                         <tr style=" height: 50px">

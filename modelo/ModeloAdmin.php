@@ -347,7 +347,7 @@ class ModeloAdmin
     {
         $BD = new BaseDatos();
 
-        $sql = "Select tituloArticulo from academia order by idAcademia";
+        $sql = "Select tituloArticulo from academia order by idAcademia desc";
 
         $resultado = $BD->modelQueryDB($sql);
 

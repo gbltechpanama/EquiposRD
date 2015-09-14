@@ -23,7 +23,7 @@ body a {
 	background: #f6f6f6;
         padding-top: 0px; 
         padding-bottom: 0px;
-        height: 105px;
+        /*height: 105px;*/
 }
 .logo {
 	float: left;
@@ -878,7 +878,7 @@ ul.about_grid1 li.about_desc p {
 
 @media (max-width:480px) {
 .banner {
-	min-height: 250px;
+	/*min-height: 250px;*/
 }
 .banner-info h1 {
 	font-size: 1.5em;
@@ -932,7 +932,7 @@ a.banner-btn span {
 	font-size: 12px;
 }
 .banner {
-	min-height: 150px;
+	/*min-height: 150px;*/
 }
 .banner-btn {
 	margin-top: 1em;
@@ -1064,4 +1064,14 @@ input.text {
     clear: both; 
     width: 180px; 
     height: 202px;
+}
+
+#separador_verde
+{
+    height: 1px; 
+    width: 100%; 
+    background-color: #009900; 
+    clear: both; 
+    margin-top: 50px
+    
 }

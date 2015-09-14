@@ -34,7 +34,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-        <img src="img/logo.png">
+        <img src="img/logo.png" class="img-responsive">
       </div>
       
       <div class="menu" style="padding-top: 25px"> 
@@ -66,7 +66,7 @@
                });
             });
         </script>
-        <li class="dropdown"">
+        <li class="dropdown hidden-sm hidden-xs">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                <li style="width: 100%">
@@ -84,9 +84,18 @@
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
         
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell">MARCA HUBBELL</a>
+        </li>
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=eclipse">MARCA ECLIPSE</a>
+        </li>
+        
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
         <li><a href="../controlador/FrontController.php?action=administraracademia">ACADEMIA</a></li>
+        <li><a href="formCambioClave.php">CAMBIO CLAVE ADMIN</a></li>
         
       </ul>
       <script type="text/javascript" src="js/responsive-nav.js"></script> 
@@ -118,15 +127,15 @@
             </div>
             
             <!-- IMAGEN -->
-            <div style=" width: 800px; height: 200px; clear: both; margin-left: auto; margin-right: auto; margin-top: 50px">
+            <div style=" max-width: 800px; max-height: 200px; clear: both; margin-left: auto; margin-right: auto; margin-top: 50px">
                 <?php
                     echo "<span style='float: left'><b>Ruta Banner:</b> ".$_SESSION['rutaBannerEspecifico']."</span><br><br>";
-                    echo "<img src='".$_SESSION['rutaBannerEspecifico']."' style='width: 800px; height: 180px;'>";
+                    echo "<img src='".$_SESSION['rutaBannerEspecifico']."' class='img-responsive'>";
                 ?>
             </div>         
             
             <!-- DESCRIPCION -->
-            <div style=" width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 50px">
+            <div style="max-width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 50px">
                 <?php
                     echo "<span style='float: left'><b>Descripcion Banner:</b></span><br><br>";
                     echo "<div style='border-color: #cccccc; border-style: solid; border-width: 1px; height:80px'>".$_SESSION['descripcionBannerEspecifico']."</div>";

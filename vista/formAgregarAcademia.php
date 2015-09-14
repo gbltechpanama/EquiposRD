@@ -12,11 +12,7 @@
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="js/flexslider.css" rel="stylesheet" />
 
-<script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-</script>
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> 
@@ -39,7 +35,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-        <img src="img/logo.png">
+        <img src="img/logo.png" class="img-responsive">
       </div>
       
       <div class="menu" style="padding-top: 25px"> 
@@ -71,7 +67,7 @@
                });
             });
         </script>
-        <li class="dropdown"">
+        <li class="dropdown hidden-sm hidden-xs">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
@@ -89,6 +85,14 @@
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
         
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell">MARCA HUBBELL</a>
+        </li>
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=eclipse">MARCA ECLIPSE</a>
+        </li>
+        
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
         <li><a href="../controlador/FrontController.php?action=administraracademia">ACADEMIA</a></li>
@@ -101,6 +105,12 @@
   </div>
 </div>
     
+
+<script>
+  $(function() {
+    $("#datepicker").datepicker();
+  });
+</script>
 
 <!-- BARRA SUPERIOR VERDE -->
 <div id="barraSuperior"></div>
@@ -127,13 +137,15 @@
             <br><br>
                 <form method="post" action="../controlador/FrontController.php?action=nuevoacademia" enctype="multipart/form-data">
             
-                    <table border="0" style="width: 900px; margin-left: auto; margin-right: auto;">
+                    <table border="0" style="width: 90%; max-width: 650px; margin-left: auto; margin-right: auto;">
                         <tr style=" height: 40px">
                             <td style="text-align: right;">
-                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">TITULO ARTICULO</label>
+                                <label style=" font-family: arial; font-size: 12px; font-weight: bold">
+                                    TITULO ARTICULO
+                                </label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <input type="text" name="tituloArticulo" style="width: 450px">
+                                <input type="text" name="tituloArticulo" class="text" style="width: 90%">
                             </td>
                         </tr>
                         
@@ -143,7 +155,8 @@
                                 <label style=" font-family: arial; font-size: 12px; font-weight: bold">FOTO ARTICULO</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <input type="file" name="objFoto">
+                                <input type="file" name="objFoto" style="width: 90%">
+                                
                             </td>
                         </tr>
                         
@@ -152,7 +165,7 @@
                                 <label style=" font-family: arial; font-size: 12px; font-weight: bold">FECHA ARTICULO</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <input type="date" name="fechaArticulo" style="height: 30px">
+                                <input type="date" name="fechaArticulo" style="height: 30px;">
                             </td>
                         </tr>
                         
@@ -161,7 +174,7 @@
                                 <label style=" font-family: arial; font-size: 12px; font-weight: bold">CONT. ARTICULO</label>
                             </td>
                             <td style="text-align: left; padding-left: 10px">
-                                <textarea name="contenidoArticulo" rows="10" cols="100"></textarea>
+                                <textarea name="contenidoArticulo" rows="10" style="width: 90%"></textarea>
                             </td>
                         </tr>
                         
@@ -169,7 +182,7 @@
                         <tr style=" height: 50px">
                             <td>
                             </td>
-                            <td style="text-align: left; padding-left: 15px">
+                            <td style="text-align: left; padding-left: 10px">
                                 <img src="img/btnAceptar.jpg" 
                                      style="cursor: pointer" onclick="document.forms[0].submit();">
                             </td>

@@ -38,6 +38,7 @@
               <img src="img/logo.png" class="img-responsive">
           </a> 
       </div>
+      
       <div class="menu" style="padding-top: 25px;"> 
           <a class="toggleMenu" href="#">
               <img src="img/nav_icon.png" alt="" /> 
@@ -115,7 +116,6 @@
 
 
 <!-- BANNER -->
-
 <div class="text-center banner" style="clear: both">
     
     <div class="container" style="padding-left: 0px; 
@@ -124,38 +124,38 @@
     <!-- Slider -->
     <div id="main-slider" class="flexslider col-lg-12 col-md-12">
             <ul class="slides">
-                
-            <?php
+                <?php
             
-            $n = count($_SESSION["rutaBanners"]);
+                $n = count($_SESSION["rutaBanners"]);
             
-            for ($i=0; $i<$n; $i++) {
-                echo "<li>";
-                echo '<img src="'.trim($_SESSION["rutaBanners"][$i]).'" style="margin-left:auto; margin-right:auto" class="img-responsive center-block">';
-                echo '
-                <div id="descripcion">
-                    <p style="padding-top: 25px; text-align: center">
-                        
-                            '.$_SESSION['descripcionBanners'][$i].'
-                    </p>
-                </div>';
-                
-                echo "</li>";
-            }
+                for ($i=0; $i<$n; $i++) {
+                    echo "<li>";
+                    echo '<img src="'.trim($_SESSION["rutaBanners"][$i]).'" '
+                            . 'style="margin-left:auto; margin-right:auto; max-height: 283px" '
+                            . 'class="img-responsive center-block">';
+                    echo '
+                    <div id="descripcion">
+                        <p style="padding-top: 25px; text-align: center">
+                                '.$_SESSION['descripcionBanners'][$i].'
+                        </p>
+                    </div>';
+
+                    echo "</li>";
+                }
             
-            ?>  
+            ?> 
             </ul>
     </div>
     <!-- end slider -->
-    </div>
+    </div> 
 </div>
 
 
 <!-- COMENTARIO -->    
-<div class="main">
-    <div class="content_white" style="background-color: #f6f6f6">
-  <h2>Equipos y Controles R&D</h2>
-  <p>Hubbell / Eclipse</p>
+<!--div class="main"-->
+<div class="content_white" style="background-color: #f6f6f6">
+    <h2>Equipos y Controles R&D</h2>
+    <p>Hubbell / Eclipse</p>
 </div>
     
 <!-- LINEAS NEGOCIO -->

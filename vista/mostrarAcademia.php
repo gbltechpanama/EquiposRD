@@ -34,7 +34,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-        <img src="img/logo.png">
+        <img src="img/logo.png" class="img-responsive">
       </div>
       
       <div class="menu" style="padding-top: 25px"> 
@@ -66,7 +66,7 @@
                });
             });
         </script>
-        <li class="dropdown"">
+        <li class="dropdown hidden-sm hidden-xs">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                <li style="width: 100%">
@@ -84,9 +84,18 @@
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
         
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell">MARCA HUBBELL</a>
+        </li>
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=eclipse">MARCA ECLIPSE</a>
+        </li>
+        
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
         <li><a href="../controlador/FrontController.php?action=administraracademia">ACADEMIA</a></li>
+        <li><a href="formCambioClave.php">CAMBIO CLAVE ADMIN</a></li>
         
         
       </ul>
@@ -121,7 +130,7 @@
              <!-- TITULO PUBLICACION -->
             <?php
                 
-                echo "<div style='width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 30px'>";
+                echo "<div class='col-lg-12' style='max-width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 30px'>";
                 echo "<span style='float: left'><b>Titulo de la Publicacion: </b>".strtoupper($_SESSION['tituloArticuloEspecifico'])."</span>";
                 echo "</div><br>";
             ?>
@@ -130,22 +139,22 @@
             <?php
                 $date = date_create($_SESSION['fechaArticuloEspecifico']);
             
-                echo "<div style='width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 30px'>";
+                echo "<div class='col-lg-12' style='max-width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 30px'>";
                 echo "<span style='float: left'><b>Fecha de Publicacion: </b>".date_format($date, 'M d, Y')."</span>";
                 echo "</div><br>";
             ?>
             
             <!-- IMAGEN -->
-            <div style=" width: 800px; height: 300px; clear: both; margin-left: auto; margin-right: auto; margin-top: 30px">
+            <div class='col-lg-12' style="max-width: 800px; min-height: 300px; clear: both; margin-left: auto; margin-right: auto; margin-top: 30px">
                 <?php
                     echo "<span style='float: left'><b>Ruta Foto:</b> ".$_SESSION['fotoArticuloEspecifico']."</span><br><br>";
-                    echo "<img src='".$_SESSION['fotoArticuloEspecifico']."' style='width: 755px; height: 280px;'>";
+                    echo "<img src='".$_SESSION['fotoArticuloEspecifico']."' class='img-responsive'>";
                 ?>
             </div>         
             
             
             <!-- DESCRIPCION -->
-            <div style=" width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 50px">
+            <div class='col-lg-12' style="max-width: 800px; clear: both; margin-left: auto; margin-right: auto; margin-top: 50px">
                 <?php
                     echo "<div style='float: left'><b>Contenido Articulo:</b></div><br><br>";
                     echo "<div style='background-color: white; border-color: #cccccc; border-style: solid; border-width: 1px;'>".$_SESSION['contenidoArticuloEspecifico']."</div>";

@@ -34,7 +34,7 @@
 <div class="header">
   <div class="container">
       <div class="logo"> 
-        <img src="img/logo.png">
+        <img src="img/logo.png" class="img-responsive">
       </div>
       
       <div class="menu" style="padding-top: 25px"> 
@@ -66,7 +66,7 @@
                });
             });
         </script>
-        <li class="dropdown"">
+        <li class="dropdown hidden-sm hidden-xs">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Marcas <b class="caret"></b></a>
             <ul class="dropdown-menu" style="background-color: #ffffff;">
                 <li style="width: 100%">
@@ -83,6 +83,14 @@
             </ul>
         </li>
         <!-- FIN DE MENU MARCAS DESPLEGALE -->
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=hubbell">MARCA HUBBELL</a>
+        </li>
+        
+        <li class="hidden-md hidden-lg visible-sm visible-xs">
+            <a href="../controlador/FrontController.php?action=lineanegocio&lineaNegocio=eclipse">MARCA ECLIPSE</a>
+        </li>
         
         <li><a href="../controlador/FrontController.php?action=cargarsublineas">PRODUCTOS</a></li>
         <li><a href="../controlador/FrontController.php?action=cargarlineas">INTEGRADORES</a></li>
@@ -112,11 +120,13 @@
         <div class="col-md-12" style="margin-top: 10px;">
             
             <!-- INDICADOR DE SECCION -->
-            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">CAMBIO CLAVE ADMIN</div>
+            <div style="width: 100%; text-align: right; color: green; font-size: 18px; font-weight: bold">
+                CAMBIO CLAVE ADMIN
+            </div>
             
             <br><br>
             <form method="post" action="../controlador/FrontController.php?action=cambioclave">
-                    <table border="0" style="width: 500px; margin-left: auto; margin-right: auto;">
+                    <table border="0" style="max-width: 500px;  margin-left: auto; margin-right: auto;">
                         
                         <tr style=" height: 40px">
                             <td style="text-align: right">
