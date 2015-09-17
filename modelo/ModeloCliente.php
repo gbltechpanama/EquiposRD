@@ -3,6 +3,7 @@ namespace erd;
 
 require_once '../ORM.php';
 
+
 class ModeloCliente
 {
 
@@ -238,5 +239,24 @@ class ModeloCliente
 
         return $data_array;
         
+    }
+    
+    public function mdlEnviarCorreo($nombre, $rif, $remitente, $destinatario, $mensaje)
+    {
+        $contenido="";
+
+        $contenido.="Name: ".$nombre."\n";
+
+        $contenido.="Rif: ".$rif."\n";
+
+        $contenido.="E-mail: ".$remitente."\n";
+
+        $contenido.="Mensaje: ".$mensaje."\n";
+
+        $subject="Mensaje desde Pagina WEB";
+         
+        $resultadoEnvio = mail($destinatario, $subject, $contenido);
+        
+        return $resultadoEnvio;
     }
 }

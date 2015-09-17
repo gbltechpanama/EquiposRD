@@ -123,12 +123,11 @@
 <div class="col-md-3"></div>
 
 <div id="contenidoCentral" class="col-md-6" style="margin-left: auto; margin-right: auto">
-    
-<form>
-    
+
+<form method="post" action="../controlador/FrontController.php?action=enviaremail"">
     <div class="form-group">
       <label>Zona</label>
-      <select class="form-control" id="txtZona">
+      <select class="form-control" id="txtZona" name="txtZona">
         <option>Seleccione una zona...</option>
         <option>Zona Central</option>
         <option>Zona Oriente</option>
@@ -138,22 +137,22 @@
     
     <div class="form-group">
       <label>Nombre</label>
-      <input type="text" class="form-control" id="txtNombre" required>
+      <input type="text" class="form-control" id="txtNombre" name="txtNombre" required>
     </div> 
 
     <div class="form-group">
       <label>Rif</label>
-      <input type="text" class="form-control" id="txtRif" required>
+      <input type="text" class="form-control" id="txtRif" name="txtRif" required>
     </div>
 
     <div class="form-group">
       <label>Email</label>
-      <input type="text" class="form-control" id="txtEmail" required>
+      <input type="text" class="form-control" id="txtEmail" name="txtEmail" required>
     </div>
 
     <div class="form-group">
       <label>Escriba su Mensaje</label>
-      <textarea class="form-control" rows="9" id="txtArea" required></textarea>
+      <textarea class="form-control" rows="9" id="txtArea" name="txtArea" required></textarea>
     </div>
     
     <div class="form-group" style="text-align: right">

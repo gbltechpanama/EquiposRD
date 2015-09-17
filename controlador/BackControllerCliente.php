@@ -24,6 +24,8 @@ class BackControllerCliente
     private $contenidoAcademia;
     private $fechaAcademia;
         
+    private $resultadoEnvio;
+    
     public function ctrlPaginaPrincipal()
     {
 
@@ -160,5 +162,31 @@ class BackControllerCliente
          * LLAMADA A LA VISTA
          */
         header("Location: ../vista/academy.php");
+    }
+    
+    public function ctrlEnviarInformacion($zona, $nombre, $rif, $remitente, $mensaje)
+    {
+        $modelCliente = new ModeloCliente();
+        
+        if ($zona=="Zona Oriente") {
+            $destinatario = "jvelasquez@ryd.com.ve";
+        } elseif ($zona=="Zona Central") {
+            $destinatario = "jcarrillo@ryd.com.ve";
+        } elseif ($zona=="Zona Occidente") {
+            $destinatario = "obaptista@ryd.com.ve";
+        }
+        
+        
+        /*PRUEBA*/
+        //$destinatario = "abraham.verde@gbltechpanama.com";
+        
+        $resultadoEnvio = $modelCliente->mdlEnviarCorreo($nombre, $rif, $remitente, $destinatario, $mensaje);
+        
+        if ($resultadoEnvio==true) {
+            header("Location: ../vista/successEmail.php");
+        } else {
+            header("Location: ../vista/errorEmail.php");
+        }
+        
     }
 }

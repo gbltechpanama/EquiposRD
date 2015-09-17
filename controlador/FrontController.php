@@ -19,15 +19,21 @@ $action = $_GET['action'];
  */
 if ($action=="principal") {
     $bkCliente->ctrlPaginaPrincipal();
+    
 } elseif ($action=="level1neg") {
     $linea = $_GET['linea'];
     $bkCliente->ctrlObtenerInformacionGeneral($linea);
+    
 } elseif ($action=="level2neg") {
     $linea = $_GET['linea'];
     $bkCliente->ctrlObtenerInformacionDetalleLinea($linea);
+    
 } elseif ($action=="academia") {
     $linea = $_GET['linea'];
     $bkCliente->ctrlObtenerInformacionAcademia();
+    
+} elseif ($action=="enviaremail") {
+    $bkCliente->ctrlEnviarInformacion($_REQUEST['txtZona'], $_REQUEST['txtNombre'], $_REQUEST['txtRif'], $_REQUEST['txtEmail'], $_REQUEST['txtArea']);
 }
 
 /*
